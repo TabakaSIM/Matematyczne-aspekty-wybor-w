@@ -90,8 +90,9 @@
 			\centering #1
 		\end{mdframed}
 	}
-	\newcommand{\TekstSzare}[1]{
+	\newcommand{\Komentarz}[1]{
 	\begin{mdframed}[style=zadanie]
+		\textbf{Komentarz}\\
 		#1
 	\end{mdframed}
 	}
@@ -102,7 +103,7 @@
 \setlength{\theorempreskipamount}{20pt}  % Space above the theorem
 \setlength{\theorempostskipamount}{20pt} % Space below the theorem
 
-\newtheorem{definition}{Definition}[section]
+\newtheorem{definition}{Definicja}[section]
 
 \newtheorem{theorem}{Twierdzenie}[section]
 \newtheorem{lemma}{Lemat}[section]
@@ -149,9 +150,12 @@
 	\newpage
 \section{Preliminaria}
 \subsection{Jak wyglądają aktualnie wybory?}
-Materiał ten nie ma w żadnym stopniu charakteru politycznego, a wyłącznie charakter matematyczny.\\
+\Komentarz{Materiał ten nie ma w żadnym stopniu charakteru politycznego, a wyłącznie charakter matematyczny.}
 
-Rozważmy poniższe dane, oparte na 6 partiach, 1000 głosach i 6 mandatów do rozdania:\\\\
+\begin{example}
+Rozważmy poniższe dane, oparte na 6 partiach, 1000 głosach i 6 mandatów do rozdania:
+\end{example}
+
 \begin{tabular}{|c|c|c|c|c|c|c|}\hline
 	Nazwa        & Głosy & $:1$ & $:2$ & $:3$ & $:4$ & Otrzymane mandaty\\\hline
 	Filateliści  & 380   & \textbf{380} & \textbf{190} & \textbf{127} & 87   & 3\\\hline
@@ -209,7 +213,7 @@ Partia \textbf{Rybacy} prowadziła kampanię przeciwko \textbf{Myśliwym}, w wyn
 	Artyści  & \textbf{2150} & 1075          &      &       & 0\\\hline
 \end{tabular}\\
 
-Tym oto sposobem partia \textbf{Myśliwi} straciła jeden mandat na rzecz partii \textbf{Artyści}.
+\Komentarz{Tym oto sposobem partia \textbf{Myśliwi} stracili jeden mandat na rzecz partii \textbf{Artyści}.}
 
 \begin{example}
 	Rozważmy wyniki głosowania dla dwóch partii z 6 mandatami do rozdania.
@@ -242,7 +246,7 @@ Popatrzmy na głosy bezpośrednio na konkretnych kandydatów z każdej partii:
 	Pan Andrzej  & 33\\\hline
 \end{tabular}\\
 
-Tym oto sposobem mandatu nie otrzymuje \textbf{Iloczyn}, mimo że zdobył więcej głosów niż \textbf{Magister}.
+\Komentarz{Tym oto sposobem mandatu nie otrzymuje \textbf{Iloczyn}, mimo że zdobył więcej głosów niż \textbf{Magister}.}
 
 \begin{example}
 	Rozważmy sytuację, w której państwo jest podzielone na dwa bloki, oba mające po $50\%$ wpływu na wyniki wyborów. Każdy blok ma przyznać po 4 mandaty.
@@ -262,7 +266,7 @@ W bloku A znajdowały się dwie partie: PZK (Partia Zwolenników Kawy) i PZH (Pa
 	Pan Tadeusz & \textbf{1}\\\hline
 \end{tabular}\\
 
-I tym oto sposobem wygrywają osoby, które dostają 2 lub 1 głos.
+\Komentarz{I tym oto sposobem wygrywają osoby, które dostają 2 lub 1 głos.}
 
 \subsection{\href{http://www.racjonalista.pl/kk.php/s,9848/k,3}{Prawo Ciesielskiego}}
 
@@ -283,7 +287,7 @@ Partia \textbf{Sportowcy} postanowiła się rozdzielić na dwie partie i startow
 	Siatkarze    & \textbf{504}  & \textbf{168} & 101  &     &      & 2\\\hline
 \end{tabular}\\
 
-Tym oto sposobem partia \textbf{Sportowcy} zdobyła większość.
+\Komentarz{Tym oto sposobem partia \textbf{Sportowcy} zdobyła większość.}
 
 	
 \newpage
@@ -307,13 +311,14 @@ $K$ - zbiór wszystkich kandydatów.
 	Metoda jest anonimowa, \textit{wtedy i tylko wtedy} (w skrócie: \witw), gdy wszyscy wyborcy są traktowani tak samo, \witw $\forall_{x,y \in W}$ zamiana głosów $x$ i $y$ nie zmienia wyniku.
 \end{definition}
 
-\TekstSzare{Alternatywnie, metoda nie jest anonimowa \witw $\exists_{x,y \in W}$ takie, że zamiana głosów $x$ i $y$ \textit{istotnie} zmienia wynik.}
+\Komentarz{Alternatywnie, metoda nie jest anonimowa \witw $\exists_{x,y \in W}$ takie, że zamiana głosów $x$ i $y$ \textit{istotnie} zmienia wynik.}
 
 \begin{definition}[Metoda neutralna]
 	Metoda jest neutralna, \witw wszyscy kandydaci są traktowani tak samo, \witw $\forall_{x,y \in K}$ zamiana ról $x$ i $y$ nie zmienia wyniku.
 \end{definition}
 
-\TekstSzare{Alternatywnie, metoda nie jest neutralna \witw $\exists_{x,y \in K}$ takie, że zamiana ról $x$ i $y$ \textit{istotnie} zmienia wynik.}
+\Komentarz{Alternatywnie, metoda nie jest neutralna \witw $\exists_{x,y \in K}$ takie, że zamiana ról $x$ i $y$ \textit{istotnie} zmienia wynik, dokładniej definiując:\\
+jeśli $\exists{k_1,k_2\in K}: W_1=\{w_{1},w_{2},\dots,w_{i}\}$ głosowali na $k_1$, a $W_2=\{w_{i+1},w_{i+2},\dots,w_{j}\}$ głosowali na $k_2$ to jeżeli kandydaci Ci "zamienią się" wyborcami (zbiorami $W_1,W_2$), to $k_1$ i $k_2$ zamienią się wynikami.}
 
 \begin{definition}
 	Trzy rodzaje metod ze względu na wyniki:
