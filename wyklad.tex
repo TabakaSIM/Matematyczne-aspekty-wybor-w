@@ -115,7 +115,6 @@
 \newtheorem{obserwacja}{Obserwacja}[section]
 
 
-%\newcommand{\endproof}{\begin{flushright}\square\end{flushright}}
 \newcommand{\tg}{\text{tg}}
 \newcommand{\ctg}{\text{ctg}}
 \newcommand{\witw}{$\Leftrightarrow$}
@@ -416,145 +415,167 @@ jeśli $\exists{k_1,k_2\in K}: W_1=\{w_{1},w_{2},\dots,w_{i}\}$ głosowali na $k
 	Uzupełnij tabelę:\\
 	\begin{tabular}{|c|c|c|c|}\hline
 		& Anonimowa & Neutralna & Efektywna\\\hline
-		Dyktatura   &&&\\\hline
-		Monarchia   &&&\\\hline
-		Metoda Większości &&&\\\hline
+		Dyktatura   &-&+&+\\\hline
+		Monarchia   &+&-&+\\\hline
+		Metoda Większości &+&+&+\\\hline
 	\end{tabular}\\
 \end{exercise}
 
+
+
+
 	\begin{definition}[Kryterium jednoznacznej bezwzględnej większości]
-		Metoda zwyciężcy (MZ) spełnia kryterium jednoznacznej bezwzględnej większości \witw kandydat który ma ponad 50\% głosów jest jedynym zwyciężcą. 
+		Metoda zwycięzcy (MZ) spełnia kryterium jednoznacznej bezwzględnej większości, \textit{wtedy i tylko wtedy}, gdy kandydat, który otrzyma ponad 50\% głosów, jest jedynym zwycięzcą.
 	\end{definition}
 	
 	\begin{stwierdzenie}
-	Mamy klasyczną metodę zwyciężcy, taką że $\# K=2$ i głosowanie jest metodą bezwględnej większości, wówczas metoda jest prawie decyzyjna.
+		Mamy klasyczną metodę zwycięzcy, taką że $\# K=2$, a głosowanie odbywa się według zasady bezwzględnej większości. Wówczas metoda jest prawie decyzyjna.
+	\end{stwierdzenie}
+	
+	\textit{Dowód:}
 	\begin{enumerate}[1$^\circ$]
-		\item $\# W$ nieparzysta - OK.
-		\item $\# W$ parzysta:
+		\item Załóżmy, że liczba wyborców $\# W$ jest nieparzysta - OK.
+		\item Liczba wyborców $\# W$ jest parzysta:
 		\begin{itemize}
-			\item jeden ma więcej niż 50\% - OK.
-			\item równa 50\% - nie ma zwyciężcy.
+			\item jeden kandydat ma więcej niż 50\% głosów - OK.
+			\item remis, czyli obaj mają po 50\% - nie ma zwycięzcy (dlatego metoda jest prawie decyzyjna).
 		\end{itemize}
-	\end{enumerate} TODO(endproof)
-	\end{stwierdzenie}
+		\begin{flushright}$\square$\end{flushright}
+	\end{enumerate} 
 	
-	
-						
 	\begin{stwierdzenie}
-		Metoda jest decyzyjna $=>$ metoda jest prawie decyzyjna.
+		Metoda jest decyzyjna $\Rightarrow$ metoda jest prawie decyzyjna.
 	\end{stwierdzenie}
-	\newpage
-	\begin{definition}[Metoda monotoniczna ze względu na zwyciężcę]
+	
+	\begin{definition}[Metoda monotoniczna ze względu na zwycięzcę]
 		\textbf{Z:} MZ - klasyczna lub semi-klasyczna.
-		Metoda jest monotoniczna ze względu na zwyciężcę \witw Kandydat A wygrywa oraz $B\neq A$ grupa wyborców zamieni A i B rolami bez straty dla A
-		Jeżeli model się zmieni przy następujących dozwolonych operacjach: 
+		Metoda jest monotoniczna ze względu na zwycięzcę, \textit{wtedy i tylko wtedy}, gdy kandydat $A$ jest zwycięzcą, a jeśli wybierzemy kandydata $B$ różnego od $A$ ($B\neq A$) oraz jego grupę wyborców, to jeśli ta grupa zmieni swoje głosy bez straty dla $A$ (czyli zmiana nastąpi zgodnie z następującymi dozwolonymi operacjami):
 		
-		\begin{tabular}{|c|c|c|}\hline
-			M & $\Rightarrow$ & N\\\hline
-			A B & $\Rightarrow$ & A B\\\hline
-			- - & $\Rightarrow$ & - -\\\hline
-			+ + & $\Rightarrow$ & + +\\\hline
-			- + & $\Rightarrow$ & + -\\\hline
+		\begin{tabular}{|c|c|c|}
+			\hline
+			M & $\Rightarrow$ & N \\\hline
+			A B & $\Rightarrow$ & A B \\\hline
+			- - & $\Rightarrow$ & - - \\\hline
+			+ + & $\Rightarrow$ & + + \\\hline
+			- + & $\Rightarrow$ & + - \\\hline
 		\end{tabular}
 		
-		\begin{itemize} 
-			\item B -> A
-			\item 0 -> 0
-			\item 0 -> 1
-			\item 1 -> 1 
-		\end{itemize}
-		
-		$\Rightarrow$ A dalej wygrywa.
+		to: $\Rightarrow$ $A$ nadal wygrywa.
 	\end{definition}
 	
-	\begin{definition}[Metoda quoty]
-		MZ klasyczna lub semi-klasyczna jest metodą quoty (większości kwalifikowanej) \witw $\exists_q$ (quota) - liczba głosów o własności: kandydat A jest zwyciężcą \witw A dostał conajmniej $q$ głosów.\\
-		
-		(Często quota wyrażana jest w procentach, wtedy nieraz z nierównością słabą.)
-	\end{definition}
-		
-		\begin{theorem}[Maya - \textit{Kenneth Maya, 1952r}]
-			Z: Klasyczna metoda zwyciężcy i $\# K = 2$, metoda, która jest:
-			\begin{itemize}
-				\item anoniowa 
-				\item neutralna
-				\item monotoniczna ze względu na zwyciężce
-				\item prawie decyzyjna
-			\end{itemize}
-			$\Rightarrow$ jest metodą bezwzględnej większości.
-		\end{theorem}
-		Złóżmy, że $A,B$ - kandydaci
-		Metoda aninimowa $\Rightarrow$ interesuą nas liczby głosów
-		A - a głosów
-		B - b głosów
-		1* $\# W = 2n$ (parzysta) a=n, b=n
-		1.1Hipoteza A wygrywa metoda jest neutralna, to przy wymianie wyborców $\Rightarrow$ B wygyrwa $\Rightarrow$ A,B wygyrwają sprzeczność
-		
-		Analogicznie B nie wygyrwa 			(żadej nie ma ponad 50\%, nie ma wyższych)
-		
-		
-		1.2* a>b, Hipoteza: B wygrywa, a-b wyborców zmiania głosy z B na A z monotoniczności $\Rightarrow$ B dalej wygrywa
-		
-		B ma teraz a głosów $\Rightarrow$(neutralność) A ten wygrywa -> sprzeczność z prawie decyzyjne
-		
-		prawie decyzyjne $\Rightarrow$ A wygyrwa
-		
-		A ma ponad połowę głosów
-		
-		2* $\# W = wn+1$ (nieparzyście)
-		
-		Niech a>b ipoteza B wygyrwa, a-b TODO zmienią głosy i jak poprzednio udowadniamy
-		
-		Zawsze wygyrwa ten co ma ponad połowę głosów.
-		
-		
+	\Komentarz{Czyli, jeżeli ktoś, kto nie głosował na zwycięzcę ($A$), a głosował na kandydata $B$, zmieni swój głos na zwycięzcę ($A$), to ($A$) nadal wygrywa.}
 	
-		\begin{definition}[Metoda zakładająca uporządkowanie]
-			Metoda zwyciężcy jest metodą zakładającą uporządkowanie (MZU) \witw $\forall_{w\in W}$ ustala K kandytatów w niliowym porządku i od tego zależy jego głos.
-		\end{definition}
-		Zapis $A\overset{w,m}{<}B$ w modelu $m$, wstawia $B$ wyżej niż $A$\\
-		$A\overset{w}{<}B$ - gdy wiadomo jaki model
+	\begin{definition}[Metoda kwoty]
+		MZ klasyczna lub semi-klasyczna jest metodą kwoty (większości kwalifikowanej), \textit{wtedy i tylko wtedy}, gdy istnieje $q$ (kwota), taka że liczba głosów o tej własności, że kandydat $A$ jest zwycięzcą \textit{wtedy i tylko wtedy}, gdy $A$ otrzymał co najmniej $q$ głosów.
 		
-		
-		
-		\begin{example}
-			\begin{enumerate}[1.]
-				\item Metoda punktów Bordy (Jean Charles de Borda - 1733 - 1799 - Inżynier wojskowy)  - Każdy wyborca punktuje od (n-1) do 0 
-				1. n-1
-				2. n-2
-				$\vdots$
-				n-1 - 1
-				n - 0
-				wygrywa ten co otrzyma największą liczbę punktów
-				\item Metoda Hare'a (Sir Thomas Hare 1806 - 1891 - Anglia, Prawnik) - (1857r) polega na odrzucaniu tego (tych), kto ma najmniej pierwszych miejsc i głosujemy dalej (listy pozostają z usunięciem odrzuconego kandydata) aż ktoś ma ponad $50\%$. Gdy równo i nie ma kogo odrzucić wtedy wszyscy wygrywają.
-				\item Metoda Coombs'a (Clyde Coombs - 1912 - 1988, USA, Psycholog) - wypisujemy kolejność, odrzucamy tego, kto ma najwięcej ostatnich miejsc i głosujemy dalej aż ktoś ma ponad $50\%$ pierwszych miejsc.  Gdy się nie da wyrzucać, wygrywają wszyscy, którzy zostali.
-				\item Metoda odrzuceń ostatniego - jak w metodzie Coombsa, przy czym odrzucamy "do oporu".  Gdy się nie da wyrzucać, wygrywają wszyscy, którzy zostali.
-				
-				\begin{example}
-					Różnica między metodą Coomb'sa,a metodą odrzucania.
-					TABELKA
-				\end{example}
-				
-				\item Metoda Copelanda (Arthur H Copeland - 1898 - 1970 - Matematyk) - porównujemy parami kandydatów. Ten który więcej razy wyżej 1 pkt, w przypadku remisu po 0.5 punktu. 
-				
-				$\#{m:A\overset{m}{<}B}$\\
-				$\#{m:B\overset{m}{<}A}$
-				
-				Decyduje suma punktów. (Zwyciężców może być więcej niż 1)
-				
-				\item Metoda terminażowa (Z: $\# W = 2n+1$ nieparzysta) - $k_1$ porównujemy z $k_2$ (metodą powyżej), następnie porównujemy z $k_3$ itd.
-				
-				\item Metoda pozycyjna - $P(p_1, p_2, \dots , p_n)$ przy czym $p_1\geq p_2 \geq \dots \geq p_n$. 
-				1 - $p_1$ punktów
-				2 - $p_2$ punktów itd.
-				Wygrywa ten z największą ilością punktów. 
-			\end{enumerate}
-			\textbf{UWAGA - w szczególności:} 
-			Metoda Bordy: $P(n-1, n-2,\dots, 1, 0)$
-			Metoda większości $P(1,0, \dots , 0)$
-			Metoda k głosów $P(1,1,\dots, 1, 0, \dots, 0)$ (gdzie 1 występuje k razy)
+		\Komentarz{Często kwota wyrażana jest w procentach, a wówczas stosuje się nieraz nierówność słabą.}
+	\end{definition}
+	\begin{theorem}[Maya - \textit{Kenneth Maya, 1952r}]
+		\textbf{Z:} Klasyczna metoda zwycięzcy oraz $\# K = 2$. Jeżeli metoda ta jest metodą:
+		\begin{enumerate}[(1)]
+			\item anonimową
+			\item neutralną
+			\item monotoniczną ze względu na zwycięzcę
+			\item prawie decyzyjną
+		\end{enumerate}
+		$\Rightarrow$ jest metodą bezwzględnej większości.
+	\end{theorem}
+	
+	\textit{Dowód:}
+	Załóżmy, że $A,B$ to kandydaci.\\
+	$\overset{(1)}{\Rightarrow}$ interesują nas liczby głosów, które otrzymali kandydaci. Załóżmy:\\
+	$A$ - $a$ głosów\\
+	$B$ - $b$ głosów\\
+	Rozpatrzmy zatem przypadki:\\
+	\begin{enumerate}[1$^\circ$]
+		\item $\# W = 2n$ (parzysta), rozważmy dwa podprzypadki:
+		\begin{enumerate}[a)]
+			\item Jeśli $a=n$, $b=n$.\\
+			\textbf{Hipoteza:} $A$ wygrywa (analogicznie, jeżeli nie wygrywa $B$), a metoda jest neutralna, to przy wymianie wyborców $\overset{(2)}{\Rightarrow}$ $B$ wygrywa (nie wygrywa $A$) $\Rightarrow$ $A$ i $B$ wygrywają jednocześnie (nie wygrywa żaden) $\Rightarrow$ co prowadzi do \faBolt (bo żaden z nich nie ma ponad 50\%).
 			
-		\end{example}
+			\item Jeśli $a>b$.\\
+			\textbf{Hipoteza:} $B$ wygrywa, wtedy $a-b$ wyborców zmienia głosy z $A$ na $B$, $\overset{(3)}{\Rightarrow}$ $B$ dalej wygrywa. Teraz $B$ ma $a$ głosów, $\overset{(2)}{\Rightarrow}$ $A$ wygrywa, $\overset{(4)}{\Rightarrow}$ $A$ wygrywa i ma ponad połowę głosów.
+		\end{enumerate}
+		
+		\item Niech $\# W = 2n+1$ (nieparzysta).\\
+		Niech $a>b$.\\
+		\textbf{Hipoteza:} $B$ wygrywa, $a-b$ wyborców zmienia głosy i, jak w 1a), udowadniamy, że $B$ musi mieć ponad połowę głosów.
+	\end{enumerate}
+	
+	Tak więc zawsze wygrywa ten, kto ma ponad połowę głosów.
+	\begin{flushright}$\square$\end{flushright}
+	
+	\begin{definition}[Metoda zakładająca uporządkowanie]
+		Metoda zwycięzcy jest metodą zakładającą uporządkowanie (MZU) \textit{wtedy i tylko wtedy}, gdy $\forall_{w\in W}$ ustala $K$ kandydatów w liniowym porządku, a jego głos zależy od tego porządku.
+	\end{definition}
+	
+	Zapis:\\
+	$A\overset{w,m}{<}B$ w modelu $m$ oznacza, że wyborca $w$ stawia $B$ wyżej niż $A$.\\
+	$A\overset{w}{<}B$ - gdy wiadomo, jaki model.
+	
+	\begin{example}
+		\begin{enumerate}[1.]
+			\item Metoda punktów Bordy (Jean Charles de Borda, 1733–1799, inżynier wojskowy) – Każdy wyborca przydziela punkty od $n-1$ do 0:
+			1. $n-1$
+			2. $n-2$
+			$\vdots$
+			$n-1$ - 1
+			$n$ - 0\\
+			Zwycięża ten, kto otrzyma największą liczbę punktów.
+			
+			\item Metoda Hare'a (Sir Thomas Hare, 1806–1891, Anglia, prawnik, 1857 r.) – Polega na odrzucaniu tego kandydata (tych kandydatów), który ma najmniej pierwszych miejsc, i głosowaniu dalej (listy pozostają z usunięciem odrzuconego kandydata), aż ktoś uzyska ponad $50\%$ głosów. Gdy następuje remis i nie ma kogo odrzucić, wszyscy wygrywają.
+			
+			\item Metoda Coombsa (Clyde Coombs, 1912–1988, USA, psycholog) – Wypisujemy kolejność, odrzucamy kandydata, który ma najwięcej ostatnich miejsc, i głosujemy dalej, aż ktoś uzyska ponad $50\%$ pierwszych miejsc. Gdy nie można nikogo odrzucić, wygrywają wszyscy, którzy pozostali.
+			
+			\item Metoda odrzuceń ostatniego – Jak w metodzie Coombsa, przy czym odrzucamy „do oporu”. Gdy nie można nikogo więcej odrzucić, wygrywają wszyscy, którzy pozostali.
+			
+			\begin{example}
+				Różnica między metodą Coombsa a metodą odrzucania ostatniego.\\
+				
+				\textbf{Metoda Coombsa}\\
+				\begin{tabular}{|c|c|c|c|}\hline
+					Liczba: & 4 & 2 & 3 \\\hline
+					I pozycja & C & \textbf{B} & \textbf{B} \\\hline
+					II pozycja & A & C & A \\\hline
+					III pozycja & B & A & C \\\hline
+				\end{tabular}\\
+				Wygrywa $B$, bo ma ponad 50\% pierwszych miejsc.\\\\
+				
+				\textbf{Metoda odrzuceń ostatniego}\\
+				\begin{tabular}{|c|c|c|c|}\hline
+					Liczba: & 4 & 2 & 3 \\\hline
+					I pozycja & C & B & B \\\hline
+					II pozycja & \xout{A} & C & A \\\hline
+					III pozycja & \sout{B} & \xout{A} & C \\\hline
+				\end{tabular}\\
+				Kolejność odrzuceń: B, A, C – C wygrywa.
+			\end{example}
+			
+			\item Metoda Copelanda (Arthur H. Copeland, 1898–1970, matematyk) – Porównujemy parami kandydatów. Ten, kto więcej razy zostaje oceniony wyżej, dostaje 1 pkt, a w przypadku remisu obaj dostają po 0,5 pkt.
+			
+			$\#\{m:A\overset{m}{<}B\}$\\
+			$\#\{m:B\overset{m}{<}A\}$\\
+			
+			Decyduje suma punktów (zwycięzców może być więcej niż jeden).
+			
+			\item Metoda turniejowa (Z: $\# W = 2n+1$ nieparzysta) – $k_1$ porównujemy z $k_2$ (metodą powyżej), następnie porównujemy z $k_3$ itd.
+			
+			\item Metoda pozycyjna – $P(p_1, p_2, \dots, p_n)$, gdzie $p_1\geq p_2 \geq \dots \geq p_n$. 
+			1 – $p_1$ punktów,
+			2 – $p_2$ punktów itd.\\
+			Zwycięża ten z największą liczbą punktów.\\
+			
+		\end{enumerate}
+			
+			
+		\textbf{UWAGA – w szczególności:}\\
+		Metoda Bordy: $P(n-1, n-2, \dots, 1, 0)$\\
+		Metoda większości: $P(1,0, \dots, 0)$\\
+		Metoda $k$ głosów: $P(\underset{\text{k razy}}{1,1,\dots,1}, 0, \dots, 0)$
+	\end{example}
+		
+		
+		
 	\newpage
 	\section{Deser}
 	W sumie to deseru jeszcze nie ma, ale ma być na ostatnim wykładzie!!! 
