@@ -504,12 +504,12 @@ jeśli $\exists{k_1,k_2\in K}: W_1=\{w_{1},w_{2},\dots,w_{i}\}$ głosowali na $k
 	
 	Tak więc zawsze wygrywa ten, kto ma ponad połowę głosów.
 	\begin{flushright}$\square$\end{flushright}
-	
+	\subsubsection{MZU - Metoda zakładająca uporządkowanie}
 	\begin{definition}[Metoda zakładająca uporządkowanie]
 		Metoda zwycięzcy jest metodą zakładającą uporządkowanie (MZU) \textit{wtedy i tylko wtedy}, gdy $\forall_{w\in W}$ ustala $K$ kandydatów w liniowym porządku, a jego głos zależy od tego porządku.
 	\end{definition}
 	
-	Zapis:\\
+	\textbf{Zapis:}\\\\
 	$A\overset{w,m}{<}B$ w modelu $m$ oznacza, że wyborca $w$ stawia $B$ wyżej niż $A$.\\
 	$A\overset{w}{<}B$ - gdy wiadomo, jaki model.
 	
@@ -538,7 +538,7 @@ jeśli $\exists{k_1,k_2\in K}: W_1=\{w_{1},w_{2},\dots,w_{i}\}$ głosowali na $k
 					I pozycja & C & \textbf{B} & \textbf{B} \\\hline
 					II pozycja & A & C & A \\\hline
 					III pozycja & B & A & C \\\hline
-				\end{tabular}\\
+				\end{tabular}\\\\
 				Wygrywa $B$, bo ma ponad 50\% pierwszych miejsc.\\\\
 				
 				\textbf{Metoda odrzuceń ostatniego}\\
@@ -547,7 +547,7 @@ jeśli $\exists{k_1,k_2\in K}: W_1=\{w_{1},w_{2},\dots,w_{i}\}$ głosowali na $k
 					I pozycja & C & B & B \\\hline
 					II pozycja & \xout{A} & C & A \\\hline
 					III pozycja & \sout{B} & \xout{A} & C \\\hline
-				\end{tabular}\\
+				\end{tabular}\\\\
 				Kolejność odrzuceń: B, A, C – C wygrywa.
 			\end{example}
 			
@@ -575,124 +575,131 @@ jeśli $\exists{k_1,k_2\in K}: W_1=\{w_{1},w_{2},\dots,w_{i}\}$ głosowali na $k
 	\end{example}
 		
 		\begin{definition}[Monotoniczność ze względu na transpozycję]
-			MZU jest monotoniczna ze względu na transpozycje \witw $\forall_{M-\text{model}} \forall_{w\in W} \forall_{A,B\in K}$ jeśli w $M$ głosuje $[\Delta, B, A, *]$ w $M$ wygrywa $A$ to jeśli w w $N$ zmiana polega na $[\Delta, A, B, *]$ to w $N$ wygrywa $A$.
+			MZU jest monotoniczna ze względu na transpozycje \witw $\forall_{M-\text{model}} \forall_{w\in W} \forall_{A,B\in K}$, jeśli w $M$ głosuje się $[\Delta, B, A, *]$ i w $M$ wygrywa $A$, to w $N$, gdzie zmiana polega na $[\Delta, A, B, *]$, również wygrywa $A$.
 		\end{definition}
 		
-		\Komentarz{Zmiana polega na zamienieniu kolejności uporządkowania A i B. Dodatkowo porządek ten był na wykładzie zapisany pionowo. %(TODO?)
+		\Komentarz{Zmiana polega na zamienieniu kolejności uporządkowania $A$ i $B$. Dodatkowo porządek ten był na wykładzie zapisany pionowo. $\begin{bmatrix}
+				\Delta\\
+				A\\
+				B\\
+				*
+			\end{bmatrix}$
 		}
 		
-		{\textbf{Umowa:}} Jeśli nie jest zaznaczone inaczej, to w K,W różne oznaczenia oznaczają różnych kandydatów (wyborców).
+		{\textbf{Umowa:}} Jeśli nie jest zaznaczone inaczej, to w $K,W$ różne oznaczenia oznaczają różnych kandydatów (wyborców).
 		
 		\begin{definition}[Słaba zasada Pareto]
-			MZU spełnia słabą zasadę Pareto \witw $\forall_m (\exists_{A,B\in K}\forall_{w\in W} A\overset{w,M}{<}B) \Rightarrow$ $A$ nie wygrywa w $M$.
+			MZU spełnia słabą zasadę Pareto \witw $\forall_M (\exists_{A,B\in K}\forall_{w\in W} A\overset{w,M}{<}B) \Rightarrow A$ nie wygrywa w $M$.
 		\end{definition}
 		
 		\begin{definition}[Kandydat Condorceta]
-			$A\in K$ jest kandydatem Condorceta (zwyciężca Condorceta) \witw w "bezpośrednich porównaniach" $A$ jest lepszy od każdego innego kandydata \witw $\forall_{B \in K}: B\neq A \#{w: B\overset{w,M}{<}A}>\#{w: B\overset{w,M}{>}A}$.
+			$A\in K$ jest kandydatem Condorceta (zwycięzcą Condorceta) \witw w "bezpośrednich porównaniach" $A$ jest lepszy od każdego innego kandydata \witw $\forall_{B \in K}: B\neq A \#\{w: B\overset{w,M}{<}A\}>\#\{w: B\overset{w,M}{>}A\}$.
 		\end{definition}
 		
 		\begin{definition}[Przegrany Condorceta]
-			$A\in K$ to przegrany Condorceta (w modelu $M$) \witw $\forall_{B \in K}: B\neq A \#{w: B\overset{w,M}{<}A}<\#{w: B\overset{w,M}{>}A}$ 
+			$A\in K$ to przegrany Condorceta (w modelu $M$) \witw $\forall_{B \in K}: B\neq A \#\{w: B\overset{w,M}{<}A\}<\#\{w: B\overset{w,M}{>}A\}$.
 		\end{definition}
 		
 		\begin{definition}[Kryterium Condorceta]
-			Metoda spełnia kryterium Condorceta \witw $\forall_M:$ Istenieje kandydat Condorceta (w $M$) $\Rightarrow$ $A$- jedyny zwyciężca w $M$
+			Metoda spełnia kryterium Condorceta \witw $\forall_M:$ Istnieje kandydat Condorceta (w $M$) $\Rightarrow A$ - jedyny zwycięzca w $M$.
 		\end{definition}
+		
 		\begin{definition}[Kryterium przegranych Condorceta]			
-			Metoda spełnia kryterium przegranych Condorceta \witw $\forall_M:$ Istnieje przegrany Condorceta $A$ w $M$ $\Rightarrow$ $A$ nie wygrywa w $M$
+			Metoda spełnia kryterium przegranych Condorceta \witw $\forall_M:$ Istnieje przegrany Condorceta $A$ w $M$ $\Rightarrow A$ nie wygrywa w $M$.
 		\end{definition}
 		
 		\begin{definition}[Metoda jednoznacznie większościowa]
-			Metoda jednoznacznie większościowa \witw $\forall_M$ kandydat $A$ w $M$ ma ponad połowę pierwszych miejsc $\Rightarrow$ $A$ - jedyny zwyciężca
+			Metoda jest jednoznacznie większościowa \witw $\forall_M$ kandydat $A$ w $M$ ma ponad połowę pierwszych miejsc $\Rightarrow A$ - jedyny zwycięzca.
 		\end{definition}
 		
-		\begin{definition}[Metoda słabo nieznależna od ubocznych opcji]
-			Metoda słabo nieznależna od ubocznych opcji spełnia warunek niezależności porażki od ubocznych opcji (spełnia słaby warunek $IIA$) \witw
+		\begin{definition}[Metoda słabo niezależna od ubocznych opcji]
+			Metoda słabo niezależna od ubocznych opcji spełnia warunek niezależności porażki od ubocznych opcji (spełnia słaby warunek $IIA$) \witw
 			
-			$\forall_{A,B\in K} \forall_{M,W - modele}$
+			$\forall_{A,B\in K} \forall_{M,N - modele}$ spełnia 
 			$\begin{bmatrix}
-				\forall_{w\in W} B\overset{w,M}{<}A \text{\witw} B\overset{w,N}{<}A \\
+				\forall_{w\in W} (B\overset{w,M}{<}A) \text{\witw} (B\overset{w,N}{<}A) \\
 				\text{A wygrywa w M, B nie wygrywa w M}		 
-			\end{bmatrix}$	$\Rightarrow$ B nie wygrywa w N.
+			\end{bmatrix}$	$\Rightarrow$ B nie wygrywa w N.\\\\
 			
-			Innymi słowy: zmiany nie wpływające na relacje przegrany-zwyciężca nie mogą dać przegrywającemu zwycięstwa.		
+			Innymi słowy: zmiany nie wpływające na relacje przegrany-zwycięzca nie mogą dać przegrywającemu zwycięstwa.		
 			
 		\end{definition}
 		
 		\begin{theorem}
-			MZU, anonimowa, neutralna $\Rightarrow$ nie jest decyzyjna.
+			MZU, anonimowa, neutralna $\Rightarrow$ metoda nie jest decyzyjna.
 		\end{theorem}
-		\textit{Dowód.} Rozważmy $\# K = 2$, $\# W = 2n$ i otrzymali głosy\begin{tabular}{|c|c|c|}\hline
-			&n&n\\\hline
+		\textit{Dowód.} Rozważmy $\# K = 2$, $\# W = 2n$ i otrzymane głosy.\\
+		
+		\begin{tabular}{|c|c|c|}\hline
+			Głosy&n&n\\\hline
 			1&A&B\\\hline
 			2&B&A\\\hline
-		\end{tabular}.
+		\end{tabular}\\\\
+		\textbf{Hipoteza:} Metoda decyzyjna to np. wygrywa $A \Rightarrow$ wygrywa $B$ \faBolt\\
+		Analogicznie zachodzi dla $A$.
 		
-		Hp. decyzyjna to np. wygrywa A $\Rightarrow$ wygyrwa B sprzeczność
-		analogicznie dla A.
-		
-			\begin{flushright}$\square$\end{flushright}
+		\begin{flushright}$\square$\end{flushright}
 		
 		\begin{example}[Paradoks Condorceta]
-			Rozważmy następującą tabelę \\
+			Rozważmy następującą tabelę:\\
 			\begin{tabular}{|c|c|c|c|}\hline
+				Głosy&9&10&11\\\hline
 				1&A&B&C\\\hline
 				2&B&C&A\\\hline
 				3&C&A&B\\\hline
-			\end{tabular}
+			\end{tabular}\\
 			
-			Zachodzi $A>B$, $B>C$, $C>A$. Czyli mamy grę w kamień papier i nożyce.
+			Zachodzi $A>B$, $B>C$, $C>A$. Mamy więc grę w "kamień, papier, nożyce."
 		\end{example}
 		
 		\begin{theorem}
 			MZU spełnia kryterium Condorceta $\Rightarrow$ jest jednoznacznie większościowa.
 		\end{theorem}
-		\textit{Dowód.} A ma ponad połowę 1 miejsc $\Rightarrow$ A - kandydat Condorcera $\Rightarrow$ A jedyny zwyciężcą.		
+		\textit{Dowód.} A ma ponad połowę pierwszych miejsc $\Rightarrow$ A - kandydat Condorceta $\Rightarrow$ A jest jedynym zwycięzcą.		
 		
-			\begin{flushright}$\square$\end{flushright}
+		\begin{flushright}$\square$\end{flushright}
 		
 		\begin{theorem}
-			MZU spełnia słabe $IIA$ i $A$ spełnia kryterium Condorceta $\Rightarrow$ spełnia słabą zasadę Pareto.
+			MZU spełnia słabe $IIA$, a $A$ spełnia kryterium Condorceta $\Rightarrow$ spełnia słabą zasadę Pareto.
 		\end{theorem}
-		\textit{Dowód.} Bierzemy $M$ $\forall_W A\overset{w,M}{<}B \overset{?}{\Rightarrow} A nie wygrywa w M$.
+		\textit{Dowód.} Rozważmy $M$ $\forall_{W} A\overset{w,M}{<}B \overset{?}{\Rightarrow}$ $A$ nie wygrywa w $M$.
 		
-		Rozważmy model $N: w każdego wyborcy $ (przesuwamy A,B na  szczyt) [B,A,reszta] $A\overset{w,M}{<}B$ \witw $A\overset{w,N}{<}B$.
+		Rozważmy model $N$: dla każdego wyborcy przesuwamy $A$ i $B$ na szczyt, $[B,A,reszta]$ $A\overset{w,M}{<}B$ \witw $A\overset{w,N}{<}B$.
 		
-		w N: - B kandydat conderceta
+		W $N$: $B$ jest kandydatem Condorceta.
 		
-		w N - B jedyny zwyciężca, B wygrywa, A nie wygrywa 
+		W $N$: $B$ jest jedynym zwycięzcą, $B$ wygrywa, $A$ nie wygrywa. 
 		
-		$\overset{\textbf{Słabe IIA}}{\Rightarrow}$ $A$ nie wygyrwa w $M$.\begin{flushright}$\square$\end{flushright}
+		$\overset{\textbf{Słabe IIA}}{\Rightarrow}$ $A$ nie wygrywa w $M$.
+		\begin{flushright}$\square$\end{flushright}
 		
 		\begin{theorem}
-			MZU, monotoniczna ze względu na transpozycje \witw $\forall_{M - \text{model}} \forall_{A\in K} \forall_{B_1,\dots,B_n\in A} (A\neq B,ale może być B_i=B_j)$
-			$\forall_{w_,\dots,w_n\in W}$ (może być $w_i=w_j$)
-			 
-			 w modelu $M$ wygrywa $A$
-			 
-			 model N utworzony przez $[\Delta, B_i, A, *]$ -> $[\Delta, A, B_i,*]$ dla $i=1,\dots,n$ $\Rightarrow$ w N dalej wygyrwa A.
-			 
+			MZU, monotoniczna ze względu na transpozycje, \witw $\forall_{M - \text{model}} \forall_{A\in K} \forall_{B_1,\dots,B_n\in A} (A\neq B, \text{ ale może być } B_i=B_j)$
+			$\forall_{w_1,\dots,w_n\in W}$ (może być $w_i=w_j$)
+			
+			Jeżeli w modelu $M$ wygrywa $A$, to model $N$ utworzony przez $[\Delta, B_i, A, *] \rightarrow [\Delta, A, B_i, *]$ dla $i=1,\dots,n$ $\Rightarrow$ w $N$ dalej wygrywa $A$.
+			
 		\end{theorem}
 		
 		\textit{Dowód.} $\Leftarrow$ oczywiste.
 		
-		$\Rightarrow$ stosujemy ząłożenie $n$ razy (robimy n skoków i dalej wygrywa $A$).
+		$\Rightarrow$ Stosujemy założenie $n$ razy (robimy $n$ skoków i dalej wygrywa $A$).
 		
 		\begin{example}
 			
 		\end{example}
 		
 		\begin{enumerate}[1.]
-			\item Metoda Blacka (1908-1991, ekonomista) - istnieje kandydat Condorceta $\Rightarrow$ on wygyrwa. Nie istnieje $\Rightarrow$ stosujemy punkty Bordy.
-			\item Metoda Condorceta - jeśli istnieje kandydat, który z każdym innym w "bezpośrednim porównaniu" wygrywa lub remisuje \witw on jest zwyciężcą.
-			\item Metoda nominacji - każdy kto ma co najmniej 1 pierwsze miejsce wygrywa,
-			\item Metoda ostatnich miejsc - każdy, kto nie ma żadnego ostatniego miejsca wygrywa.
-			\item Metoda prezydencka - rozważamy dwóch kandydatów z największą liczbą pierwszych miejsc. Ich porównujemy "bezpośrednio". Gdy na drugim miejscu remis, wszyscy z drugiego miejsca "przechodzą do finału" i tutaj stosujemy metodę Copelanda.
+			\item Metoda Blacka (1908-1991, ekonomista) - jeśli istnieje kandydat Condorceta, to on wygrywa. Jeśli nie istnieje, stosujemy punkty Bordy.
+			\item Metoda Condorceta - jeśli istnieje kandydat, który w "bezpośrednim porównaniu" wygrywa lub remisuje z każdym innym, \witw on jest zwycięzcą.
+			\item Metoda nominacji - każdy, kto ma co najmniej jedno pierwsze miejsce, wygrywa.
+			\item Metoda ostatnich miejsc - każdy, kto nie ma żadnego ostatniego miejsca, wygrywa.
+			\item Metoda prezydencka - rozważamy dwóch kandydatów z największą liczbą pierwszych miejsc. Porównujemy ich "bezpośrednio". Jeśli na drugim miejscu jest remis, wszyscy z drugiego miejsca "przechodzą do finału" i tam stosujemy metodę Copelanda.
 		\end{enumerate}
 		
 		Metoda punktów Bordy jest monotoniczna ze względu na transpozycję.
 		
-		$A$ wygrywa. Niech $A+1$ pkt. Innym się nie zwiększyło $\Rightarrow$ A dalej wygrywa.
+		$A$ wygrywa. Niech $A$ dostanie 1 punkt więcej. Innym się nie zwiększyło $\Rightarrow$ $A$ dalej wygrywa.
 		
 	\newpage
 	\section{Deser}
