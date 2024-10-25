@@ -515,17 +515,17 @@ jeśli $\exists{k_1,k_2\in K}: W_1=\{w_{1},w_{2},\dots,w_{i}\}$ głosowali na $k
 	
 	\begin{example}
 		\begin{enumerate}[1.]
-			\item Metoda punktów Bordy (Jean Charles de Borda, 1733–1799, inżynier wojskowy) – Każdy wyborca przydziela punkty od $n-1$ do 0:
-			1. $n-1$
-			2. $n-2$
-			$\vdots$
-			$n-1$ - 1
-			$n$ - 0\\
+			\item Metoda punktów Bordy (Jean Charles de Borda, 1733–1799, inżynier wojskowy) – Każdy wyborca przydziela punkty od $n-1$ do 0:\\
+			1 miejsce - $n-1$ punktów\\
+			2 miejsce - $n-2$ punktów\\
+			$\vdots$ \\
+			$n-1$ miejsce - 1 punkt\\
+			$n$ miejsce - 0 punktów\\\\
 			Zwycięża ten, kto otrzyma największą liczbę punktów.
 			
 			\item Metoda Hare'a (Sir Thomas Hare, 1806–1891, Anglia, prawnik, 1857 r.) – Polega na odrzucaniu tego kandydata (tych kandydatów), który ma najmniej pierwszych miejsc, i głosowaniu dalej (listy pozostają z usunięciem odrzuconego kandydata), aż ktoś uzyska ponad $50\%$ głosów. Gdy następuje remis i nie ma kogo odrzucić, wszyscy wygrywają.
 			
-			\item Metoda Coombsa (Clyde Coombs, 1912–1988, USA, psycholog) – Wypisujemy kolejność, odrzucamy kandydata, który ma najwięcej ostatnich miejsc, i głosujemy dalej, aż ktoś uzyska ponad $50\%$ pierwszych miejsc. Gdy nie można nikogo odrzucić, wygrywają wszyscy, którzy pozostali.
+			\item Metoda Coombsa (Clyde Coombs, 1912–1988, USA, psycholog) – Wypisujemy kolejność wyników głosowania, odrzucamy kandydata, który ma najwięcej ostatnich miejsc, i głosujemy dalej, aż ktoś uzyska ponad $50\%$ pierwszych miejsc. Gdy nie można nikogo odrzucić, wygrywają wszyscy, którzy pozostali.
 			
 			\item Metoda odrzuceń ostatniego – Jak w metodzie Coombsa, przy czym odrzucamy „do oporu”. Gdy nie można nikogo więcej odrzucić, wygrywają wszyscy, którzy pozostali.
 			
@@ -558,11 +558,11 @@ jeśli $\exists{k_1,k_2\in K}: W_1=\{w_{1},w_{2},\dots,w_{i}\}$ głosowali na $k
 			
 			Decyduje suma punktów (zwycięzców może być więcej niż jeden).
 			
-			\item Metoda turniejowa (Z: $\# W = 2n+1$ nieparzysta) – $k_1$ porównujemy z $k_2$ (metodą powyżej), następnie porównujemy z $k_3$ itd.
+			\item Metoda turniejowa (Z: $\# W = 2n+1$ nieparzysta) – $k_1$ porównujemy z $k_2$ (metodą powyżej),a następnie zwycięzcę pierwszego porównania porównujemy z $k_3$ itd.
 			
-			\item Metoda pozycyjna – $P(p_1, p_2, \dots, p_n)$, gdzie $p_1\geq p_2 \geq \dots \geq p_n$. 
-			1 – $p_1$ punktów,
-			2 – $p_2$ punktów itd.\\
+			\item Metoda pozycyjna – Wyborcy przyznają punkty kandydatą w postaci $P(p_1, p_2, \dots, p_n)$, gdzie $p_1\geq p_2 \geq \dots \geq p_n$. np.\\ 
+			1 miejsce – $p_1$ punktów \\
+			2 miejsce – $p_2$ punktów\\ itd.\\\\
 			Zwycięża ten z największą liczbą punktów.\\
 			
 		\end{enumerate}
@@ -593,11 +593,11 @@ jeśli $\exists{k_1,k_2\in K}: W_1=\{w_{1},w_{2},\dots,w_{i}\}$ głosowali na $k
 		\end{definition}
 		
 		\begin{definition}[Kandydat Condorceta]
-			$A\in K$ jest kandydatem Condorceta (zwycięzcą Condorceta) \witw w "bezpośrednich porównaniach" $A$ jest lepszy od każdego innego kandydata \witw $\forall_{B \in K}: B\neq A \#\{w: B\overset{w,M}{<}A\}>\#\{w: B\overset{w,M}{>}A\}$.
+			$A\in K$ jest kandydatem Condorceta (zwycięzcą Condorceta) \witw w "bezpośrednich porównaniach" $A$ jest lepszy od każdego innego kandydata \witw $\forall_{B \in K}: B\neq A \quad \#\{w: B\overset{w,M}{<}A\}>\#\{w: B\overset{w,M}{>}A\}$.
 		\end{definition}
 		
 		\begin{definition}[Przegrany Condorceta]
-			$A\in K$ to przegrany Condorceta (w modelu $M$) \witw $\forall_{B \in K}: B\neq A \#\{w: B\overset{w,M}{<}A\}<\#\{w: B\overset{w,M}{>}A\}$.
+			$A\in K$ to przegrany Condorceta (w modelu $M$) \witw $\forall_{B \in K}: B\neq A \quad\#\{w: B\overset{w,M}{<}A\}<\#\{w: B\overset{w,M}{>}A\}$.
 		\end{definition}
 		
 		\begin{definition}[Kryterium Condorceta]
@@ -691,7 +691,7 @@ jeśli $\exists{k_1,k_2\in K}: W_1=\{w_{1},w_{2},\dots,w_{i}\}$ głosowali na $k
 		
 		\begin{enumerate}[1.]
 			\item Metoda Blacka (1908-1991, ekonomista) - jeśli istnieje kandydat Condorceta, to on wygrywa. Jeśli nie istnieje, stosujemy punkty Bordy.
-			\item Metoda Condorceta - jeśli istnieje kandydat, który w "bezpośrednim porównaniu" wygrywa lub remisuje z każdym innym, \witw on jest zwycięzcą.
+			\item Metoda Condorceta - jeśli istnieje kandydat, który w "bezpośrednim porównaniu" wygrywa lub remisuje z każdym innym \witw$\:$  on jest zwycięzcą.
 			\item Metoda nominacji - każdy, kto ma co najmniej jedno pierwsze miejsce, wygrywa.
 			\item Metoda ostatnich miejsc - każdy, kto nie ma żadnego ostatniego miejsca, wygrywa.
 			\item Metoda prezydencka - rozważamy dwóch kandydatów z największą liczbą pierwszych miejsc. Porównujemy ich "bezpośrednio". Jeśli na drugim miejscu jest remis, wszyscy z drugiego miejsca "przechodzą do finału" i tam stosujemy metodę Copelanda.
@@ -699,11 +699,85 @@ jeśli $\exists{k_1,k_2\in K}: W_1=\{w_{1},w_{2},\dots,w_{i}\}$ głosowali na $k
 		
 		Metoda punktów Bordy jest monotoniczna ze względu na transpozycję.
 		
-		$A$ wygrywa. Niech $A$ dostanie 1 punkt więcej. Innym się nie zwiększyło $\Rightarrow$ $A$ dalej wygrywa.
+		$A$ wygrywa. Niech $A$ dostanie 1 punkt więcej. Innym się nie zwiększyło $\Rightarrow$ $A$ dalej wygrywa.\\\\
 		
+		
+		\begin{tabular}{|p{2.5cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|c|p{2cm}|}\hline
+			Metoda & Kryrterium Condorceta & Kryrterium przegranego Condorceta & słaba zasada Pareto &Monoto- niczność ze względu na transpozycję &IIA&Jedno- znaczna większość\\\hline
+			Punkty Bordy   &-(1)&+&+&+&-(2)&-(1)\\\hline
+			Hare'a   &-(3)&-(3)&+&-(4)&-(5)&+(O)\\\hline
+			Coombsa &&&+&-(13)&-(13)&+(O)\\\hline
+			Odrzuceń  $\:$ostatniego &-(11,12)&-(12)&+&-(13)&-(13)&-(11,12)\\\hline
+			Copelanda &+&+&+&+&-(10)&+(O)\\\hline
+			Większości &-(3)&-(3)&+(O)&+&-(6)&+\\\hline
+			Dyktatura &-(7)&-(7)&+&+(O)&+&-(7)\\\hline
+			Terminażowa &+&+&-(8)&+&-(9)&+\\\hline
+		\end{tabular}\\\\
+		\textbf{Metoda Bordy, K przegranego Condorseta}
+		$\forall_w A<B$ Punkty $A$ < Punkty $B$
+		w punktuje A dostaje 1 punkt za każdą parę $(B,w)$w którego w stawia B ponad A
+		
+		A - przegrany condorseta
+		k kandydatów, n wyborców
+		$K_1,...,K_{n-1}$ u każdego będzie miał $A<\frac{n}{2}$ punktów. A w sumie ma mniej niż $\frac{k(k-1)}{2}$ punktów
+		
+		A - B punktów do rozdziału (w parze z każdym kandydatem dostaje mniej punktów)
+		
+		W sumie do rozdziału jest $n\cdot\frac{k(k-1)}{2}$ punktów (suma ciągu arytmetycznego). Wszyscy wobec tego mają mniej niż $\frac{n(k-1)}{2}$ punktów. W sumie jest $<\frac{k\cdot n \cdot (k-1)}{2}$
+		
+		\textbf{M COmbsa i Hare'a}
+		$\forall_w A\overset{w}{<}B$ to A wczesniej odpadnie od B
+		\textbf{IIA dyktatura}
+		A wygrywa, $B\overset{d,M}{<}A$ B nie może wygrać
+	
+		\textbf{Metoda terminarzowa - k condorseta}
+		
+		Kandydat condorseta wygrywa z każdym i nie odda zwycięstwa	
+	
+		\textbf{Terminażowa - monotoniczność} po przesunięciu też wygrywa 
+	
+		\textbf{Metod copelanda} Jak z każdym wygrywa to ma max punktów
+		Zasada pareto - $\forall_w B\overset{w}{<}A \overset{?}{\Rightarrow}B nie wygrywa$
+		
+		B wygrywa w pojedynku z C $\Rightarrow$ A wygrywa w pojedynku z C. Wobec tego punkty A $>$ punkty B, bo A dostaje punkty za parę $(A-B)$. Wobec tego punkty A są silniejsze.
+	
+		\textbf{Metoda Coombsa - słaba zasada Pareto}
+		$\forall_w B\overset{w}{<}A$ - A nie odpadnie zanim B nie odpadnie (B odpadnie wcześniej niż A). 
+	
 	\newpage
 	\section{Deser}
-	W sumie to deseru jeszcze nie ma, ale ma być na ostatnim wykładzie!!! 
+	W sumie to deseru jeszcze nie ma, ale ma być na ostatnim wykładzie!!! \\\\
+	
+	
+	\begin{tabular}{|c|c|c|c|p{2.5cm}|p{1cm}|}\hline
+		Metoda & Anonimowa & Neutralna & Efektywna & Monotoniczna ze względu na transpozycje&Słaba zasada Pareto\\\hline
+		Punkty Bordy   &+&+&+&+&+\\\hline
+		Hare'a   &+&+&+&-&+\\\hline
+		Coombsa &+&+&+&+&-\\\hline
+		Odrzuceń ostatniego &+&+&+&+&-\\\hline
+		Copelanda &+&+&+&+&+\\\hline
+		Większości &+&+&+&+&+\\\hline
+		Dyktatura &+&+&+&+&+\\\hline
+		Terminażowa &+&+&+&+&+\\\hline
+		Turniejowa &+&+&+&+&+\\\hline
+		Pozycyjna &+&+&+&+&+\\\hline
+	\end{tabular}\\\\
+	
+	\begin{tabular}{|c|c|p{3cm}|p{3cm}|c|}\hline
+		Metoda &K Condorceta& K Przegranego Condorceta&Jednoznacznie większościowa&Słabo niezależna\\\hline
+		Punkty Bordy   &+&+&-&+\\\hline
+		Hare'a   &-&-&+&-\\\hline
+		Coombsa &-&+&+&+\\\hline
+		Odrzuceń ostatniego &-&+&+&+\\\hline
+		Copelanda &+&+&+&+\\\hline
+		Większości &+&+&+&+\\\hline
+		Dykatatura &+&+&+&+\\\hline
+		Terminarzowa &+&+&+&+\\\hline
+		Truniejowa &+&+&+&+\\\hline
+		Pozycyjna &+&+&-&+\\\hline
+	\end{tabular}\\
+	
+	
 		
 	\begin{center}
 		 {\fontsize{30}{36}\selectfont\faBirthdayCake}
