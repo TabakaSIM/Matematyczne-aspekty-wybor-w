@@ -699,51 +699,221 @@ jeśli $\exists{k_1,k_2\in K}: W_1=\{w_{1},w_{2},\dots,w_{i}\}$ głosowali na $k
 		
 		Metoda punktów Bordy jest monotoniczna ze względu na transpozycję.
 		
-		$A$ wygrywa. Niech $A$ dostanie 1 punkt więcej. Innym się nie zwiększyło $\Rightarrow$ $A$ dalej wygrywa.\\\\
-		
+		$A$ wygrywa. Niech $A$ zdobędzie 1 punkt więcej. Innym się nie zwiększyło $\Rightarrow$ $A$ dalej wygrywa.\\\\
 		
 		\begin{tabular}{|p{2.5cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|c|p{2cm}|}\hline
-			Metoda & Kryrterium Condorceta & Kryrterium przegranego Condorceta & słaba zasada Pareto &Monoto- niczność ze względu na transpozycję &IIA&Jedno- znaczna większość\\\hline
+			Metoda & Kryterium Condorceta & Kryterium przegranego Condorceta & Słaba zasada Pareto & Monoto- niczność ze względu na transpozycję & IIA & Jedno- znaczna większość\\\hline
 			Punkty Bordy   &-(1)&+&+&+&-(2)&-(1)\\\hline
 			Hare'a   &-(3)&-(3)&+&-(4)&-(5)&+(O)\\\hline
-			Coombsa &&&+&-(13)&-(13)&+(O)\\\hline
-			Odrzuceń  $\:$ostatniego &-(11,12)&-(12)&+&-(13)&-(13)&-(11,12)\\\hline
+			Coombsa &-&-&+&-(13)&-(13)&+(O)\\\hline
+			Odrzuceń ostatniego &-(11,12)&-(12)&+&-(13)&-(13)&-(11,12)\\\hline
 			Copelanda &+&+&+&+&-(10)&+(O)\\\hline
 			Większości &-(3)&-(3)&+(O)&+&-(6)&+\\\hline
 			Dyktatura &-(7)&-(7)&+&+(O)&+&-(7)\\\hline
 			Terminażowa &+&+&-(8)&+&-(9)&+\\\hline
 		\end{tabular}\\\\
-		\textbf{Metoda Bordy, K przegranego Condorseta}
-		$\forall_w A<B$ Punkty $A$ < Punkty $B$
-		w punktuje A dostaje 1 punkt za każdą parę $(B,w)$w którego w stawia B ponad A
 		
-		A - przegrany condorseta
-		k kandydatów, n wyborców
-		$K_1,...,K_{n-1}$ u każdego będzie miał $A<\frac{n}{2}$ punktów. A w sumie ma mniej niż $\frac{k(k-1)}{2}$ punktów
+		\begin{enumerate}[D1)]
+			\item \textbf{Metoda Bordy, Kryterium przegranego Condorceta} $\forall_w A<B$ Punkty $A$ < Punkty $B$. W punktacji $A$ zdobywa 1 punkt za każdą parę $(B, w)$, w której wyborca $w$ umieszcza $B$ wyżej niż $A$. 
+			
+			$A$ jest przegranym Condorceta. Mamy $k$ kandydatów, $n$ wyborców, a kandydat $K_1,...,K_{n-1}$ otrzyma mniej niż $\frac{n}{2}$ punktów. W sumie, $A$ zdobywa mniej niż $\frac{k(k-1)}{2}$ punktów.
+			
+			Łączna pula punktów do rozdziału wynosi $n\cdot\frac{k(k-1)}{2}$ (suma ciągu arytmetycznego). Wszyscy razem zdobywają mniej niż $\frac{n(k-1)}{2}$ punktów, czyli łącznie mniej niż $\frac{k\cdot n \cdot (k-1)}{2}$.
+			
+			\item \textbf{Metoda Comba i Hare'a} Jeśli $\forall_w A \overset{w}{<} B$, to $A$ wcześniej odpadnie od $B$.
+			
+			\item \textbf{IIA dyktatura} Jeśli $A$ wygrywa, $B \overset{d,M}{<} A$, to $B$ nie może wygrać.
+			
+			\item \textbf{Metoda terminarzowa - Kryterium Condorceta} Kandydat Condorceta wygrywa z każdym i nie odda zwycięstwa.
+			
+			\item \textbf{Terminażowa - monotoniczność} Przy przesunięciu $A$ również wygrywa.
+			
+			\item \textbf{Metoda Copelanda} Gdy $A$ wygrywa z każdym, to zdobywa maksymalną liczbę punktów. Zasada Pareto: $\forall_w B \overset{w}{<} A \overset{?}{\Rightarrow} B$ nie wygrywa.
+			
+			Jeśli $B$ wygrywa w pojedynku z $C$, to również $A$ wygrywa z $C$. Wówczas punkty $A >$ punkty $B$, ponieważ $A$ zdobywa punkty za parę $(A, B)$, a zatem punkty $A$ są silniejsze.
+			
+			\item \textbf{Metoda Coombsa - Słaba zasada Pareto} Jeśli $\forall_w B \overset{w}{<} A$, to $A$ nie odpadnie, zanim $B$ nie odpadnie (czyli $B$ odpadnie wcześniej niż $A$).
+		\end{enumerate}
 		
-		A - B punktów do rozdziału (w parze z każdym kandydatem dostaje mniej punktów)
+		\begin{enumerate}[K1)]
+			\item \begin{tabular}{|c|c|c|}\hline
+				3os & 2os & Pkt\\\hline
+				A & B & 2\\\hline
+				B & C & 1\\\hline
+				C & A & 0\\\hline
+			\end{tabular}
+			$A$ jest kandydatem Condorceta, natomiast otrzymano punkty: $\begin{bmatrix}
+				A=6\ \text{pkt}\\
+				B=7\ \text{pkt}\\
+				C=2\ \text{pkt}\\
+			\end{bmatrix}$
+			
+			\item \begin{tabular}{|c|c|c|c|}\hline
+				1os & 2os & 2os & Pkt\\\hline
+				C & A & B & 2\\\hline
+				A & B & A & 1\\\hline
+				B & C & C & 0\\\hline
+			\end{tabular} $\Rightarrow$ \begin{tabular}{|c|c|c|c|}\hline
+				1os & 2os & 2os & Pkt\\\hline
+				C & A & B & 2\\\hline
+				A & B & \textbf{C$\uparrow$} & 1\\\hline
+				B & C & A & 0\\\hline
+			\end{tabular}, wykorzystując transpozycję otrzymujemy wyniki $\begin{bmatrix}
+				A=5 && A=7\\
+				B=6 & \Rightarrow & B=6\\
+				C=4 && C=2\\
+			\end{bmatrix}$, czyli $A$ wygrywa.
+			
+			\item \begin{tabular}{|c|c|c|}\hline
+				2os & 3os & 2os\\\hline
+				A & B & C\\\hline
+				C & A & A\\\hline
+				B & C & B\\\hline
+			\end{tabular} $\begin{bmatrix}
+				A - \text{kandydat Condorceta}\\
+				B - \text{przegrany Condorceta}\\
+			\end{bmatrix}$, bo $A:B$ $4:3$ $\Rightarrow$ $A:C$ $5:2$, ale wygrywa $B$.
+			
+			\item \begin{tabular}{|c|c|c|c|}\hline
+				6os & 5os & 4os & 2os\\\hline
+				A & C & B & B\\\hline
+				B & A & C & A\\\hline
+				C & B & A & C\\\hline
+			\end{tabular} $\Rightarrow$ \begin{tabular}{|c|c|c|c|}\hline
+				6os & 5os & 4os & 2os\\\hline
+				A & C & B & \textbf{A$\uparrow$}\\\hline
+				B & A & C & B\\\hline
+				C & B & A & C\\\hline
+			\end{tabular}, wygrywał $B$, po zmianie $C$.
+			
+			\item \begin{tabular}{|c|c|c|}\hline
+				2os & 1os & 2os\\\hline
+				B & A & A\\\hline
+				A & B & C\\\hline
+				C & C & B\\\hline
+			\end{tabular} $B$ nie wygrywa, $A$ wygrywa $\Rightarrow$\begin{tabular}{|c|c|c|}\hline
+				2os & 1os & 2os\\\hline
+				B & A & \textbf{C$\uparrow$}\\\hline
+				A & B & A\\\hline
+				C & C & B\\\hline
+			\end{tabular}, wygrywa $B$
+			
+			\item \begin{tabular}{|c|c|c|}\hline
+				2os & 3os & 2os\\\hline
+				A & B & A\\\hline
+				B & A & C\\\hline
+				C & C & B\\\hline
+			\end{tabular}, $A$ wygrywa, $B$ nie wygrywa $\Rightarrow$ \begin{tabular}{|c|c|c|}\hline
+				2os & 3os & 2os\\\hline
+				A & B & \textbf{C$\uparrow$}\\\hline
+				B & A & A\\\hline
+				C & C & B\\\hline
+			\end{tabular}
+			
+			\item \begin{tabular}{|c|c|}\hline
+				2os & 1os (\text{w tym jeden dyktator})\\\hline
+				A & B\\\hline
+				B & A\\\hline
+			\end{tabular} $\begin{bmatrix}
+				A \text{ - kandydat Condorceta}\\
+				B \text{ - przegrany Condorceta}
+			\end{bmatrix}$, wygrywa $B$.
+			
+			\item Ustawiamy kolejność: $ABCD$
+			\begin{tabular}{|c|c|c|}\hline
+				1os & 1os & 1os\\\hline
+				A & C & B\\\hline
+				B & A & D\\\hline
+				D & B & C\\\hline
+				C & D & A\\\hline
+			\end{tabular} mamy $\begin{bmatrix}
+				A > B\\
+				A < C\\
+				C > D\\
+			\end{bmatrix}$, ostatecznie wygrywa $D$, mimo iż $D < B$.
+			
+			\item Ustawiamy kolejność $ABC$
+			\begin{tabular}{|c|c|c|}\hline
+				1os & 1os & 1os\\\hline
+				C & B & A\\\hline
+				A & C & B\\\hline
+				B & A & C\\\hline
+			\end{tabular} mamy $\begin{bmatrix}
+				A > B\\
+				A < C\\
+			\end{bmatrix}$, wygrywa $C$ $\Rightarrow$ \begin{tabular}{|c|c|c|}\hline
+				1os & 1os & 1os\\\hline
+				C & B & B\\\hline
+				A & C & \textbf{A$\uparrow$}\\\hline
+				B & A & C\\\hline
+			\end{tabular}, $B$ wygrywa.
+			
+			\item \begin{tabular}{|c|c|c|c|}\hline
+				2os & 2os & 1os & 1os\\\hline
+				A & C & D & B\\\hline
+				D & A & B & C\\\hline
+				B & B & C & D\\\hline
+				C & D & A & A\\\hline
+			\end{tabular} otrzymujemy kolejno wyniki: $\begin{bmatrix}
+				\textbf{A} > B\:(4:2) & \textbf{B} > C\:(4:2)\\
+				A < \textbf{C}\:(2:4) & \textbf{B = D}\:(3:3)\\
+				\textbf{A} > D\:(4:2) & \textbf{C = D}\:(3:3)\\
+			\end{bmatrix}$, przyznano punkty $\begin{bmatrix}
+				A\text{ -2 pkt}\\
+				B\text{ -1,5 pkt}\\
+				C\text{ -1,5 pkt}\\
+				D\text{ -1 pkt}\\
+			\end{bmatrix}$, $A$ wygrywa, $C$ nie wygrywa.
+			
+			Po zmianie: \begin{tabular}{|c|c|c|c|}\hline
+				2os & 2os & 1os & 1os\\\hline
+				A & C & D & B\\\hline
+				D & A & B & C\\\hline
+				\textbf{$\uparrow$} & B & C & D\\\hline
+				B & D & A & A\\\hline
+			\end{tabular} oraz punktacje: $\begin{bmatrix}
+				A\text{ -2 pkt}\\
+				B\text{ -0,5 pkt}\\
+				C\text{ -2,5 pkt}\\
+				D\text{ -1 pkt}\\
+			\end{bmatrix}$, $C$ wygrywa.
+			
+			\item \begin{tabular}{|c|c|c|}\hline
+				4os & 2os & 3os\\\hline
+				C & B & B\\\hline
+				A & C & A\\\hline
+				B & A & C\\\hline
+			\end{tabular} $B$ ma najwięcej głosów pierwszych, czyli jest kandydatem Condorceta, ale kolejność odrzuceń to $B$, $A$, więc wygrywa $C$.
+			
+			\item \begin{tabular}{|c|c|c|}\hline
+				2os & 1os & 2os\\\hline
+				C & B & B\\\hline
+				A & C & A\\\hline
+				B & A & C\\\hline
+			\end{tabular} $C$ to przegrany Condorceta, ale $C$ wygrywa.
+			
+			\item \begin{tabular}{|c|c|c|c|}\hline
+				5os & 4os & 1os & 2os\\\hline
+				A & B & C & B\\\hline
+				C & A & B & C\\\hline
+				B & C & A & A\\\hline
+			\end{tabular}, $A$ wygrywa, $C$ i $B$ nie wygrywają.
+			
+			Przekształcamy do: \begin{tabular}{|c|c|c|c|}\hline
+				5os & 4os & 1os & 2os\\\hline
+				A & B & C & B\\\hline
+				C & A & B & \textbf{A$\uparrow$}\\\hline
+				B & C & A & C\\\hline
+			\end{tabular}, $B$ wygrywa.
+		\end{enumerate}
 		
-		W sumie do rozdziału jest $n\cdot\frac{k(k-1)}{2}$ punktów (suma ciągu arytmetycznego). Wszyscy wobec tego mają mniej niż $\frac{n(k-1)}{2}$ punktów. W sumie jest $<\frac{k\cdot n \cdot (k-1)}{2}$
 		
-		\textbf{M COmbsa i Hare'a}
-		$\forall_w A\overset{w}{<}B$ to A wczesniej odpadnie od B
-		\textbf{IIA dyktatura}
-		A wygrywa, $B\overset{d,M}{<}A$ B nie może wygrać
+		
+		
+		 
 	
-		\textbf{Metoda terminarzowa - k condorseta}
 		
-		Kandydat condorseta wygrywa z każdym i nie odda zwycięstwa	
-	
-		\textbf{Terminażowa - monotoniczność} po przesunięciu też wygrywa 
-	
-		\textbf{Metod copelanda} Jak z każdym wygrywa to ma max punktów
-		Zasada pareto - $\forall_w B\overset{w}{<}A \overset{?}{\Rightarrow}B nie wygrywa$
 		
-		B wygrywa w pojedynku z C $\Rightarrow$ A wygrywa w pojedynku z C. Wobec tego punkty A $>$ punkty B, bo A dostaje punkty za parę $(A-B)$. Wobec tego punkty A są silniejsze.
-	
-		\textbf{Metoda Coombsa - słaba zasada Pareto}
-		$\forall_w B\overset{w}{<}A$ - A nie odpadnie zanim B nie odpadnie (B odpadnie wcześniej niż A). 
-	
 	\newpage
 	\section{Deser}
 	W sumie to deseru jeszcze nie ma, ale ma być na ostatnim wykładzie!!! \\\\
