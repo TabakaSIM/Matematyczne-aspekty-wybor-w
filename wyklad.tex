@@ -525,7 +525,7 @@ jeśli $\exists{k_1,k_2\in K}: W_1=\{w_{1},w_{2},\dots,w_{i}\}$ głosowali na $k
 			
 			\item Metoda Hare'a (Sir Thomas Hare, 1806–1891, Anglia, prawnik, 1857 r.) – Polega na odrzucaniu tego kandydata (tych kandydatów), który ma najmniej pierwszych miejsc, i głosowaniu dalej (listy pozostają z usunięciem odrzuconego kandydata), aż ktoś uzyska ponad $50\%$ głosów. Gdy następuje remis i nie ma kogo odrzucić, wszyscy wygrywają.
 			
-			\item Metoda Coombsa (Clyde Coombs, 1912–1988, USA, psycholog) – Wypisujemy kolejność wyników głosowania, odrzucamy kandydata, który ma najwięcej ostatnich miejsc, i głosujemy dalej, aż ktoś uzyska ponad $50\%$ pierwszych miejsc. Gdy nie można nikogo odrzucić, wygrywają wszyscy, którzy pozostali.
+			\item Metoda Coombsa (Clyde Coombs, 1912–1988, USA, psycholog) – Wypisujemy kolejność wyników głosowania, odrzucamy kandydata (lub kandydatów jeżeli ktoś zostanie), który ma najwięcej ostatnich miejsc, i głosujemy dalej, aż ktoś uzyska ponad $50\%$ pierwszych miejsc. Gdy nie można nikogo odrzucić, wygrywają wszyscy, którzy pozostali.
 			
 			\item Metoda odrzuceń ostatniego – Jak w metodzie Coombsa, przy czym odrzucamy „do oporu”. Gdy nie można nikogo więcej odrzucić, wygrywają wszyscy, którzy pozostali.
 			
@@ -705,7 +705,7 @@ jeśli $\exists{k_1,k_2\in K}: W_1=\{w_{1},w_{2},\dots,w_{i}\}$ głosowali na $k
 			Metoda & Kryterium Condorceta & Kryterium przegranego Condorceta & Słaba zasada Pareto & Monoto- niczność ze względu na transpozycję & IIA & Jedno- znaczna większość\\\hline
 			Punkty Bordy   &-(1)&+&+&+&-(2)&-(1)\\\hline
 			Hare'a   &-(3)&-(3)&+&-(4)&-(5)&+(O)\\\hline
-			Coombsa &-&-&+&-(13)&-(13)&+(O)\\\hline
+			Coombsa &-(14)&-(15)&+&-(13)&-(13)&+(O)\\\hline
 			Odrzuceń ostatniego &-(11,12)&-(12)&+&-(13)&-(13)&-(11,12)\\\hline
 			Copelanda &+&+&+&+&-(10)&+(O)\\\hline
 			Większości &-(3)&-(3)&+(O)&+&-(6)&+\\\hline
@@ -905,14 +905,184 @@ jeśli $\exists{k_1,k_2\in K}: W_1=\{w_{1},w_{2},\dots,w_{i}\}$ głosowali na $k
 				C & A & B & \textbf{A$\uparrow$}\\\hline
 				B & C & A & C\\\hline
 			\end{tabular}, $B$ wygrywa.
+			
+			\item \begin{tabular}{|c|c|c|c|c|}\hline
+				2os & 1os & 1os & 1os & 2os\\\hline
+				E & D & A & C & B\\\hline
+				A & B & B & B & C\\\hline
+				D & A & C & D & A\\\hline
+				C & E & E & E & D\\\hline
+				B & C & D & A & E\\\hline
+			\end{tabular}
+			$B$ -kandydat Condorceta, $B$ odpada w I turze
+			
+			\item \begin{tabular}{|c|c|c|c|}\hline
+				2os & 2os & 2os & 1os\\\hline
+				D & B & C & B\\\hline
+				C & D & B & C\\\hline
+				A & A & A & D\\\hline
+				B & C & D & A\\\hline
+			\end{tabular} $A$-przegrany Condorceta, ale $A$ wygrywa
+			 
 		\end{enumerate}
 		
+		\begin{lemma}[lemat o decyzyjności]
+			Z: MZU, efektywna, $\#K\geq3$, $\#W\geq2$
+			Metoda spełnia słabą zasadą Pareto i słabe IIA
+			$\Rightarrow$ jest decyzyjna.
+		\end{lemma}
+		D: Wiemy, że zwyciężca istnieje (chcemy wykazać że jest jedyny)
+		Hp. A,B zwyciężcy w modelu $M$ oraz
+		$W=X\cup Y$ \begin{tabular}{|c|c|}\hline
+			X & Y \\\hline
+			\dots & \dots \\\hline
+			A & B \\\hline
+			\dots & \dots \\\hline
+			B & A \\\hline
+			\dots & \dots \\\hline
+		\end{tabular} 
+		C- inny kandydat
 		
+		model Q
+		\begin{tabular}{|c|c|}\hline
+			X & Y \\\hline
+			A & C\\\hline
+			C & B \\\hline
+			B & A \\\hline
+			\dots & \dots \\\hline
+		\end{tabular} 
+		Relacje A-B nie są zmienione
 		
+		Kto wygrywa w Q?
+		Na pewno nie B, bo $\forall_w B\overset{w}{<}C$, A też nie! (z IIA).
 		
-		 
-	
+		Hp. A wygrywa, B nie $\Rightarrow$ w M B nie wygrywa \faBolt
 		
+		Zatem wygrywa $C$.
+		
+			\begin{tabular}{|c|c|}\hline
+				X & Y \\\hline
+				A & B\\\hline
+				B & C \\\hline
+				C & A \\\hline
+				\dots & \dots \\\hline
+			\end{tabular}
+		Kto wygrywa w R? - A,B lub C (Pareto)
+		Ale nie wygrywa $C$ (z zasady Pareto)
+		
+		W R: relacje $A-C$ są takie same jak w $Q$
+		
+		Hp. $A$ wygrywa w R $\Rightarrow$ C nie wygrywa w $Q$
+		
+		Wobec tego w $R$ wygrywa $B$.
+		
+		Porównajmy M i R : relacje $A-B$ w M i R są takie same. Wobec tego IIA $\Rightarrow$ w M A nie wygrywa \faBolt
+				\begin{flushright}$\square$\end{flushright}
+				
+				
+		\begin{theorem}[Twierdzenie Arrowa dla metod zwyciężcy (1951)]
+			Z: $\# K \geq 3, \#W\geq2$, MZU, effektywna, spełnia słabą zasadę Pareto i słabe IIA $\Rightarrow$ dyktatura.
+		\end{theorem}
+		
+		D: Z lematu o decyzyjności $\Rightarrow$ jeśli zwyciężca istaniej, to jest jedyny.
+		
+		Jedyny zwyciężca ? (pytamy się) dykatatura
+		
+		\begin{definition}[na potrzeby dowodu]
+			$w\in W$ - dyktator A z kontrollerem B \witw jeśli $A\overset{w}{<}B \Rightarrow$ A nie wygrywa.
+		\end{definition}
+		
+		I krok
+		
+		$\forall_{A,B \in K} \exists_{w\in W}$ dyktator nad A z kontrolerem B
+		
+		II krok
+		
+		w-dyktator nad A z kandydatem B $\Rightarrow$ w dyktator nad B z kontrolerem A (dyktatora nad parą A, B oznaczamy $d(A,B)$)
+		
+		III krok
+		
+		Jeżeli $w=d(A,B) \Rightarrow \forall_{D,E} w = d(D,E)$ (gdzie, D,E może być A lub B)
+		
+		Wtedy ten w z I - kroku jest dyktatorem. 
+		
+		\begin{tabular}{|c|}\hline
+			w \\\hline
+			A \\\hline
+			$B_1$ \\\hline
+			$B_2$ \\\hline
+			\dots\\\hline
+			$B_n$ \\\hline
+		\end{tabular}
+		
+		\begin{enumerate}[Dow. I)]
+			\item C - trzeci kandydat TODO D1
+			wygrywa $C$, jeden wyborce przesuwa C do tyłu
+			TODO D2
+			wygrywa C lub A
+			to samo z trzecim wyborcą
+			TODO D3
+			wygrywa A lub C
+			itd. aż dojdzie do sytuacji
+			TODO D4
+			aż wygra A (z zasady Pareto), C nie
+			
+			Pierwsze przejście, po którym $C$ nie wygrywa (musi takie zaistnieć) 
+			
+			X,Y - grupy wyborców
+			
+			TODO D5
+			
+			Pokażemy, że w - dyktator nad B z kontrolerem A.
+			
+			Rozważmy P - dowlony model, w którym $B\overset{w,P}{<}A$ 
+			TODO D6
+			Kto wygrywa w $Q$? - A,B lub C. Ale relacje $B-C$ w modelach Q i M1 są takie same $\Rightarrow$ w Q B nie wygrywa (IIA), ale relacje $A-C$ w Q i M2 są takie same $\overset{IIA}{\Rightarrow}$ w Q C nie wygrywa.
+			
+			W Q wygrywa A, B nie
+			
+			Relacje $A/B$ w P i Q są takie same. $\Rightarrow$ w P B nie wygrywa.
+			
+			\item w - dyktator nad B z konrolerem A, v dyktator nad A z kontrolerem B
+			
+			TODO D7
+			
+			wygrywa A lub B (z. Pareto)
+			B nie wygrywa (bo w), A nie wygrywa (bo v) \faBolt
+			\item A,B $w = d(A,B)$
+			1.Zauważmy, że $\forall_{D,E} \exists d(D,E)$ 
+			2. $\forall_{D,E} w=d(D,E)$
+			
+			D 2.1 C, Hp. $v=d(B,C)$, $v\neq w$ TODO D8
+			Wygrywa B lub C (z. Pareto), B nie (bo w), C nie (bo v)\faBolt
+			
+			D 2.2 Zmieniamy A i B rolami, $v= d(A,C)$, tak samo pokazujemy, że $w=d(A,C)$.
+			
+			D 2.3 $\overset{z 2.1 i 2.2}{C}\neq A,B$ $w=d(A,B), w=d(A,C)$ $D\neq A,C$ weźmy rozumowanie z 2.1 i 2.2 dla A,C,D pokazuje,że $w=d(A,C)\Rightarrow w=d(C,D)$ 
+			
+			$C,d \neq A,B$ OK
+			jeden z $C,D$ równy $A$ lub $B$ (to 2.1 i 2.2)
+			
+		\end{enumerate}
+		
+		\begin{flushright}$\square$\end{flushright}
+		
+		\begin{wniosek}[Tw Arrowa o niemożliwości]
+			Z: $\# K \geq 3, \#W\geq2$
+			T: Nie istnieje MZU efektywna, która jednocześnie jest 
+			\begin{enumerate}[-]
+				\item anonimowa
+				\item spełnia słabą zasadę Pareto
+				\item spełnia słabe IIA
+			\end{enumerate}
+		\end{wniosek}
+		
+		\begin{example}[Przykłady wyjątkowe do Tw Arrowa]
+			\begin{enumerate}[1.]
+				\item  $\# K=2,\# w nieparzyste$ metoda większości decyzyjna
+				\item $\# K=3,\# w = 5$ Reguła $\geq3$ pierwsze miejsca - zwyciężca
+			\end{enumerate}
+		\end{example}
 		
 	\newpage
 	\section{Deser}
