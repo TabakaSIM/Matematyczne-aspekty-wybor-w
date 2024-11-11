@@ -926,163 +926,222 @@ jeśli $\exists{k_1,k_2\in K}: W_1=\{w_{1},w_{2},\dots,w_{i}\}$ głosowali na $k
 			 
 		\end{enumerate}
 		
-		\begin{lemma}[lemat o decyzyjności]
-			Z: MZU, efektywna, $\#K\geq3$, $\#W\geq2$
-			Metoda spełnia słabą zasadą Pareto i słabe IIA
+		\begin{lemma}[Lemat o decyzyjności]
+			Z: MZU, efektywna, $\#K\geq3$, $\#W\geq2$.
+			Metoda spełnia słabą zasadę Pareto i słabe IIA
 			$\Rightarrow$ jest decyzyjna.
-		\end{lemma}
-		D: Wiemy, że zwyciężca istnieje (chcemy wykazać że jest jedyny)
-		Hp. A,B zwyciężcy w modelu $M$ oraz
+		\end{lemma} \newpage
+		Dowód: Wiemy, że zwycięzca istnieje (chcemy wykazać, że jest jedyny).
+		Załóżmy, że $A$ i $B$ są zwycięzcami w modelu $M$ oraz
 		$W=X\cup Y$ \begin{tabular}{|c|c|}\hline
 			X & Y \\\hline
-			\dots & \dots \\\hline
+			\vdots & \vdots \\\hline
 			A & B \\\hline
-			\dots & \dots \\\hline
+			\vdots & \vdots \\\hline
 			B & A \\\hline
-			\dots & \dots \\\hline
+			\vdots & \vdots \\\hline
 		\end{tabular} 
-		C- inny kandydat
+		Niech $C$ - inny kandydat
 		
-		model Q
-		\begin{tabular}{|c|c|}\hline
+		Tworzymy model
+		$\underset{Q}{\begin{tabular}{|c|c|}\hline
 			X & Y \\\hline
 			A & C\\\hline
 			C & B \\\hline
 			B & A \\\hline
 			\dots & \dots \\\hline
-		\end{tabular} 
-		Relacje A-B nie są zmienione
+		\end{tabular}}$
+		, w którym relacje $A/B$ nie są zmienione.
 		
-		Kto wygrywa w Q?
-		Na pewno nie B, bo $\forall_w B\overset{w}{<}C$, A też nie! (z IIA).
+		Kto wygrywa w $Q$?
+		Na pewno nie $B$, bo $\forall_w \; B\overset{w}{<}C$, ale również nie $A$ (z IIA).
 		
-		Hp. A wygrywa, B nie $\Rightarrow$ w M B nie wygrywa \faBolt
+		Jeżeli w $Q$ $A$ wygrywa, $B$ nie $\Rightarrow$ w $M$ $B$ nie wygrywa \faBolt 
 		
 		Zatem wygrywa $C$.
 		
-			\begin{tabular}{|c|c|}\hline
-				X & Y \\\hline
-				A & B\\\hline
-				B & C \\\hline
-				C & A \\\hline
-				\dots & \dots \\\hline
-			\end{tabular}
-		Kto wygrywa w R? - A,B lub C (Pareto)
-		Ale nie wygrywa $C$ (z zasady Pareto)
+		Rozważmy model $R$ $\underset{R}{\begin{tabular}{|c|c|}\hline
+			X & Y \\\hline
+			A & B\\\hline
+			B & C \\\hline
+			C & A \\\hline
+			\dots & \dots \\\hline
+		\end{tabular}}$
+	
+		Kto wygrywa w $R$? - $A$, $B$ lub $C$ (Pareto)
+		Ale nie wygrywa $C$ (z zasady Pareto). W $R$: relacje $A/C$ są takie same jak w $Q$.
 		
-		W R: relacje $A-C$ są takie same jak w $Q$
+		Załóżmy, że $A$ wygrywa w $R$ $\Rightarrow$ $C$ nie wygrywa w $Q$. Wobec tego w $R$ wygrywa $B$.
 		
-		Hp. $A$ wygrywa w R $\Rightarrow$ C nie wygrywa w $Q$
+		Porównajmy $M$ i $R$: relacje $A$-$B$ w $M$ i $R$ są takie same. Wobec tego z IIA $\Rightarrow$ w $M$ $A$ nie wygrywa \faBolt
+		\begin{flushright}$\square$\end{flushright}
 		
-		Wobec tego w $R$ wygrywa $B$.
 		
-		Porównajmy M i R : relacje $A-B$ w M i R są takie same. Wobec tego IIA $\Rightarrow$ w M A nie wygrywa \faBolt
-				\begin{flushright}$\square$\end{flushright}
-				
-				
-		\begin{theorem}[Twierdzenie Arrowa dla metod zwyciężcy (1951)]
-			Z: $\# K \geq 3, \#W\geq2$, MZU, effektywna, spełnia słabą zasadę Pareto i słabe IIA $\Rightarrow$ dyktatura.
+		\begin{theorem}[Twierdzenie Arrowa dla metod zwycięzcy (1951)]
+			Załóżmy: $\# K \geq 3, \#W\geq2$, MZU, efektywna, spełnia słabą zasadę Pareto i słabe IIA $\Rightarrow$ dyktatura.
 		\end{theorem}
 		
-		D: Z lematu o decyzyjności $\Rightarrow$ jeśli zwyciężca istaniej, to jest jedyny.
+		D: Z lematu o decyzyjności $\Rightarrow$ jeśli zwycięzca istnieje, to jest jedyny.
 		
-		Jedyny zwyciężca ? (pytamy się) dykatatura
+		Czy istnieje jedyny zwycięzca? (pytanie) dyktatura.
 		
 		\begin{definition}[na potrzeby dowodu]
-			$w\in W$ - dyktator A z kontrollerem B \witw jeśli $A\overset{w}{<}B \Rightarrow$ A nie wygrywa.
+			$w\in W$ - dyktator $A$ z kontrolerem $B$ \witw \quad jeśli $A\overset{w}{<}B \Rightarrow$ $A$ nie wygrywa.
 		\end{definition}
 		
-		I krok
+		Podzielimy dówód na 3 kroki:
 		
-		$\forall_{A,B \in K} \exists_{w\in W}$ dyktator nad A z kontrolerem B
+		\begin{enumerate}[I krok - ]
+			\item $\forall_{A,B \in K} \exists_{w\in W}$ dyktator nad $A$ z kontrolerem $B$.
+			
+			\item $w$-dyktator nad $A$ z kandydatem $B$ $\Rightarrow$ $w$ dyktator nad $B$ z kontrolerem $A$ (dyktatora nad parą $A$, $B$ oznaczamy $d(A,B)$).
+			
+			\item Jeżeli $w=d(A,B) \Rightarrow \forall_{D,E} w = d(D,E)$ (gdzie $D,E$ może być $A$ lub $B$).
+		\end{enumerate}
 		
-		II krok
 		
-		w-dyktator nad A z kandydatem B $\Rightarrow$ w dyktator nad B z kontrolerem A (dyktatora nad parą A, B oznaczamy $d(A,B)$)
 		
-		III krok
-		
-		Jeżeli $w=d(A,B) \Rightarrow \forall_{D,E} w = d(D,E)$ (gdzie, D,E może być A lub B)
-		
-		Wtedy ten w z I - kroku jest dyktatorem. 
-		
+		Wtedy ten $w$ z I kroku jest dyktatorem.
 		\begin{tabular}{|c|}\hline
-			w \\\hline
-			A \\\hline
+			$w$ \\\hline
+			$A$ \\\hline
 			$B_1$ \\\hline
 			$B_2$ \\\hline
-			\dots\\\hline
+			\dots \\\hline
 			$B_n$ \\\hline
 		\end{tabular}
 		
 		\begin{enumerate}[Dow. I)]
-			\item C - trzeci kandydat TODO D1
-			wygrywa $C$, jeden wyborce przesuwa C do tyłu
-			TODO D2
-			wygrywa C lub A
-			to samo z trzecim wyborcą
-			TODO D3
-			wygrywa A lub C
-			itd. aż dojdzie do sytuacji
-			TODO D4
-			aż wygra A (z zasady Pareto), C nie
+			\item Niech $C$ będzie trzecim kandydatem. \begin{tabular}{|c|}\hline
+				$C$ \\\hline
+				$A$ \\\hline
+				$B$ \\\hline
+				wszyscy \\\hline
+			\end{tabular}
+			Wygrywa $C$. Jeden wyborca przesuwa $C$ do tyłu:
+			\begin{tabular}{c|c}\hline
+				inni & $W_1$ \\\hline
+				$C$ & $A$ \\
+				$A$ & $B$ \\
+				$B$ & $C$ \\
+				\vdots & \vdots \\
+			\end{tabular}
+			Wygrywa $C$ lub $A$.
 			
-			Pierwsze przejście, po którym $C$ nie wygrywa (musi takie zaistnieć) 
+			To samo z trzecim wyborcą:
+			\begin{tabular}{c|c}\hline
+				inni & $w_1$ $w_2$ \\\hline
+				$C$ & $A$ \\
+				$A$ & $B$ \\
+				$B$ & $C$ \\
+				\vdots & \vdots \\
+			\end{tabular}
+			Wygrywa $A$ lub $C$, i tak dalej, aż dojdzie do sytuacji:
+			\begin{tabular}{|c|}\hline
+				wszyscy \\\hline
+				$A$ \\\hline
+				$B$ \\\hline
+				$C$ \\\hline
+			\end{tabular}
+			Wówczas wygrywa $A$ (z zasady Pareto), a $C$ nie.
 			
-			X,Y - grupy wyborców
+			Pierwsze przejście, po którym $C$ nie wygrywa (musi takie zaistnieć). 
 			
-			TODO D5
+			$X, Y$ - grupy wyborców.
 			
-			Pokażemy, że w - dyktator nad B z kontrolerem A.
+			$\underset{M_1}{\begin{tabular}{|c|c|c|}\hline
+					X & w & Y \\\hline
+					$C$ & $C$ & $A$ \\\hline
+					$A$ & $A$ & $B$ \\\hline
+					$B$ & $B$ & $C$ \\\hline
+			\end{tabular}} \Rightarrow \underset{M_2}{\begin{tabular}{|c|c|c|}\hline
+					X & w & Y \\\hline
+					$C$ & $A$ & $A$ \\\hline
+					$A$ & $B$ & $B$ \\\hline
+					$B$ & $C$ & $C$ \\\hline
+			\end{tabular}}$
 			
-			Rozważmy P - dowlony model, w którym $B\overset{w,P}{<}A$ 
-			TODO D6
-			Kto wygrywa w $Q$? - A,B lub C. Ale relacje $B-C$ w modelach Q i M1 są takie same $\Rightarrow$ w Q B nie wygrywa (IIA), ale relacje $A-C$ w Q i M2 są takie same $\overset{IIA}{\Rightarrow}$ w Q C nie wygrywa.
+			Pokażemy, że $w$ jest dyktatorem nad $B$ z kontrolerem $A$.
 			
-			W Q wygrywa A, B nie
+			Rozważmy $P$ - dowolny model, w którym $B\overset{w,P}{<}A$. 
 			
-			Relacje $A/B$ w P i Q są takie same. $\Rightarrow$ w P B nie wygrywa.
+			Niech $A/B$ oznacza pewną relację między $A$ i $B$.
 			
-			\item w - dyktator nad B z konrolerem A, v dyktator nad A z kontrolerem B
+			$\underset{P}{\begin{tabular}{|c|c|c|}\hline
+				$W$ & $V$ & inni \\\hline
+				$A/B$ & $A$ & $A/B$ \\\hline
+				& $B$ & \\\hline
+				\vdots & \vdots & \vdots \\\hline
+			\end{tabular}}
+			\Rightarrow
+			\underset{Q}{\begin{tabular}{|c|c|c|}\hline
+				$W$ & $V$ & inni \\\hline
+				$C$ & $A$ & $A/B$ \\\hline
+				$A/B$ & $B$ & $C$ \\\hline
+				\vdots & $C$ & \vdots \\\hline
+				\vdots & \vdots & \vdots \\\hline
+			\end{tabular}}$
 			
-			TODO D7
+						Kto wygrywa w $Q$? - $A$, $B$ lub $C$. Jednak relacje $B/C$ w modelach $Q$ i $M_1$ są takie same $\Rightarrow$ w $Q$ $B$ nie wygrywa (IIA). Z kolei relacje $A/C$ w $Q$ i $M_2$ są takie same $\overset{IIA}{\Rightarrow}$ w $Q$ $C$ nie wygrywa.
 			
-			wygrywa A lub B (z. Pareto)
-			B nie wygrywa (bo w), A nie wygrywa (bo v) \faBolt
-			\item A,B $w = d(A,B)$
-			1.Zauważmy, że $\forall_{D,E} \exists d(D,E)$ 
-			2. $\forall_{D,E} w=d(D,E)$
+			W $Q$ wygrywa $A$, $B$ nie wygyrwa.
 			
-			D 2.1 C, Hp. $v=d(B,C)$, $v\neq w$ TODO D8
-			Wygrywa B lub C (z. Pareto), B nie (bo w), C nie (bo v)\faBolt
+			Relacje $A/B$ w $P$ i $Q$ są takie same. $\Rightarrow$ w $P$ $B$ nie wygrywa.
+			\newpage
+			\item $w$ jest dyktatorem nad $B$ z kontrolerem $A$, $v$ jest dyktatorem nad $A$ z kontrolerem $B$
 			
-			D 2.2 Zmieniamy A i B rolami, $v= d(A,C)$, tak samo pokazujemy, że $w=d(A,C)$.
+			\begin{tabular}{|c|c|c|}\hline
+				$W$ & $V$ & inni \\\hline
+				$A$ & $B$ & \\\hline
+				$B$ & $A$ & \\\hline
+				\vdots & \vdots & \\\hline
+			\end{tabular}
 			
-			D 2.3 $\overset{z 2.1 i 2.2}{C}\neq A,B$ $w=d(A,B), w=d(A,C)$ $D\neq A,C$ weźmy rozumowanie z 2.1 i 2.2 dla A,C,D pokazuje,że $w=d(A,C)\Rightarrow w=d(C,D)$ 
+			Wygrywa $A$ lub $B$ (z zasady Pareto).
+			$B$ nie wygrywa (bo $w$), $A$ nie wygrywa (bo $v$) \faBolt
+			\item Niech $w = d(A,B)$.
+			1. Zauważmy, że $\forall_{D,E} \exists d(D,E)$.
+			2. $\forall_{D,E}$ $w = d(D,E)$.
 			
-			$C,d \neq A,B$ OK
-			jeden z $C,D$ równy $A$ lub $B$ (to 2.1 i 2.2)
+			D 2.1. Załóżmy, że $C$, oraz że $v = d(B,C)$ i $v \neq w$. 	
+			\begin{tabular}{|c|c|c|}\hline
+				$W$ & $V$ & inni \\\hline
+				$C$ & $B$ & $C$ \\\hline
+				$A$ & $C$ & $B$ \\\hline
+				$B$ & $A$ & $A$ \\\hline
+				\vdots & \vdots & \vdots \\\hline
+			\end{tabular}
+			
+			Wygrywa $B$ lub $C$ (z zasady Pareto). $B$ nie wygrywa (bo $w$), $C$ nie wygrywa (bo $v$) \faBolt
+			
+			D 2.2. Zamieniamy $A$ i $B$ rolami, $v = d(A,C)$, i w ten sam sposób pokazujemy, że $w = d(A,C)$.
+			
+			D 2.3. $\overset{z 2.1 \text{ i } 2.2}{C \neq A,B}$ oraz $w = d(A,B)$, $w = d(A,C)$. Jeśli $D \neq A,C$, to podobne rozumowanie jak w 2.1 i 2.2 dla $A,C,D$ pokazuje, że $w = d(A,C) \Rightarrow w = d(C,D)$.
+			
+			Dla $C,d \neq A,B$ OK.
+			Jeden z $C,D$ musi być równy $A$ lub $B$ (z 2.1 i 2.2).
 			
 		\end{enumerate}
-		
-		\begin{flushright}$\square$\end{flushright}
-		
-		\begin{wniosek}[Tw Arrowa o niemożliwości]
-			Z: $\# K \geq 3, \#W\geq2$
-			T: Nie istnieje MZU efektywna, która jednocześnie jest 
-			\begin{enumerate}[-]
-				\item anonimowa
-				\item spełnia słabą zasadę Pareto
-				\item spełnia słabe IIA
-			\end{enumerate}
-		\end{wniosek}
-		
-		\begin{example}[Przykłady wyjątkowe do Tw Arrowa]
-			\begin{enumerate}[1.]
-				\item  $\# K=2,\# w nieparzyste$ metoda większości decyzyjna
-				\item $\# K=3,\# w = 5$ Reguła $\geq3$ pierwsze miejsca - zwyciężca
-			\end{enumerate}
-		\end{example}
+	
+\begin{flushright}$\square$\end{flushright}
+
+\begin{wniosek}[Twierdzenie Arrowa o niemożliwości]
+Załóżmy, że $\# K \geq 3$, $\# W \geq 2$.
+Wtedy: Nie istnieje MZU efektywna, która jednocześnie jest:
+\begin{enumerate}[-]
+	\item anonimowa,
+	\item spełnia słabą zasadę Pareto,
+	\item spełnia słabe IIA.
+\end{enumerate}
+\end{wniosek}
+
+\begin{example}[Przykłady wyjątkowe do twierdzenia Arrowa]
+\begin{enumerate}[1.]
+	\item $\# K = 2, \# W$ nieparzyste - metoda większości jest decyzyjna.
+	\item $\# K = 3, \# W = 5$ - reguła $\geq 3$ pierwsze miejsca - zwycięzca.
+\end{enumerate}
+\end{example}
+
 		
 	\newpage
 	\section{Deser}
