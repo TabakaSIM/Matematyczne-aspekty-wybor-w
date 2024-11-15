@@ -1142,11 +1142,279 @@ Wtedy: Nie istnieje MZU efektywna, która jednocześnie jest:
 \end{enumerate}
 \end{example}
 
+
+\begin{theorem}[Twierdzenie Taylora o niemożliwości]
+	Z: $\# K\geq3,\# W\geq 3$
+	
+	T: Nie istnieje MZU, efektywna spełniająca jednocześnie kryterium Condorceta oraz słaby warunek IIA.
+\end{theorem}
+	D: Z IIA i kreterium Condorceta $\Rightarrow$ słaba zasad Pareto
+	
+	Słaba zasada Pareto + IIA $\overset{tw Arrowa}{\Rightarrow}$ Dyktatura
+
+	Ale z warunku, że $\# W \geq 3$ dykatatura nie spełnia kryterium Condorceta
+\begin{flushright}$\square$\end{flushright}
 		
+	Oprócz przypadku $\# W=4$ jest znacznie prostrzy. (czyli dla W = 4)
+		
+	\subsection{Metoda TAK/NIE}
+	$\begin{bmatrix}
+		\Sigma = \{ M:W \rightarrow K\}&\Sigma = \{ M:W \rightarrow \{TAK, NIE\}\}\\
+		f:\Sigma \rightarrow P(K)&f:\Sigma \rightarrow \{TAK,NIE\}\\
+	\end{bmatrix}$
+	
+	\begin{example}
+		Szczególny przypadek: metoda status quo z dwoma kandydatami.
+		
+		Dwa założenia:\\
+		$\forall_{w\in W} w:TAK \Rightarrow wynik:TAK$\\
+		$\forall_{w\in W} w:NIE \Rightarrow wynik:NIE$
+	\end{example}
+	
+	\begin{definition}
+		$A \subset W$ koalicja wygrywająca \witw $\{x\in A$ \witw  $x:$ TAK $\}$ $ \Rightarrow$ wynik: TAK
+	\end{definition}
+		
+	\begin{definition}[Monotoniczność metody TAK/NIE]
+		\vspace{0.5cm}
+		Metoda TAK/NIE jest monotoniczna \witw $\begin{bmatrix}
+		A \subset A_1\\
+		A \text{ koalicja wygrywająca}\\
+		\end{bmatrix}	\Rightarrow$ $A_1$, koalicja wygrywająca.
+	\end{definition}
+		
+		\begin{definition}
+			Załóżmy, że A - koalicja rządząca
+			
+			$p\in A$ - wyborca decydujący dla $A$ \witw $A\{p\}$ nie jest wygrywająca.
+		\end{definition}
+		
+	\begin{definition}[Wskaźnik Bauzhafa]
+		Załóżmy, że $W=\{a_1,\dots,a_n\}$
+		$B(a_i) = \# \{ A: a_i\in A_i, a_i$ decydujący dla $A\}$
+	\end{definition}		
+	
+	\begin{definition}[Index Bauzhafa (Penrose'a Bauzhafa)]
+		$I_B(a_i)=\frac{B(a_i)}{B(a_1)+\dots+B(a_n)}$
+	\end{definition}
+	
+	\begin{example}
+		3 wyborców\\
+		$w_1=50$\\
+		$w_2=45$\\
+		$w_3=1$\\
+		
+		do decyzji TAK potrzeba 51\\
+		Format zapisu powyższego warunku: $W(51;52,45,1) - W(\text{min}; \text{ wagi})$
+		
+		Przypadki wygrywające:
+		$\{w_1,w_2\}$\\
+		$\{w_1,w_3\}$\\
+		$\{w_1,w_2,w_3\}$\\
+		
+		
+		$B(w_1)=3$\\
+		$B(w_2)=1$\\
+		$B(w_3)=1$\\
+		
+		$w_1$ jest decydujący.
+		
+		Indexy Bauzhafa:\\
+		$I_B(w_1)=\frac{3}{5}$\\
+		$I_B(w_2)=\frac{1}{5}$\\
+		$I_B(w_3)=\frac{1}{5}$\\
+	\end{example}
+	
+	Metoda liczenia wskaźnika Bauzhafa (dla metody monotonicznej)
+	
+	ALGORYTM %TODO A1 + A2
+	
+	$+$ - gdy należy
+	$-$ - gdy nie należy
+	
+	dla $w_1$ liczba $+$ - liczba $-$ to wskaźnik Bauzhafa/
+	
+	Dlaczego dobrze?
+	
+	D: Niech $K$ to zbiór koalicji wygrywających i $p\in W$. Dzielimy $K$ na 3 podzbiory.
+	
+	$K_1=\{A: p\notin A\}$\\
+	$K_1=\{A \cup \{p\} : A\in K\}$\\
+	$K_1=K\setminus (K_1\cup K_2)$\\
+	
+	Zauważmy, że:
+	$K=K_1\cup K_2 \cup K_3$
+	$K_i$ - parami rozkłączne
+	
+	$\# K_1 = \# K_2$
+	
+	$B(p)=\#K_3$
+	$p$ decydujący dla $A$ \witw $A\in K_3$
+	
+	
+	Czyli dla $K_1$ jest "-", a dla $K_2$ jest "+".
+	\begin{flushright}$\square$\end{flushright}
+	
+	\begin{definition}[Wskaźnik/Index Shapleya - Shubika]
+		Z: monotoniczna.
+		Porządkujemy $W=(w_1,\dots,w_n)$
+		W ciągu $(w_1,\dots,w_n)$ wyborca $w_k$ jest wyborcą wpływającym jeśli $w_1,\dots,w_{k-1}$ nie jest koalicją wygrywającą, a $w_1,\dots,w_{k}$ jest.\\\\
+		
+		Wskaźnik Shapleya - Shubika $S(w_k)=\# \{ C:w_k$ wpływający w ciagu $C\}$\\\\
+		
+		Index Shapleya - Shubika $I_S(w_k)=\frac{S(w_k)}{n!}$
+	\end{definition}
+	
+	Komentarz do przykładu
+	%TODO A3
+	$(w_1,w_2,|\rightarrow w_3)$
+	$(w_1,w_3,|\rightarrow w_2)$
+	$(w_2,w_1,|\rightarrow w_3)$
+	$(w_2,w_3,|\rightarrow w_1)$
+	$(w_3,|\rightarrow w_1,w_1)$
+	$(w_3,w_2,|\rightarrow w_1)$
+	
+	$I_S(w_1)=\frac{4}{6}$
+	$I_S(w_2)=\frac{1}{6}$
+	$I_S(w_3)=\frac{1}{6}$
+	
+	\begin{definition}
+		Metoda TAK/NIE jest odporna na zamianę \witw
+		$\forall_{A,B \text{ koalicje wygrywające}} \forall_{a\in A, b\in B}$ conajmniej jedna z koalicji 
+		$\begin{bmatrix}
+		(A\setminus \{a\}\cup \{b\})\\
+		B\setminus \{b\}\cup \{a\}\\
+		\end{bmatrix}$ to jedna z nich dalej jest wygrywająca.
+	\end{definition}
+	
+	\begin{stwierdzenie}
+		Większość ważona TAK/NIE jest odporna na zamianę.
+	\end{stwierdzenie}
+	
+	D: $A,B$ - wygrywające, $a\in A$, $b\in B$
+	
+	$W_a$, $W_b$ wagi głosów $a,b$
+	Niech $W_b\geq W_a$
+	
+	$W(A\setminus\{w_a\}\cup\{w_b\})\geq W(A)$
+	\begin{flushright}$\square$\end{flushright}
+	
+	\begin{example}
+		System federalny USA nie jest odporny na zamianę.
+		
+		Izba reprezentantóww liczbie 435
+		Senat w liczbie: 100
+		Prezydent i viceprezydent
+		
+		Warunki podjęcia decyzji:
+		\begin{itemize}
+			\item Większość w obu izbach
+			\item Większośc w IR, remis w S $\rightarrow$ decyduje viceprezydent
+			\item Prezydent ma prawo veta, które może być obalone przy $\frac{2}{3}$ głosów.
+		\end{itemize}
+		
+		Czyli zachodzą reguły do przegłosowania:\\
+		TAK $\geq 218$ IR\\
+		TAK $\geq 51$ S\\
+		TAK prezydent\\
+		
+		TAK $\geq 218$ IR\\
+		TAK $\geq 50$ S \\
+		TAK viceprezydent\\
+		
+		
+		TAK $\geq 290$ IR\\
+		TAK $\geq 67$ S\\
+		
+		
+		A: (TAK)\\
+		51 S\\
+		218 IR\\
+		+ prezydent\\
+		niech $s\in A$, $r\notin A$\\
+		
+		B: (TAK)\\
+		51 S\\
+		218 OR\\
+		+ prezydent\\
+		niech $s\notin B$, $r\in B$\\
+		
+		$s\leftrightarrow r$ zamieniamy głosy
+		
+		$A'$: (TAK)\\
+		50 S\\
+		219 IR\\
+		+ prezydent\\
+		
+		
+		$B'$: (TAK)\\
+		52 S\\
+		217 OR\\
+		+ prezydent\\
+		
+		I żaden wniosek nie przechodzi.
+		
+	\end{example}
+	
+	\subsection{Metody porządkowe}
+	
+	\begin{definition}[Słaby porządek]
+		Zbiór $K$ jest słabo uporządkowany \witw $\exists R$ relacja równoważności w $K$ o własności $K/R$ uporządkowany liniowa przez $\leq$
+		
+		$a,b\in K \qquad a<b \overset{def}{\Leftrightarrow} [a]_R < [b]_R$ 
+		(przechodzna, słabo antysymetryczna)
+		
+	\end{definition}
+	
+	\begin{definition}[Metoda porządkowa - MP]
+		Każdy wyborca kandydatów porządkuje kandydatów (liniowo)\\ 
+		
+		Wynik - słabym porządkiem w $K$
+		$L(K) = \{(K,\leq) : \leq text{ porządek w } K\}$ 
+		$S(K) = \{(K,\leq) : \leq text{ słaby porządek w } K\}$
+		
+		$\Sigma = \{ M: W \rightarrow L(K)\}$
+		$f:\Sigma \rightarrow S(K)$
+	\end{definition}
+	
+	MZU efektywna jest MP!
+	
+	Zapis:
+	
+	$A\overset{w}{<}B, A\overset{w,M}{<}B$
+	
+	$A\underset{M}{<}B$ w modelu $M$ w efekcie wyborów $B$ jest nad $A$
+	
+	\begin{example}
+		Dyktatura porządkowa
+		
+		Wynik toższamy z głosem jednego wyborcy.
+	\end{example}
+	
+	\begin{definition}[porządkowa zasada Pareto]
+		MP spełnia (porządkową) zasadę Pareto \witw $\forall_M \forall_{A,B \in K} (\forall_w A\overset{w,M}{<}B) \Rightarrow A\underset{M}{<}B$. 
+	\end{definition}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	\newpage
 	\section{Deser}
+	\begin{center}
+		{\fontsize{30}{36}\selectfont\faBirthdayCake}
+	\end{center} 
+	
 	W sumie to deseru jeszcze nie ma, ale ma być na ostatnim wykładzie!!! \\\\
 	Egzamin stępnie środa 29 stycznia 11:00
+	
+	
+	Na to nie patrzcie, kiedyś (czyli w święta) to uaktulnie!
 	
 	\begin{tabular}{|c|c|c|c|p{2.5cm}|p{1cm}|}\hline
 		Metoda & Anonimowa & Neutralna & Efektywna & Monotoniczna ze względu na transpozycje&Słaba zasada Pareto\\\hline
@@ -1178,9 +1446,7 @@ Wtedy: Nie istnieje MZU efektywna, która jednocześnie jest:
 	
 	
 		
-	\begin{center}
-		 {\fontsize{30}{36}\selectfont\faBirthdayCake}
-	\end{center}
+	
 	
 
 	
