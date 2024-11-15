@@ -1229,10 +1229,25 @@ Wtedy: Nie istnieje MZU efektywna, która jednocześnie jest:
 	
 	ALGORYTM %TODO A1 + A2
 	
+	\begin{tabular}{c|c c c c}
+		Koalicje wygrywające$\setminus$ Wyborcy & $w_2$ & $w_1$ & \dots & $w_n$\\\hline
+		$k_1$ &+&+&\dots&-\\
+		$k_2$ &-&+&\dots&-\\
+		\vdots&\vdots&\vdots&&\vdots\\
+		$k_j$ &+&-&\dots&-\\
+	\end{tabular}
+	
 	$+$ - gdy należy
 	$-$ - gdy nie należy
 	
 	dla $w_1$ liczba $+$ - liczba $-$ to wskaźnik Bauzhafa/
+	
+	\begin{tabular}{c|ccc}
+		&$w_1$&$w_2$&$w_3$\\\hline
+		$\{w_1,w_2\}$&+&+&-\\
+		$\{w_1,w_3\}$&+&-&+\\
+		$\{w_1,w_2,w_3\}$&+&+&+\\
+	\end{tabular}
 	
 	Dlaczego dobrze?
 	
@@ -1266,13 +1281,12 @@ Wtedy: Nie istnieje MZU efektywna, która jednocześnie jest:
 	\end{definition}
 	
 	Komentarz do przykładu
-	%TODO A3
-	$(w_1,w_2,|\rightarrow w_3)$
-	$(w_1,w_3,|\rightarrow w_2)$
-	$(w_2,w_1,|\rightarrow w_3)$
-	$(w_2,w_3,|\rightarrow w_1)$
-	$(w_3,|\rightarrow w_1,w_1)$
-	$(w_3,w_2,|\rightarrow w_1)$
+	$(w_1,w_2,|\rightarrow w_3)$\\
+	$(w_1,w_3,|\rightarrow w_2)$\\
+	$(w_2,w_1,|\rightarrow w_3)$\\
+	$(w_2,w_3,|\rightarrow w_1)$\\
+	$(w_3,|\rightarrow w_1,w_1)$\\
+	$(w_3,w_2,|\rightarrow w_1)$\\
 	
 	$I_S(w_1)=\frac{4}{6}$
 	$I_S(w_2)=\frac{1}{6}$
