@@ -1124,290 +1124,292 @@ jeśli $\exists{k_1,k_2\in K}: W_1=\{w_{1},w_{2},\dots,w_{i}\}$ głosowali na $k
 		\end{enumerate}
 	
 \begin{flushright}$\square$\end{flushright}
-
 \begin{wniosek}[Twierdzenie Arrowa o niemożliwości]
-Załóżmy, że $\# K \geq 3$, $\# W \geq 2$.
-Wtedy: Nie istnieje MZU efektywna, która jednocześnie jest:
-\begin{enumerate}[-]
-	\item anonimowa,
-	\item spełnia słabą zasadę Pareto,
-	\item spełnia słabe IIA.
-\end{enumerate}
+	Załóżmy, że $\# K \geq 3$, $\# W \geq 2$. Wówczas: nie istnieje metoda zbiorowego ustalania (MZU) efektywna, która jednocześnie spełnia następujące warunki:
+	\begin{enumerate}[-]
+		\item anonimowość,
+		\item słabą zasadę Pareto,
+		\item słabe kryterium niezależności od alternatyw niezwiązanych (IIA).
+	\end{enumerate}
 \end{wniosek}
 
-\begin{example}[Przykłady wyjątkowe do twierdzenia Arrowa]
-\begin{enumerate}[1.]
-	\item $\# K = 2, \# W$ nieparzyste - metoda większości jest decyzyjna.
-	\item $\# K = 3, \# W = 5$ - reguła $\geq 3$ pierwsze miejsca - zwycięzca.
-\end{enumerate}
+\begin{example}[Przypadki szczególne w twierdzeniu Arrowa]
+	\begin{enumerate}[1.]
+		\item $\# K = 2$, $\# W$ nieparzyste — metoda większości jest decyzyjna.
+		\item $\# K = 3$, $\# W = 5$ — reguła „$\geq 3$ pierwsze miejsca” wyłania zwycięzcę.
+	\end{enumerate}
 \end{example}
 
-
 \begin{theorem}[Twierdzenie Taylora o niemożliwości]
-	Z: $\# K\geq3,\# W\geq 3$
-	
-	T: Nie istnieje MZU, efektywna spełniająca jednocześnie kryterium Condorceta oraz słaby warunek IIA.
+	Dla $\# K \geq 3$, $\# W \geq 3$:  
+	nie istnieje MZU efektywna, która spełnia jednocześnie kryterium Condorceta oraz słabe kryterium niezależności od alternatyw niezwiązanych (IIA).
 \end{theorem}
-	D: Z IIA i kreterium Condorceta $\Rightarrow$ słaba zasad Pareto
-	
-	Słaba zasada Pareto + IIA $\overset{tw Arrowa}{\Rightarrow}$ Dyktatura
 
-	Ale z warunku, że $\# W \geq 3$ dykatatura nie spełnia kryterium Condorceta
+\noindent \textbf{Dowód:}  
+Z założeń IIA i kryterium Condorceta wynika słaba zasada Pareto.  
+Słaba zasada Pareto wraz z IIA prowadzi do dyktatury (zgodnie z twierdzeniem Arrowa).  
+Jednak dla $\# W \geq 3$, dyktatura nie spełnia kryterium Condorceta.  
 \begin{flushright}$\square$\end{flushright}
-		
-	Oprócz przypadku $\# W=4$ jest znacznie prostrzy. (czyli dla W = 4)
-		
-	\subsection{Metoda TAK/NIE}
-	$\begin{bmatrix}
-		\Sigma = \{ M:W \rightarrow K\}&\Sigma = \{ M:W \rightarrow \{TAK, NIE\}\}\\
-		f:\Sigma \rightarrow P(K)&f:\Sigma \rightarrow \{TAK,NIE\}\\
-	\end{bmatrix}$
-	
+
+Przypadek $\# W = 4$ jest znacznie prostszy do rozważenia.
+
+\subsubsection{Metoda TAK/NIE}
+$$
+\begin{bmatrix}
+	\Sigma = \{ M: W \rightarrow K \} & \Sigma = \{ M: W \rightarrow \{ \text{TAK}, \text{NIE} \} \} \\
+	f:\Sigma \rightarrow P(K) & f:\Sigma \rightarrow \{ \text{TAK}, \text{NIE} \}
+\end{bmatrix}
+$$
+
+\begin{example}[Szczególny przypadek metody status quo]
+	Przypadek z dwoma kandydatami. Założenia:
+	\begin{itemize}
+		\item $\forall_{w \in W} \; w : \text{TAK} \Rightarrow \text{wynik: TAK}$,
+		\item $\forall_{w \in W} \; w : \text{NIE} \Rightarrow \text{wynik: NIE}$.
+	\end{itemize}
+\end{example}
+
+\begin{definition}[Koalicja wygrywająca]
+	Podzbiór $A \subset W$ jest koalicją wygrywającą wtedy i tylko wtedy, gdy:  
+	$$\{x \in A : x \text{ głosuje TAK} \} \Rightarrow \text{wynik: TAK.}$$
+\end{definition}
+
+\begin{definition}[Monotoniczność metody TAK/NIE]
+	Metoda TAK/NIE jest monotoniczna wtedy i tylko wtedy, gdy:  
+	$$
+	\begin{bmatrix}
+		A \subset A_1 \\
+		A \text{ jest koalicją wygrywającą}
+	\end{bmatrix}
+	\Rightarrow A_1 \text{ jest koalicją wygrywającą.}
+	$$
+\end{definition}
+
+\begin{definition}[Wyborca decydujący]
+	Załóżmy, że $A$ jest koalicją rządzącą.  
+	Wyborca $p \in A$ jest decydujący dla $A$ wtedy i tylko wtedy, gdy $A \setminus \{p\}$ nie jest koalicją wygrywającą.
+\end{definition}
+
+\begin{definition}[Wskaźnik Banzhafa]
+	Załóżmy, że $W = \{a_1, \dots, a_n\}$.  
+	Wskaźnik Banzhafa dla $a_i$ jest równy liczbie:
+	$$B(a_i) = \# \{ A : a_i \in A \; \text{i $a_i$ jest decydujący dla $A$} \}.$$
+\end{definition}
+
+\begin{definition}[Indeks Banzhafa (Penrose’a–Banzhafa)]
+	Indeks Banzhafa dla $a_i$ definiuje się jako:
+	$$I_B(a_i) = \frac{B(a_i)}{B(a_1) + \dots + B(a_n)}.$$
+\end{definition}
+
 	\begin{example}
-		Szczególny przypadek: metoda status quo z dwoma kandydatami.
+		Trzech wyborców:
+		\begin{itemize}
+			\item $w_1 = 50$,
+			\item $w_2 = 45$,
+			\item $w_3 = 1$.
+		\end{itemize}
 		
-		Dwa założenia:\\
-		$\forall_{w\in W} w:TAK \Rightarrow wynik:TAK$\\
-		$\forall_{w\in W} w:NIE \Rightarrow wynik:NIE$
+		Do podjęcia decyzji TAK potrzeba 51 głosów.  
+		\Komentarz{Zapis tego warunku: $W(51; 50, 45, 1)$ — gdzie $W(\text{min}; \text{wagi wyborców})$.}
+		\newpage
+		**Koalicje wygrywające**:
+		\begin{itemize}
+			\item $\{w_1, w_2\}$,
+			\item $\{w_1, w_3\}$,
+			\item $\{w_1, w_2, w_3\}$.
+		\end{itemize}
+		
+		**Wskaźniki Banzhafa**:
+		\begin{align*}
+			B(w_1) &= 3, \\
+			B(w_2) &= 1, \\
+			B(w_3) &= 1.
+		\end{align*}
+		
+		$w_1$ jest decydującym wyborcą.
+		
+		**Indeksy Banzhafa**:
+		\begin{align*}
+			I_B(w_1) &= \frac{3}{5}, \\
+			I_B(w_2) &= \frac{1}{5}, \\
+			I_B(w_3) &= \frac{1}{5}.
+		\end{align*}
 	\end{example}
 	
-	\begin{definition}
-		$A \subset W$ koalicja wygrywająca \witw $\{x\in A$ \witw  $x:$ TAK $\}$ $ \Rightarrow$ wynik: TAK
-	\end{definition}
-		
-	\begin{definition}[Monotoniczność metody TAK/NIE]
-		\vspace{0.5cm}
-		Metoda TAK/NIE jest monotoniczna \witw $\begin{bmatrix}
-		A \subset A_1\\
-		A \text{ koalicja wygrywająca}\\
-		\end{bmatrix}	\Rightarrow$ $A_1$, koalicja wygrywająca.
-	\end{definition}
-		
-		\begin{definition}
-			Załóżmy, że A - koalicja rządząca
-			
-			$p\in A$ - wyborca decydujący dla $A$ \witw $A\{p\}$ nie jest wygrywająca.
-		\end{definition}
-		
-	\begin{definition}[Wskaźnik Bauzhafa]
-		Załóżmy, że $W=\{a_1,\dots,a_n\}$
-		$B(a_i) = \# \{ A: a_i\in A_i, a_i$ decydujący dla $A\}$
-	\end{definition}		
+	**Metoda liczenia wskaźnika Banzhafa (dla metod monotonicznych)**:
 	
-	\begin{definition}[Index Bauzhafa (Penrose'a Bauzhafa)]
-		$I_B(a_i)=\frac{B(a_i)}{B(a_1)+\dots+B(a_n)}$
-	\end{definition}
-	
-	\begin{example}
-		3 wyborców\\
-		$w_1=50$\\
-		$w_2=45$\\
-		$w_3=1$\\
-		
-		do decyzji TAK potrzeba 51\\
-		Format zapisu powyższego warunku: $W(51;52,45,1) - W(\text{min}; \text{ wagi})$
-		
-		Przypadki wygrywające:
-		$\{w_1,w_2\}$\\
-		$\{w_1,w_3\}$\\
-		$\{w_1,w_2,w_3\}$\\
-		
-		
-		$B(w_1)=3$\\
-		$B(w_2)=1$\\
-		$B(w_3)=1$\\
-		
-		$w_1$ jest decydujący.
-		
-		Indexy Bauzhafa:\\
-		$I_B(w_1)=\frac{3}{5}$\\
-		$I_B(w_2)=\frac{1}{5}$\\
-		$I_B(w_3)=\frac{1}{5}$\\
-	\end{example}
-	
-	Metoda liczenia wskaźnika Bauzhafa (dla metody monotonicznej)
-	
-	ALGORYTM %TODO A1 + A2
-	
-	\begin{tabular}{c|c c c c}
-		Koalicje wygrywające$\setminus$ Wyborcy & $w_2$ & $w_1$ & \dots & $w_n$\\\hline
-		$k_1$ &+&+&\dots&-\\
-		$k_2$ &-&+&\dots&-\\
-		\vdots&\vdots&\vdots&&\vdots\\
-		$k_j$ &+&-&\dots&-\\
+	ALGORYTM:  
+	\begin{tabular}{c|cccc}
+		Koalicje wygrywające $\setminus$ Wyborcy & $w_1$ & $w_2$ & \dots & $w_n$ \\ \hline
+		$k_1$ & + & + & \dots & - \\
+		$k_2$ & - & + & \dots & - \\
+		\vdots & \vdots & \vdots & & \vdots \\
+		$k_j$ & + & - & \dots & - \\
 	\end{tabular}
 	
-	$+$ - gdy należy
-	$-$ - gdy nie należy
+	Legenda:
+	\begin{itemize}
+		\item $+$ (wyborca należy do koalicji),
+		\item $-$ (wyborca nie należy do koalicji).
+	\end{itemize}
 	
-	dla $w_1$ liczba $+$ - liczba $-$ to wskaźnik Bauzhafa/
+	Liczba znaków $+$ dla wyborcy $w_1$ minus liczba znaków $-$ to wskaźnik Banzhafa.
 	
+	**Przykład**:
 	\begin{tabular}{c|ccc}
-		&$w_1$&$w_2$&$w_3$\\\hline
-		$\{w_1,w_2\}$&+&+&-\\
-		$\{w_1,w_3\}$&+&-&+\\
-		$\{w_1,w_2,w_3\}$&+&+&+\\
-	\end{tabular}
+		Koalicja & $w_1$ & $w_2$ & $w_3$ \\ \hline
+		$\{w_1, w_2\}$ & + & + & - \\
+		$\{w_1, w_3\}$ & + & - & + \\
+		$\{w_1, w_2, w_3\}$ & + & + & + \\
+		& 3 =(3-0) & 1 =(2-1) & 1 =(2-1) \\
+	\end{tabular}\\\\
 	
-	Dlaczego dobrze?
-	
-	D: Niech $K$ to zbiór koalicji wygrywających i $p\in W$. Dzielimy $K$ na 3 podzbiory.
-	
-	$K_1=\{A: p\notin A\}$\\
-	$K_1=\{A \cup \{p\} : A\in K\}$\\
-	$K_1=K\setminus (K_1\cup K_2)$\\
+	Dlaczego to działa?  
+	Niech $K$ to zbiór koalicji wygrywających, a $p \in W$. Dzielimy $K$ na trzy podzbiory:
+	\begin{align*}
+		K_1 &= \{A : p \notin A\}, \\
+		K_2 &= \{A \cup \{p\} : A \in K_1\}, \\
+		K_3 &= K \setminus (K_1 \cup K_2).
+	\end{align*}
 	
 	Zauważmy, że:
-	$K=K_1\cup K_2 \cup K_3$
-	$K_i$ - parami rozkłączne
+	\begin{itemize}
+		\item $K = K_1 \cup K_2 \cup K_3$,
+		\item zbiory $K_1$, $K_2$, $K_3$ są parami rozłączne,
+		\item $\# K_1 = \# K_2$.
+	\end{itemize}
 	
-	$\# K_1 = \# K_2$
+	Wskaźnik Banzhafa:
+	\[
+	B(p) = \# K_3,
+	\]
+	gdzie $p$ jest decydujący dla $A$ wtedy i tylko wtedy, gdy $A \in K_3$.
 	
-	$B(p)=\#K_3$
-	$p$ decydujący dla $A$ \witw $A\in K_3$
-	
-	
-	Czyli dla $K_1$ jest "-", a dla $K_2$ jest "+".
-	\begin{flushright}$\square$\end{flushright}
-	
-	\begin{definition}[Wskaźnik/Index Shapleya - Shubika]
-		Z: monotoniczna.
-		Porządkujemy $W=(w_1,\dots,w_n)$
-		W ciągu $(w_1,\dots,w_n)$ wyborca $w_k$ jest wyborcą wpływającym jeśli $w_1,\dots,w_{k-1}$ nie jest koalicją wygrywającą, a $w_1,\dots,w_{k}$ jest.\\\\
+	\begin{definition}[Wskaźnik/Indeks Shapleya–Shubika]
+		Dla metody monotonicznej:  
+		Porządkujemy wyborców jako $W = (w_1, \dots, w_n)$.  
+		W ciągu $(w_1, \dots, w_n)$ wyborca $w_k$ jest wpływającym wyborcą, jeśli:
+		\[
+		\{w_1, \dots, w_{k-1}\} \text{ nie tworzy koalicji wygrywającej, a } \{w_1, \dots, w_k\} \text{ już tak.}
+		\]
 		
-		Wskaźnik Shapleya - Shubika $S(w_k)=\# \{ C:w_k$ wpływający w ciagu $C\}$\\\\
+		Wskaźnik Shapleya–Shubika:
+		\[
+		S(w_k) = \# \{\text{ciągi, w których } w_k \text{ jest wpływającym wyborcą}\}.
+		\]
 		
-		Index Shapleya - Shubika $I_S(w_k)=\frac{S(w_k)}{n!}$
+		Indeks Shapleya–Shubika:
+		\[
+		I_S(w_k) = \frac{S(w_k)}{n!}.
+		\]
 	\end{definition}
 	
-	Komentarz do przykładu
-	$(w_1,w_2,|\rightarrow w_3)$\\
-	$(w_1,w_3,|\rightarrow w_2)$\\
-	$(w_2,w_1,|\rightarrow w_3)$\\
-	$(w_2,w_3,|\rightarrow w_1)$\\
-	$(w_3,|\rightarrow w_1,w_1)$\\
-	$(w_3,w_2,|\rightarrow w_1)$\\
+	**Przykład**:
+	\[
+	\text{Ciągi decyzyjne:}
+	\]
+	\begin{align*}
+		(w_1, w_2, \;|\; w_3) \\
+		(w_1, w_3, \;|\; w_2) \\
+		(w_2, w_1, \;|\; w_3) \\
+		(w_2, w_3, \;|\; w_1) \\
+		(w_3, \;|\; w_1, w_2) \\
+		(w_3, w_2, \;|\; w_1)
+	\end{align*}
+	$$I_S(w_1) = \frac{4}{6}, \; I_S(w_2) = \frac{1}{6}, \; I_S(w_3) = \frac{1}{6},$$
 	
-	$I_S(w_1)=\frac{4}{6}$
-	$I_S(w_2)=\frac{1}{6}$
-	$I_S(w_3)=\frac{1}{6}$
-	
-	\begin{definition}
-		Metoda TAK/NIE jest odporna na zamianę \witw
-		$\forall_{A,B \text{ koalicje wygrywające}} \forall_{a\in A, b\in B}$ conajmniej jedna z koalicji 
-		$\begin{bmatrix}
-		(A\setminus \{a\}\cup \{b\})\\
-		B\setminus \{b\}\cup \{a\}\\
-		\end{bmatrix}$ to jedna z nich dalej jest wygrywająca.
+	\begin{definition}[Odporności na zamianę w metodzie TAK/NIE]
+		Metoda TAK/NIE jest odporna na zamianę wtedy i tylko wtedy, gdy:
+		\[
+		\forall_{A, B \text{ — koalicje wygrywające}} \forall_{a \in A, b \in B} \text{co najmniej jedna z koalicji } 
+		\begin{bmatrix}
+			(A \setminus \{a\} \cup \{b\}) \\
+			(B \setminus \{b\} \cup \{a\})
+		\end{bmatrix}
+		\text{ jest wygrywająca.}
+		\]
 	\end{definition}
 	
 	\begin{stwierdzenie}
-		Większość ważona TAK/NIE jest odporna na zamianę.
+		Większość ważona w metodzie TAK/NIE jest odporna na zamianę.
 	\end{stwierdzenie}
 	
-	D: $A,B$ - wygrywające, $a\in A$, $b\in B$
-	
-	$W_a$, $W_b$ wagi głosów $a,b$
-	Niech $W_b\geq W_a$
-	
-	$W(A\setminus\{w_a\}\cup\{w_b\})\geq W(A)$
+	**Dowód**:  
+	Niech $A, B$ będą koalicjami wygrywającymi, $a \in A$, $b \in B$.  
+	Wagi głosów $a$ i $b$ oznaczamy jako $W_a$, $W_b$.  
+	Zakładamy, że $W_b \geq W_a$. Wówczas:
+	\[
+	W(A \setminus \{a\} \cup \{b\}) \geq W(A).
+	\]
 	\begin{flushright}$\square$\end{flushright}
 	
-	\begin{example}
-		System federalny USA nie jest odporny na zamianę.
-		
-		Izba reprezentantóww liczbie 435
-		Senat w liczbie: 100
-		Prezydent i viceprezydent
-		
-		Warunki podjęcia decyzji:
-		\begin{itemize}
-			\item Większość w obu izbach
-			\item Większośc w IR, remis w S $\rightarrow$ decyduje viceprezydent
-			\item Prezydent ma prawo veta, które może być obalone przy $\frac{2}{3}$ głosów.
-		\end{itemize}
-		
-		Czyli zachodzą reguły do przegłosowania:\\
-		TAK $\geq 218$ IR\\
-		TAK $\geq 51$ S\\
-		TAK prezydent\\
-		
-		TAK $\geq 218$ IR\\
-		TAK $\geq 50$ S \\
-		TAK viceprezydent\\
-		
-		
-		TAK $\geq 290$ IR\\
-		TAK $\geq 67$ S\\
-		
-		
-		A: (TAK)\\
-		51 S\\
-		218 IR\\
-		+ prezydent\\
-		niech $s\in A$, $r\notin A$\\
-		
-		B: (TAK)\\
-		51 S\\
-		218 OR\\
-		+ prezydent\\
-		niech $s\notin B$, $r\in B$\\
-		
-		$s\leftrightarrow r$ zamieniamy głosy
-		
-		$A'$: (TAK)\\
-		50 S\\
-		219 IR\\
-		+ prezydent\\
-		
-		
-		$B'$: (TAK)\\
-		52 S\\
-		217 OR\\
-		+ prezydent\\
-		
-		I żaden wniosek nie przechodzi.
-		
-	\end{example}
+	\begin{zad}
+		Porównać $W(5; 3, 2, 2, 1)$ z:
+		\begin{enumerate}[a)]
+			\item $W(9; 8, 7, 2, 1)$,
+			\item $W(9; 8, 7, 3, 2)$.
+		\end{enumerate}
+	\end{zad}
 	
-	\subsection{Metody porządkowe}
+	\begin{zad}
+		Niech $A, B, C, D$ oznaczają wyborców w $W(3; A, B, C, D)$, a pary $AB$ i $CD$ oznaczają koalicje wygrywające.
+		
+		Wykazać, że to nie jest metoda z większością ważoną.
+	\end{zad}
+	
+	\begin{zad}
+		Dla grupy $B + 6r$ (burmistrz i 6 radnych) wyznaczyć indeksy Shapleya–Shubika.
+	\end{zad}
+	
+	\subsubsection{Metody porządkowe}
 	
 	\begin{definition}[Słaby porządek]
-		Zbiór $K$ jest słabo uporządkowany \witw $\exists R$ relacja równoważności w $K$ o własności $K/R$ uporządkowany liniowa przez $\leq$
+		Zbiór $K$ jest słabo uporządkowany wtedy i tylko wtedy, gdy $\exists R$ — relacja równoważności w $K$ taka, że $K / R$ jest uporządkowany liniowo przez relację $\leq$. 
 		
-		$a,b\in K \qquad a<b \overset{def}{\Leftrightarrow} [a]_R < [b]_R$ 
-		(przechodzna, słabo antysymetryczna)
-		
+		Dla $a, b \in K$ definiujemy: 
+		\[
+		a < b \overset{\text{def}}{\Leftrightarrow} [a]_R < [b]_R,
+		\]
+		gdzie relacja jest przechodnia i słabo antysymetryczna.
 	\end{definition}
 	
-	\begin{definition}[Metoda porządkowa - MP]
-		Każdy wyborca kandydatów porządkuje kandydatów (liniowo)\\ 
+	\begin{definition}[Metoda porządkowa (MP)]
+		Każdy wyborca porządkuje kandydatów w sposób liniowy.
 		
-		Wynik - słabym porządkiem w $K$
-		$L(K) = \{(K,\leq) : \leq text{ porządek w } K\}$ 
-		$S(K) = \{(K,\leq) : \leq text{ słaby porządek w } K\}$
+		Wynik wyborów jest słabym porządkiem w zbiorze $K$:
+		\begin{itemize}
+			\item $L(K) = \{(K, \leq) : \leq \text{ jest porządkiem w } K\}$,
+			\item $S(K) = \{(K, \leq) : \leq \text{ jest słabym porządkiem w } K\}$.
+		\end{itemize}
 		
-		$\Sigma = \{ M: W \rightarrow L(K)\}$
-		$f:\Sigma \rightarrow S(K)$
+		Zapis formalny:
+		\[
+		\Sigma = \{ M : W \rightarrow L(K) \}, \quad f : \Sigma \rightarrow S(K).
+		\]
 	\end{definition}
 	
-	MZU efektywna jest MP!
+	Każda efektywna metoda z założeniem większości wyborców (MZU) jest metodą porządkową (MP).
 	
-	Zapis:
-	
-	$A\overset{w}{<}B, A\overset{w,M}{<}B$
-	
-	$A\underset{M}{<}B$ w modelu $M$ w efekcie wyborów $B$ jest nad $A$
+	Zapis notacyjny:
+	\begin{itemize}
+		\item $A \overset{w}{<} B$, 
+		\item $A \overset{w, M}{<} B$, 
+		\item $A \underset{M}{<} B$ — w modelu $M$, po wyborach $B$ znajduje się nad $A$.
+	\end{itemize}
 	
 	\begin{example}
-		Dyktatura porządkowa
+		Dyktatura porządkowa.  
 		
-		Wynik toższamy z głosem jednego wyborcy.
+		Wynik wyborów jest identyczny z głosem jednego wyborcy.
 	\end{example}
 	
-	\begin{definition}[porządkowa zasada Pareto]
-		MP spełnia (porządkową) zasadę Pareto \witw $\forall_M \forall_{A,B \in K} (\forall_w A\overset{w,M}{<}B) \Rightarrow A\underset{M}{<}B$. 
+	\begin{definition}[Porządkowa zasada Pareto]
+		Metoda porządkowa (MP) spełnia (porządkową) zasadę Pareto wtedy i tylko wtedy, gdy:
+		\[
+		\forall_M \forall_{A, B \in K} \left( \forall_w \; A \overset{w, M}{<} B \right) \Rightarrow A \underset{M}{<} B.
+		\]
 	\end{definition}
+	
 	
 	
 	
