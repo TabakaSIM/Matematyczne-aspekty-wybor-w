@@ -1304,17 +1304,19 @@ $$
 		\]
 	\end{definition}
 	
-	**Przykład**:
+	\begin{example}\end{example}
+	\Komentarz{Dalej działamy na przykładzie $W(51;50,45,1)$.}
+		
 	\[
 	\text{Ciągi decyzyjne:}
 	\]
 	\begin{align*}
-		(w_1, w_2, \;|\; w_3) \\
-		(w_1, w_3, \;|\; w_2) \\
-		(w_2, w_1, \;|\; w_3) \\
-		(w_2, w_3, \;|\; w_1) \\
-		(w_3, \;|\; w_1, w_2) \\
-		(w_3, w_2, \;|\; w_1)
+		(w_1, \mathbf{w_2}|\;, w_3) \\
+		(w_1, \mathbf{w_3}|\;, w_2) \\
+		(w_2, \mathbf{w_1}|\;, w_3) \\
+		(w_2, w_3, \mathbf{w_1}|\;) \\
+		(w_3, \mathbf{w_1}|\;, w_2) \\
+		(w_3, w_2, \mathbf{w_1}|\;)
 	\end{align*}
 	$$I_S(w_1) = \frac{4}{6}, \; I_S(w_2) = \frac{1}{6}, \; I_S(w_3) = \frac{1}{6},$$
 	
@@ -1334,7 +1336,7 @@ $$
 		Większość ważona w metodzie TAK/NIE jest odporna na zamianę.
 	\end{stwierdzenie}
 	
-	**Dowód**:  
+	D:  
 	Niech $A, B$ będą koalicjami wygrywającymi, $a \in A$, $b \in B$.  
 	Wagi głosów $a$ i $b$ oznaczamy jako $W_a$, $W_b$.  
 	Zakładamy, że $W_b \geq W_a$. Wówczas:
@@ -1428,37 +1430,6 @@ $$
 	
 	W sumie to deseru jeszcze nie ma, ale ma być na ostatnim wykładzie!!! \\\\
 	Egzamin stępnie środa 29 stycznia 11:00
-	
-	
-	Na to nie patrzcie, kiedyś (czyli w święta) to uaktulnie!
-	
-	\begin{tabular}{|c|c|c|c|p{2.5cm}|p{1cm}|}\hline
-		Metoda & Anonimowa & Neutralna & Efektywna & Monotoniczna ze względu na transpozycje&Słaba zasada Pareto\\\hline
-		Punkty Bordy   &+&+&+&+&+\\\hline
-		Hare'a   &+&+&+&-&+\\\hline
-		Coombsa &+&+&+&+&-\\\hline
-		Odrzuceń ostatniego &+&+&+&+&-\\\hline
-		Copelanda &+&+&+&+&+\\\hline
-		Większości &+&+&+&+&+\\\hline
-		Dyktatura &+&+&+&+&+\\\hline
-		Terminażowa &+&+&+&+&+\\\hline
-		Turniejowa &+&+&+&+&+\\\hline
-		Pozycyjna &+&+&+&+&+\\\hline
-	\end{tabular}\\\\
-	
-	\begin{tabular}{|c|c|p{3cm}|p{3cm}|c|}\hline
-		Metoda &K Condorceta& K Przegranego Condorceta&Jednoznacznie większościowa&Słabo niezależna\\\hline
-		Punkty Bordy   &+&+&-&+\\\hline
-		Hare'a   &-&-&+&-\\\hline
-		Coombsa &-&+&+&+\\\hline
-		Odrzuceń ostatniego &-&+&+&+\\\hline
-		Copelanda &+&+&+&+\\\hline
-		Większości &+&+&+&+\\\hline
-		Dykatatura &+&+&+&+\\\hline
-		Terminarzowa &+&+&+&+\\\hline
-		Truniejowa &+&+&+&+\\\hline
-		Pozycyjna &+&+&-&+\\\hline
-	\end{tabular}\\
 	
 	
 		
