@@ -1162,12 +1162,18 @@ $$
 $$
 
 \begin{example}[Szczególny przypadek metody status quo]
-	Przypadek z dwoma kandydatami. Założenia:
+	Przypadek z dwoma kandydatami.
+\end{example}
+\begin{definition}[Założenia metody TAK/NIE]
+	 Założenia:´
+	
 	\begin{itemize}
 		\item $\forall_{w \in W} \; w : \text{TAK} \Rightarrow \text{wynik: TAK}$,
 		\item $\forall_{w \in W} \; w : \text{NIE} \Rightarrow \text{wynik: NIE}$.
 	\end{itemize}
-\end{example}
+\end{definition}
+
+
 
 \begin{definition}[Koalicja wygrywająca]
 	Podzbiór $A \subset W$ jest koalicją wygrywającą wtedy i tylko wtedy, gdy:  
@@ -1186,7 +1192,7 @@ $$
 \end{definition}
 
 \begin{definition}[Wyborca decydujący]
-	Załóżmy, że $A$ jest koalicją rządzącą.  
+	Załóżmy, że $A$ jest koalicją wygrywającą.  
 	Wyborca $p \in A$ jest decydujący dla $A$ wtedy i tylko wtedy, gdy $A \setminus \{p\}$ nie jest koalicją wygrywającą.
 \end{definition}
 
@@ -1212,12 +1218,47 @@ $$
 		Do podjęcia decyzji TAK potrzeba 51 głosów.  
 		\Komentarz{Zapis tego warunku: $W(51; 50, 45, 1)$ — gdzie $W(\text{min}; \text{wagi wyborców})$.}
 		\newpage
+		
+		**Metoda liczenia wskaźnika Banzhafa (dla metod monotonicznych)**:
+		
+		ALGORYTM:  
+		\begin{tabular}{c|cccc}
+			Koalicje wygrywające $\setminus$ Wyborcy & $w_1$ & $w_2$ & \dots & $w_n$ \\ \hline
+			$k_1$ & + & + & \dots & - \\
+			$k_2$ & - & + & \dots & - \\
+			\vdots & \vdots & \vdots & & \vdots \\
+			$k_j$ & + & - & \dots & - \\
+		\end{tabular}
+	
+		Legenda:
+		\begin{itemize}
+			\item $+$ (wyborca należy do koalicji),
+			\item $-$ (wyborca nie należy do koalicji).
+		\end{itemize}
+	
+		\Komentarz{Policzymy teraz wskaźniki Banzhafa dla $W(51;50,45,1)$}
+		
 		**Koalicje wygrywające**:
 		\begin{itemize}
 			\item $\{w_1, w_2\}$,
 			\item $\{w_1, w_3\}$,
 			\item $\{w_1, w_2, w_3\}$.
 		\end{itemize}
+	
+		
+	
+		
+		
+		Liczba znaków $+$ dla wyborcy $w_1$ minus liczba znaków $-$ to wskaźnik Banzhafa.
+		
+		**Przykład**:
+		\begin{tabular}{c|ccc}
+			Koalicja & $w_1$ & $w_2$ & $w_3$ \\ \hline
+			$\{w_1, w_2\}$ & + & + & - \\
+			$\{w_1, w_3\}$ & + & - & + \\
+			$\{w_1, w_2, w_3\}$ & + & + & + \\
+			& 3 =(3-0) & 1 =(2-1) & 1 =(2-1) \\
+		\end{tabular}\\\\
 		
 		**Wskaźniki Banzhafa**:
 		\begin{align*}
@@ -1236,33 +1277,7 @@ $$
 		\end{align*}
 	\end{example}
 	
-	**Metoda liczenia wskaźnika Banzhafa (dla metod monotonicznych)**:
 	
-	ALGORYTM:  
-	\begin{tabular}{c|cccc}
-		Koalicje wygrywające $\setminus$ Wyborcy & $w_1$ & $w_2$ & \dots & $w_n$ \\ \hline
-		$k_1$ & + & + & \dots & - \\
-		$k_2$ & - & + & \dots & - \\
-		\vdots & \vdots & \vdots & & \vdots \\
-		$k_j$ & + & - & \dots & - \\
-	\end{tabular}
-	
-	Legenda:
-	\begin{itemize}
-		\item $+$ (wyborca należy do koalicji),
-		\item $-$ (wyborca nie należy do koalicji).
-	\end{itemize}
-	
-	Liczba znaków $+$ dla wyborcy $w_1$ minus liczba znaków $-$ to wskaźnik Banzhafa.
-	
-	**Przykład**:
-	\begin{tabular}{c|ccc}
-		Koalicja & $w_1$ & $w_2$ & $w_3$ \\ \hline
-		$\{w_1, w_2\}$ & + & + & - \\
-		$\{w_1, w_3\}$ & + & - & + \\
-		$\{w_1, w_2, w_3\}$ & + & + & + \\
-		& 3 =(3-0) & 1 =(2-1) & 1 =(2-1) \\
-	\end{tabular}\\\\
 	
 	Dlaczego to działa?  
 	Niech $K$ to zbiór koalicji wygrywających, a $p \in W$. Dzielimy $K$ na trzy podzbiory:
@@ -1283,7 +1298,7 @@ $$
 	\[
 	B(p) = \# K_3,
 	\]
-	gdzie $p$ jest decydujący dla $A$ wtedy i tylko wtedy, gdy $A \in K_3$.
+	gdzie $p$ jest decydujący dla $A$ wtedy i tylko wtedy, gdy $A \in K_3$.\\\\
 	
 	\begin{definition}[Wskaźnik/Indeks Shapleya–Shubika]
 		Dla metody monotonicznej:  
@@ -1331,7 +1346,8 @@ $$
 		\text{ jest wygrywająca.}
 		\]
 	\end{definition}
-	
+	\newpage
+
 	\begin{stwierdzenie}
 		Większość ważona w metodzie TAK/NIE jest odporna na zamianę.
 	\end{stwierdzenie}
