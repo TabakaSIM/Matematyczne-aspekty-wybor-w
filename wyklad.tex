@@ -1428,7 +1428,177 @@ $$
 		\]
 	\end{definition}
 	
+	\begin{definition}[Metoda spełniająca postulat liberalizmu Sena]
+		$\forall_{w\in W}\exists_{A,B\in K\: (A\neq B)} \forall_M A\overset{w,M}{<}B \Rightarrow A\underset{M}{<}B$, $A\overset{w,M}{>}B\Rightarrow A\underset{M}{>}B$
+	\end{definition}
 	
+	\begin{theorem}[Tw. Sena]
+		Z: $\# K\geq 2$, $\# W \geq 2$
+		T: Nie istnieje metoda spełniająca jednocześnie 
+		1) zasadę Pareto
+		2) postulat liberalizmu Sena
+	\end{theorem}
+	
+	D: w,v
+	1. w,v : A,B
+	2. w: A,B
+	3.w: A,B, v:C,D
+	
+	1 w: $A\overset{w,M}{<}B\Rightarrow A\underset{M}{<}B$ 
+	w: $B\overset{w,M}{<}A\Rightarrow B\underset{M}{<}A$
+	
+	2. $\begin{bmatrix}
+		w:\\
+		C\\
+		B\\
+		A\\
+		D\\
+	\end{bmatrix}$ $\begin{bmatrix}
+	\text{reszta}\\
+	A\\
+	C\\
+	B\\
+	D\\
+	\end{bmatrix}$
+	
+	
+	
+	$A\underset{M}{<}B$ $C\underset{M}{<}A$ $B\underset{M}{<}C$ (zasad Pareto)
+	
+	$A\underset{M}{<}B\underset{M}{<}C\underset{M}{<}A$ sprzeczność
+	
+	3. $\begin{bmatrix}
+		w:\\
+		D\\
+		A\\
+		B\\
+		C\\
+		\text{reszta}\\
+	\end{bmatrix}$ $\begin{bmatrix}
+		\text{reszta}\\
+		B\\
+		C\\
+		D\\
+		A\\
+		\text{reszta}
+	\end{bmatrix}$
+	
+	$B\underset{M}{(w)<}A\text{Zasada Pareto}\underset{M}{ <}D\underset{M}{<}C\underset{M}{<}B$ sprzeczność
+			
+	\begin{flushright}$\square$\end{flushright}
+			
+	\begin{definition}[Filtr]
+		X - zbiór
+		$F\subset P(x)$ $F\neq \emptyset$ - filtr \witw
+		\begin{enumerate}[1)]
+			\item $\emptyset \notin F$
+			\item $A,B \in F \Rightarrow A \land B \in F$
+			\item $A\in F, A\subset B, B\subset X \Rightarrow B\in F$
+		\end{enumerate}
+	\end{definition}
+	
+	\begin{example}
+		\begin{enumerate}[1.]
+			\item X - zbiór, $p \in X$
+			$\{A: p\in A \}$ - filtr
+			\item X - przestrzeń topologiczna, $p\in X$, $U$ - otoczenie $p$ \witw $\exists_{V\textbf{- otwarty}} p\in V\subset U$
+		\end{enumerate}
+	\end{example}
+	\begin{definition}[Ultrafiltr]
+		$F\subset P(X)$ - ultrafiltr \witw
+		\begin{enumerate}[1)]
+			\item $F$ - filtr
+			\item $\forall_{A\subset X}$ $A\in F$ lub $X\setminus A \in F$
+		\end{enumerate}
+	\end{definition}
+	\begin{example}
+		\begin{enumerate}[1]
+			\item Zobacz przykład 2.11.1
+		\end{enumerate}
+	\end{example}
+	
+	\begin{stwierdzenie}
+		Ultrafiltr jest filtrem maksymalnym, tzn.
+		
+		Jeżeli dla $F$ - ultrafiltr $\Rightarrow \forall_{G \text{- filtr}} F\subset G \Rightarrow G=F$
+	\end{stwierdzenie}
+	D: $G\\supsetneq F \exists_B : B\in G, B\notin F$
+	
+	$X\setminus B \in F \Rightarrow X\subset B \in G$ $B TODO set iloczyn (X\setminus B)$ sprzeczność.
+	
+	\begin{flushright}$\square$\end{flushright}
+	
+	Uwaga
+	
+	$\forall_{F \text{- filtr}} \exists_{G-ultrafiltr}$ $F\subset G$ 
+	
+	\begin{theorem}
+		X-skończony, F-ultrafiltr $\Rightarrow \exists_{[\in X]}$ F generowany przez $P$ 
+	\end{theorem}
+	
+	D:
+	Przyp 1) $\exists_{p\in x} \{p\} \in F \Rightarrow \forall_{B : p\in B} B\in F$ $(\{p\}\in B) $ (3 z definicji)
+	Hp. $\exists_{C\in F}:p\notin C p\in X\setminus C \in F$
+	$C set iloczyn (X\setminus C)=\emptyset \in F$ sprzeczność
+	
+	Przyp 2) $\forall_p \{p\}\notin F$
+	$X={p_1,\dots,p_n}$
+	$\begin{bmatrix}
+		X\setminus\{p_1\}\in F\\
+		X\setminus\{p_2\}\in F\\
+		\vdots
+		X\setminus\{p_n\}\in F\\
+	\end{bmatrix}\Rightarrow $
+	$X\setminus\{p_1\} iloczyn X\setminus\{p_1\} \dots X\setminus\{p_1\} = \emptyset \notin F$ sprz
+	\begin{flushright}$\square$\end{flushright}
+	
+	Wproawdźmy oznaczenia
+		K, W - zbiory
+		$L(K)= \{ (K,\leq) \leq liniowy porządek w K\}$
+		$S(K) = \{ (K,\leq) \leq słaby porządek w K\}$
+		$\Sigma = \{ M: W \rightarrow L(K)\}$
+		$f:\Sigma \rightarrow S(K)$
+		
+		Notacja:
+		$a\overset{x,M}{b}$ a<b porządku $M(X)$
+		$W\ni x \overset{M}{\rightarrow} M(x)$ porządek w $K$
+		$a\underset{M}{<}b$ a<b w słabym porządku w $F(M) \rightarrow$ słąby porządek w K.
+		
+		
+		
+	\begin{definition}
+		$(p) \forall_M (\forall_{x\in W} a\overset{x,M}{<}b)\Rightarrow a<b$
+		$(I) \forall_{M,N} (\forall_{x\in W} (a\overset{x,M}{<}b$\witw$a\overset{x,B}{b})\overset{M}{=}(a\underset{M}{<}b$\witw$a\underset{N}{<}b)$
+		
+		$T\subset W$ spełnia warunek (DEC) \witw T - zbiór decyzyjny
+		
+		$\forall_{M\in \Sigma} \forall_{p,q \in K} (\forall_{x\in T} p\overset{x,M}{q}) \Rightarrow p\underset{M}{<}q$
+		
+	\end{definition}
+	
+	\begin{theorem}[Tw Arrowa w wersji ultrafiltrów]
+		Z: $\# W\geq 3, \# K \geq 3, f:\Sigma \rightarrow$
+		T: $\{T\subset W: T \text{spełnia (DEC) jest ultrafiltrem.}\}$
+	\end{theorem}
+	
+	\begin{wniosek}
+		$\# W \geq 3, \# K \geq 2, W$ skończone
+		$f:\Sigma \rightarrow S(K)$, spełnia (p) (I)
+		T: $\exists_{w\in W} \forall_{M\in \Sigma} M(w)=f(M)$
+	\end{wniosek}
+	D: $M$ - skończony $\Rightarrow \exists_w \{w\}$ spełnia warunek (DEC)
+	
+	$\forall_{a,b \in K} \forall_{M\in \Sigma} a\overset{w,M}{<}b\Rightarrow a\underset{M}{<}b$
+	
+	\begin{flushright}$\square$\end{flushright}
+	
+	\begin{wniosek}[Tw arrowa, 1950]
+		Z: $\# W \geq 3, \# K \geq 3, W$ skończony,	MP spełnia zasadę Pareto oraz IIA
+		T: MP to dyktatura porządkowa.
+	\end{wniosek}
+	
+	D: z wniosku porzedniego
+	w dla którego $\{w\}$ zbiór decyzyjny to dyktator.
 	
 	
 	
