@@ -1605,9 +1605,169 @@ $$
 	\end{definition}
 	
 	\begin{theorem}[Twierdzenie Arrowa w wersji ultrafiltrów]
-		Założenia: $\# W \geq 3, \# K \geq 3, f : \Sigma \to S(K)$.  
+		Założenia: $\# W \geq 3, \# K \geq 3, f : \Sigma \to S(K)$ spełnia zasade Pareto (P) oraz IIA (I).  \\
 		Teza: $\{T \subset W : T \text{ spełnia (DEC)}\}$ jest ultrafiltrem.
 	\end{theorem}
+	
+	D: 0) $D\neq \emptyset$: $W\in D$ (z P)
+	
+	1) $\emptyset \notin D$: weźmy $a\neq b$ M, 
+	
+	$\begin{bmatrix}
+		\forall_{x\in W} a\overset{x,M}{<}b\Rightarrow a\underset{M}{<}b\\
+		\forall_{x\in \emptyset} b\overset{x,M}{<}a\Rightarrow b\underset{M}{<}a\\
+	\end{bmatrix} \Rightarrow$ sprzeczność
+	
+	2) $T_1\in D, T_1\subset T_2 \overset{?}{\Rightarrow} T_2 \in D$
+	
+	$a,b\in K, M\in \Sigma$ $\forall_{x\in T_2} a\overset{x,M}{<}b$ $\Rightarrow$ $\forall_{x\in T_1} a\overset{x,M}{<}b \overset{T_1\in D}{\Rightarrow} a\underset{M}{<}b$
+	
+	3) $T_1, T_2 \in D \overset{?}{\Rightarrow} a\underset{M}{<}b$ 
+	$M\in\Sigma\; a,b\in K (\forall _{T_1iloczyn T_2} a\overset{x,M}{<}b \overset{?}{\Rightarrow}b)$
+	
+	Weźmy $c\in K, c\neq a,b$
+	(?) Czy istnieje $N\in \Sigma$ (model) w którym
+	$\forall_{x\in T_1} a\overset{x,N}{<}c \forall_{x\in T_2} c\overset{x,N}{<}b \forall_{x\in W} a\overset{x,N}{<}b$ \witw $a\overset{x,M}{<}b$ Jeśli tak to:
+	
+	Pierwsza czczęść i druga część implikują $a\underset{N}{<}b$ i na mocy (I) $a\underset{M}{<}b$ 
+	
+	$M$ - dany
+	
+	$R:= \{x\in W a\overset{x,M}{<}b\}$ czyli $x\in R a\overset{x,M}{<}b$ $x\notin R b\overset{x,M}{<}a$
+	
+	\begin{tabular}{|c|c|c|}
+	$x\in R$&$xnot\in R$&$x\notin R$\\
+	$x\in R$ $a\overset{x,M}{<}c\overset{x,M}{<}b$ reszta dowolnie& $x\in T_1 \Rightarrow x\notin T_2$ $x\in T_1 \cap T_2 \Rightarrow a\overset{x,M}{<}b \Rightarrow x\in R$ $b\overset{x,N}{<}a\overset{x,N}{<}c$ reszta dowolnie& $x\notin T_1$ $c\overset{x,N}{<}b\overset{x,N}{<}a$\\	
+	\end{tabular}
+	
+	Zatem jest to filtr (spełnia warunki a<b i b>a)
+	
+	4) Czy $\forall_{T\subset W} T\in D$ lub $W\subset T \in D$ 
+	Dowód podzielimy na 4 lematy.
+	
+	\begin{lemma}
+		$\forall_{T\subset W} \forall_{a,b\in K, a\neq b} \begin{bmatrix}
+			(\exists_{N\in \Sigma} : T=\{x\in W: a\overset{x,N}{<}b\} i a\underset{N}{<}b) (a \underset{T}{**}b)\\
+			(\forall_{M\in \Sigma}: T=\{x\in W : a\overset{x,M}{<}b\}\Rightarrow a\underset{M}{<}b) (a\underset{T}{*}b)
+		\end{bmatrix}$ Podane warunki są rónoważne.
+	\end{lemma}
+		
+		D: $\Rightarrow$ $M: x \in T $ \witw $a\overset{x,N}{<}b$ i $a\underset{N}{<}b \overset{(I)}{\Rightarrow} a\underset{M}{<}b$
+		
+		$\Leftarrow$ Weźmy $N$ (spełnia założenia ze zdania dolnego) $a\overset{x,N}{<}b \Leftrightarrow x\in T$ reszta dowolnie $\Rightarrow a\underset{N}{<}b$ 
+	
+	
+	\begin{lemma}
+		$\forall_{T\subset W}, \forall_{a,b,c \in K, a\neq b\neq c} $
+		(2.1) $(a\underset{T}{*}b \Rightarrow (c\underset{T}{*}b))$
+		(2.2) $(a\underset{T}{*}b \Rightarrow (a\underset{T}{*}c))$
+	\end{lemma}
+	D: (2.1) Bierzemy następujący $M$: $x\in T \Leftrightarrow c\overset{x,M}{<}b$ (?) czy $c\underset{M}{<}b$
+	Rozważmy model $N:$ $c\overset{x,N}{<}a\overset{x,N}{<}b$ gdy $c\overset{x,M}{<}b (\Leftrightarrow x\in T)$ 
+	$b\overset{x,N}{<}c\overset{x,N}{<}a$ gdy $b\overset{x,M}{<}c$ reszta dowolnie
+	
+	$\forall_{x\in W} c\overset{x,N}{<}a$ $(x\in T) \Leftrightarrow c\overset{x,M}{<}b \overset{def N}{\Leftrightarrow} c\overset{x,N}{<}b \Leftrightarrow a\overset{x,N}{<}b (\Leftrightarrow x\in T)$
+	
+	$\overset{a\underset{T}{*}b}{\Rightarrow} a\underset{N}{<}b$
+	
+	a z $\forall_{x\in W} c\overset{x,N}{<}a \overset{(P)}{\Rightarrow} c\underset{N}{<}a$
+	
+	Wobec tego z (I) $\Rightarrow c\underset{M}{<}b$
+	
+	(2.2) M : $x\in T \Leftrightarrow a\overset{x,M}{<}c$ Czy $a\underset{M}{<}c$
+	
+	Rozważmy N: $a\overset{x,N}{<}b\overset{x,N}{<}c$ gdy $a\overset{x,M}{<}c (\Leftrightarrow x\in T)$ 
+	$b\overset{x,N}{<}c\overset{x,N}{<}a$ gdy $c\overset{x,M}{<}a$ reszta dowolnie
+	
+	$\forall_{x\in W} b\overset{x,N}{<}c$ $(x\in T) \Leftrightarrow a\overset{x,M}{<}c \overset{def N}{\Leftrightarrow} a\overset{x,N}{<}c \Leftrightarrow a\overset{x,N}{<}b (\Leftrightarrow x\in T)$
+	
+	$\overset{a\underset{T}{*}b}{\Rightarrow} a\underset{N}{<}b$
+	
+	a z $\forall_{x\in W} b\overset{x,N}{<}c \overset{(P)}{\Rightarrow} b\underset{N}{<}c$
+	
+	Wobec tego z (I) $\Rightarrow a\underset{M}{<}c$
+	
+	\begin{lemma}
+		Z:$T\in W$
+		$\exists_{a,b ,a\neq b} a\underset{T}{*}b \Leftrightarrow \forall_{c,d, c\neq d} c\underset{T}{*}d$
+	\end{lemma}
+	
+	D: (wynika bezpośrednio z lematu wcześniejszczego, ale formalny dowód)
+	
+	$\Leftarrow$ oczywiste
+	
+	$\Rightarrow$ $a\underset{T}{*}b, c\neq d$
+	(1) $c=a, d=b$ OK
+	(2) $c\neq a, d=b$ wynika z (2.1)	
+	(3) $c=a, d\neq b$ wynika z (2.2)
+	(4) $c\neq a, d\neq b$ 
+	(4.1)$a\underset{T}{*}b \overset{(2.1)}{\Rightarrow} c\underset{T}{*}b \overset{(2.2)}{\Rightarrow} c\underset{T}{*}d$ (jeśli $c\neq d$)
+	(4.2) $b=c$
+	$a\underset{T}{*}b \overset{(2.2)}{\Rightarrow} a\underset{T}{*}d \Rightarrow c \underset{T}{*}d$ (jeśli $a\neq d$)
+	(4.3) $a=d, b=c \; \#K\geq 3$
+	$e\neq a,b,c,d$
+	$a\underset{T}{*}b\overset{(2.2)}{\Rightarrow}a\underset{T}{*}e \overset{(2.2)}{\Rightarrow} c\underset{T}{*}d$ 
+	
+	\begin{lemma}
+		$S\subset W, S\neq \emptyset \exists_{a\neq b} a\underset{S}{*}b \Rightarrow S\in D$
+	\end{lemma}
+	
+	$M\in \Sigma, p,q \in K, \forall_{x\in S} p\overset{x,M}{<}q \overset{?}{\Rightarrow} p\underset{M}{<}q$
+	
+	$T:=\{ x\in W: p\overset{x,M}{<}q\}$ $S\subset T$
+	
+	1. $T=S$
+	2. $T=W$
+	3. $W=S \cup (T\setminus S) \cup (W\setminus T)$ przy czym $(T\setminus S),(W\setminus T)\neq \emptyset$
+	
+	(1) $a\underset{S}{*}b (lemat 3) \Rightarrow p\underset{S}{*}q \Rightarrow p\underset{M}{<}q$
+	
+	(2) $(P)\Rightarrow p\underset{M}{<}q$
+	
+	(3) $c\in K, c\neq p,q$ Definiujemy $N$
+	
+	$x\in S p\overset{x,N}{<}c\overset{x,N}{<}q$
+	$x\in (T\setminus S) c \overset{x,N}{<}p \overset{x,N}{<}q$
+	$x\in (W\setminus T) c \overset{x,N}{<}q \overset{x,N}{<}p$ reszta dowolnie
+	
+	$\forall_{x\in W} c\overset{x,N}{<}q \overset{(P)}{\Rightarrow} c\overset{x,N}{<}q$
+	
+	$x\in S \Leftrightarrow p\overset{x,N}{<}c$
+	
+	Zał: $a\underset{S}{*}b \overset{L. 3}{\Rightarrow} p\underset{S}{*}c \overset{def ???}{\Rightarrow} p \underset{N}{<}c \Rightarrow p\underset{N}{<}q$
+	
+	WN: $T=\{ x\in W: p\overset{x,N}{<}q\}$ i $p\underset{N}{<}q \Rightarrow p\underset{T}{**}q \Rightarrow p\underset{T}{*}q\Rightarrow p\underset{M}{<}q$
+	
+	
+	\textbf{Wracająć do Twierdzenia arrowa}
+	
+	Dowód końcowy:
+	
+	$T\subset W$ czy $T \in D$ lub $W\setminus T \in D$?
+	
+	Weźmy $a,b,c\in K$ (różne), $M\in \Sigma$
+	
+	$x \in T : c\overset{x,M}{<}b\overset{x,M}{<}a$ 
+	$x\in W\setminus T : a\overset{x,M}{<}c\overset{x,M}{<}b$ reszta dowolnie
+	
+	$\forall_{x\in W} c\overset{x,M}{<}b \overset{?}{\Rightarrow} c \underset{M}{<}b (\Delta)$
+	
+	Są 3 możliwości
+	
+	(1) $b\underset{M}{<}a$
+	(2) $a\underset{M}{<}b$
+	(3) a,b w tej samej klasie równoważności
+	
+	(1) $\Rightarrow b\underset{M}{<}a \Leftrightarrow x\in T$ $b\underset{T}{**}a \overset{L 1}{\Rightarrow} b\underset{T}{*}a \overset{L 4}{\Rightarrow} T\in D$
+	
+	(2) $\Rightarrow a\overset{x,M}{<}b \Leftrightarrow x\in W\setminus T \Rightarrow a\underset{W\setminus T}{**}b \overset{L1}{\Rightarrow} a\underset{T}{*}b \overset{L4}{\Rightarrow} W\setminus T \in D$
+	
+	(3) $\overset{(\Delta)}{\Rightarrow} c\underset{M}{<}a$ wtedy mamy: $c\overset{x,M}{<}a \Leftrightarrow x\in T \Rightarrow c\underset{T}{**}a\overset{L1}{\Rightarrow} c\underset{T}{*}a \overset{L4}{\Rightarrow}T\in D$
+	
+	
+	
+	\begin{flushright}$\square$\end{flushright}
+	
 	
 	\begin{wniosek}
 		Założenia: $\# W \geq 3, \# K \geq 2, W$ skończony.  
@@ -1643,6 +1803,21 @@ $$
 			\item $F_2 = \{D : \exists_{E \in S} \; D \subset E\}$
 		\end{enumerate}
 	\end{zad}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
