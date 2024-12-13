@@ -1804,12 +1804,112 @@ $$
 		\end{enumerate}
 	\end{zad}
 	
+	\begin{definition}[Liberalizm Senna]
+		$\forall_{w\in W} \exists_{a,b \in K; a\neq b }\forall_M w decyduje o (a,b)$
+	\end{definition}
+	
+	\begin{theorem}
+		Dla K i W istnieje metoda spełniająca postulat liberalizmu Senna \witw $\# W < \# K$
+	\end{theorem}
+	
+	D: (<=) $K=\{k_1,\dots, k_n\} W=\{w_1,\dots,w_s\} \: s\leq k-1$
+	$w_1:k_1,k_n$
+	$w_2:k_2,k_n$
+	\vdots
+	$w_s:k_s,k_n$
+	
+	Metoda $k_n $ o $k_1,\dots, k_s$ w stosunku do $k_n$ decydują $w_1, w_s$ potem ustawiamy numerami rosnąco:
+	
+	$\begin{bmatrix}
+		\vdots\\
+		k_n\\
+		\vdots\\
+	\end{bmatrix}$
+	
+	(=>) TODO2 dowód graficzny
+	\begin{flushright}$\square$\end{flushright}
+	
+	\subsubsection{MR - Metoda rozdziału}
+	\begin{definition}
+	Wprowadzamy oznaczenia:
+	
+	$S$ - liczba akcjonariuszy (stanów)\\
+	$m$ - liczba akcji (foteli)\\
+	$P_1,\dots,P_s$ - wkłady akcjonariuszy (populacje)\\
+	$a_1,\dots,a_s$ - liczba akcji dla akcjonariuszy\\
+	
+	$S,M,[p_1,\dots,p_s] \longmapsto (a_1,\dots,a_s) : a_1+\dots+a_s=m$
+	$p=p_1+\dots+p_s$\\
+	
+	$\frac{p_i}{p}$ - udział akcjonariusza $i$\\
+	$m\cdot\frac{p_i}{p}(\text{zazwyczaj }\notin \mathbf{Z})$ - to, co powinien dostać\\
+	
+	$W=\frac{p}{m}$ - wartość akcji (jednej)\\
+	
+	$q_1:= m\cdot \frac{p_1}{p}=\frac{p_1}{\frac{p}{m}}=\frac{p_1}{w}$ - quota\\
+	
+	$\lfloor q_1 \rfloor=\lfloor \frac{m\cdot p_i}{p} \rfloor$ - dolna quota\\
+	$\lceil q_1 \rceil=\lceil \frac{m\cdot p_i}{p} \rceil$ - górna quota
+	\end{definition}
+	
+	\begin{definition}[warunki sensowności metody rozdziału]
+		\begin{enumerate}[1.]
+			\item (warunek quoty) $\lfloor q_i \rfloor \leq a_i \leq \lceil q_i \rceil$ (uwzględniająć  $q_i \in \mathbf{Z} \Rightarrow g_i = a_i$)
+			\item (warunek monotoniczności) $p_i>p_j \Rightarrow a_i \geq a_j$ (analogicznie w drugą stronę)
+			\item (warunek populacji) S,m dane; $p_1,\dots,p_s \longmapsto a_1,\dots,a_s$
+			nastąpiła zmiana
+			$\bar{p_1},\dots,\bar{p_s}\longrightarrow \bar{a_1},\dots,\bar{a_s}$
+			
+			$!\exists_{i,j} \bar{p_i}> p_j, \bar{a_i}<a_i$ oraz $\bar{p_j}<p_j, \bar{a_j}>a_j$
+			\item (warunek monotoniczności akcji) $p_1,\dots,p_n$ stałe ,$\bar{m}>m \Rightarrow \forall_i \bar{a_i}\leq a_i$
+		\end{enumerate}
+		
+		Nie mogą zajść wszystkie te warunki na raz.
+		
+	\end{definition}
+	
+	\begin{example}
+		\begin{enumerate}[1)]
+			\item Metoda reszt (meroda Hamiltona)
+			$a_i=\lfloor q_i \rfloor + \epsilon_i$, gdzie $\epsilon_i=0$ lub $1$, bierzemy największe reszty $q_i-\lfloor a_1 \rfloor$ aż do "wyczerpania" m
+			TAB1\\
+			
+			Paradoks Alabamy:
+			TAB2  
+			
+			Paradoks Oklahomy
+			TAB3
+			
+			\item Metoda Jeffersona
+			Bierzemy liczbę $v$ - umowna wartość akcji (w-prawdziwa)
+			$\frac{p_i}{v}$ - kwoty umowne
+			dobieramy tak, by suma dolnych kwot umownych wynosiła $m$
+			TAB4
+			
+			\item Przybliżanie do wartościami umownymi do górnych quot (Metoda Adamsa)
+			TAB5
+			
+			\item Zaokrąglenie do bliższej dolnej/górnej (Metoda Webstera)
+			TAB6
+			
+			$\bar{q_i}>\frac{\lfloor \bar{q_i}\rfloor + \lceil \bar{q_i}\rceil}{2}\nearrow \lceil \bar{q_i} \rceil$ \\\\
+			$\bar{q_i}<\frac{\lfloor \bar{q_i}\rfloor + \lceil  \bar{q_i}\rceil}{2}\searrow \lfloor \bar{q_i}\rfloor$
+			
+			\item Metoda Hilla
+			Jak w metodzie Webstera, ale \\\\
+			$\bar{q_i} > \sqrt{\lfloor \bar{q_i} \rfloor \cdot \lceil \bar{q_i} \rceil} \nearrow \lceil \bar{q_i} \rceil$\\\\
+			$\bar{q_i} > \sqrt{\lfloor \bar{q_i} \rfloor \cdot \lceil \bar{q_i} \rceil}\searrow \lfloor \bar{q_i}\rfloor$
+			
+			\item Metoda Deana (to samo, ale ze średnią harmoniczną)
+			
+		\end{enumerate}
+	\end{example}
 	
 	
 	
 	
 	
-	
+	 
 	
 	
 	
