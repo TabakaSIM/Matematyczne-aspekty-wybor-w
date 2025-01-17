@@ -2480,7 +2480,7 @@ $$
 			Procedura:
 			\begin{enumerate}[a)]
 				\item Wyznaczamy $m(A)$ i $m(B)$.
-				\item Jeśli $m(A)$ jest lepsze od $m(B)$, to $A$ jest lepszy od $B$.
+				\item Jeśli $m(A)$ jest lepsze od $m(B)$, to $A$ jest lepszy od $B$. Notacja: $m(A)<m(B) \Rightarrow A \underset{M}{<}B$
 				\item Jeśli $m(A) = m(B)$, usuwamy tę ocenę z rankingu i powtarzamy procedurę z $n-1$ ocenami.
 			\end{enumerate}
 			Przykład:
@@ -2495,8 +2495,141 @@ $$
 		\end{enumerate}
 	\end{example}
 	
+	\begin{definition}[Metoda rankingowo niezależna od ubocznych opcji]
+		Metoda wartościująca jest rankingowo niezależna  od ubocznych opcji \witw \\\\
+		$\forall{M,N} \forall_{A,B} \begin{bmatrix}
+			M,N\textbf{ - modele}\\
+			K_M = K_N \cup \{C\}, C\notin K_M\\
+			\forall_{v\in W} \textbf{ oceny } v \textbf{ w } M = \textbf{ oceny } v \textbf{ w } N \\
+		\end{bmatrix} \Rightarrow (A\underset{M}{<}B)$ \witw $A\underset{N}{<}B$ 
+	\end{definition}
 	
+	\begin{theorem}
+		Metoda mediany i B=L są niezależne rankingowo od ubocznych opcji.
+	\end{theorem}
+	D: Dodanie kandydata nie zmienia ocen.
+	\begin{flushright}$\square$\end{flushright}
 	
+	\begin{lemma}
+		Metoda punktów Bordy nie jest rankingowo niezależna od ubocznych opcji.
+	\end{lemma}
+	
+	Model M = \begin{tabular}{|c|c|}\hline
+		3&2\\\hline
+		A&B\\\hline
+		B&A\\\hline
+	\end{tabular} \hspace{1cm}	$\begin{bmatrix}
+	A\textbf{ - 3 głosy}\\
+	B\text{ - 2 głosy}
+	\end{bmatrix}$ $A\underset{M}{>}B$\\\\
+	
+	Model N = \begin{tabular}{|c|c|}\hline
+		3&2\\\hline
+		C&B\\\hline
+		A&C\\\hline
+		B&A\\\hline
+	\end{tabular} \hspace{1cm}	$\begin{bmatrix}
+		A\textbf{ - 3 głosy}\\
+		B\text{ - 4 głosy}
+	\end{bmatrix}$ $A\underset{M}{<}B$
+	
+	\begin{definition}[Metoda odporna na nieobecność]
+		Metoda (MP, MW) jest odporna na nieobecność \witw \\\\ $\forall_{M,N} \forall_{A,B} \begin{bmatrix}
+			M,N\textbf{ - modele}\\
+			W_N = W_M \cup W^* \quad W^*\cap W_M\neq \emptyset\\
+			v\in W_M \Rightarrow \textbf{ głos }v \textbf{ w } M = \textbf{ głos }v \textbf{ w } N \\
+			A \underset{M}{<} B \:\forall_{v\in W^*} A\overset{v,N}{B} 
+		\end{bmatrix} \Rightarrow A \underset{N}{<} B$ 
+	\end{definition}
+	
+	\begin{theorem}
+		Metoda punktów Bordy jest odporna na nieobecność.
+	\end{theorem}
+	D: B dostaje jeszcze więcej puntów niż A.
+	
+	\begin{lemma}
+		Metoda B-L nie jest odporna na nieobecność.
+		Metody mediany nie są odporne na nieobecność.
+	\end{lemma}
+	
+	\begin{tabular}{|c|c|c|c|c|c|}\hline
+		A&5&5&\textbf{4}&2&2\\\hline
+		B&3&3&\textbf{3}&3&2\\\hline
+	\end{tabular} $\Rightarrow A\underset{M}{>}B$\\\\
+	
+	\begin{tabular}{|c|c|c|c|c|c|c|}\hline
+		A&5&5&4&\textbf{2}&2&2\\\hline
+		B&3&3&3&\textbf{3}&2&1\\\hline
+	\end{tabular} $\Rightarrow A\underset{M}{<}B$
+	
+	\begin{theorem}[Twierdzenie Saariego (1992)]
+		Z: $K=\{k_1,\dots,k_n\}$, $n\geq 3$
+		T: Istnieje model w któym $k_i$ wygrywa samodzielnie metodą i-głosów $(i=1,\dots,n-1)$. Natomiast $k_n$ wygrywa metodą punktów Bordy.
+	\end{theorem}
+	
+	TODO Przykłady 17.3
+	
+	\begin{definition}[Grupowa metoda n-głosów]
+		Grupowa metoda n-głosów - wyborca głosuje na n kandydatów, wygrywa n z największą liczbą głosów.
+	\end{definition}
+	
+	TODO 17.4
+	
+	\begin{theorem}
+		$\# K \geq 2n+1$, $n\geq 1$ $\# W$ odpowiednio duża
+		
+		$k_1,\dots,k_{2n+1}$
+		T: Istnieje model, w którym
+		\begin{itemize}
+			\item w głosowaniu grupową metodą n głosów wygrywają $k_1,\dots,k_n$
+			\item w głosowaniu grupową metodą (n+1) głosów wygrywają $k_{n+1},\dots,k_{2n+1}$ (w obu przypadkach każdy kandydat ma ponad 50\% głosów)
+		\end{itemize}
+	\end{theorem}
+	D: Idea dla $n=3,\: 2n+1=7$:
+	
+	Tabela 17.5
+	
+	Wypełniamy odpowiednio rzędami dając kandydata w tej kolumnie w której go jeszcze nie było.
+	
+	Zarys ogólny
+	
+	Tabelta 17.6
+	
+	* W tych grupach mamy po $p$ wyborców, każdy z $k_{n+1},\dots,k_{2n+1}$ pojawia się $w(\frac{1+2n\epsilon}{2(n+1)})$
+	
+	$\Delta$ w każdym rzędzie (miejsca $n+1,\dots,2n+1$) każdy z kandydatów $k_{n+1},\dots,k_{2n+1}$ po $w(\frac{2n\epsilon+1}{2(n+1)})$ razy, a każdy z $k_1,\dots,k_n$ po $w(\frac{1}{2n}-\epsilon)$ razy. Wstawiamy każdego w kolumnę, w której go jeszcze nie było. \\\\
+	0) dobrze zdefiniowane\\
+	1) $nw(\frac{1}{2n}+\epsilon)>nw(\frac{1}{2(n+1)} - \epsilon + \frac{\epsilon}{n+1})$, czyli $p>q$\\
+	2) $nw(\frac{1}{2n}+\epsilon)< nw (\frac{1}{2(n+1)-\epsilon + \frac{\epsilon}{n+1}})$\\
+	3) $nw (\frac{1}{2n}+\epsilon) > \frac{w}{2}$\\
+	4) $nw(\frac{1}{2(n+1)}-\epsilon + \frac{\epsilon}{2(n+1)}) + \frac{2}{n+1}> \frac{w}{2}$\\
+	Okaże się, że dla $\epsilon < \frac{1}{2(2n^2+2)}$ będzie ok.\\
+	Dobieramy n tak, aby wyszły liczby całkowite.
+
+	(0) a) suma w rzędzie $= w$
+	$np + (n+1)q = nw(\frac{1}{2n}+\epsilon) + (n+1)w(\frac{1}{2(n+1)}-\epsilon + \frac{\epsilon}{n+1})= w[ \frac{1}{2}+n\epsilon + \frac{n+1}{2(n+1)}-(n+1)\epsilon+\frac{(n+1)\epsilon}{n+1}]=w$
+	b) Czy w każdym miejscu liczba $>0$? Dla $p$ ok
+	$\frac{1}{2(n+1)}+\frac{\epsilon(1-n-1)}{n+1}>0$
+	$n\epsilon < \frac{1}{2}$
+	$\epsilon<\frac{1}{2n}$ ok
+	c) Czy suma każdego przy $n+1$ miejsc jest $\leq w$
+	$wn(\frac{1}{2n}+\epsilon)=w(\frac{1}{2}+n\epsilon)<w$ $n\epsilon<\frac{1}{2}$
+	$\epsilon < \frac{1}{2n}$ ok
+	
+	$w(\frac{n}{2(n+1)}-\epsilon n + \frac{\epsilon n}{n+1}+\frac{1}{n+1}) = w(\frac{n+2}{2(n+1)}-\epsilon n (1\frac{1}{n+1}))<w$
+	głosy na $k_i$ do miejsc $n+1$, $(i=n+1,\dots,2n+1)$
+	
+	(1) $w(\frac{1}{2n+1}+\epsilon)> w(\frac{1}{2(n+1)-\epsilon + \frac{\epsilon}{n+1}})$ oczywiste (prawa strona jest silnie mniejsza od lewej)
+	
+	(2)  $nw(\frac{1}{2n}+\epsilon)< nw (\frac{1}{2(n+1)} -\epsilon + \frac{\epsilon}{n+1})$
+	$\frac{1}{2}+n\epsilon < \frac{n+1}{2(n+1)}-(n+1) \frac{(n+1\epsilon - \epsilon)}{n+1}+ \frac{1}{n+1}$
+	$n\epsilon < \frac{1}{n+1}-n\epsilon$
+	$2n\epsilon < \frac{1}{n+1}$
+	$\epsilon < \frac{1}{2n(n+1)}$ ok
+	
+	Sprawdzenie (3), (4) do domu :o
+	
+	\begin{flushright}$\square$\end{flushright}
 	
 	\newpage
 	\section{Deser}
