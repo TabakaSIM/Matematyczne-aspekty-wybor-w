@@ -2154,240 +2154,346 @@ $$
 	\vspace{3cm}
 	
 	
-	Jak wyglądało głosowanie w USA?
-			Stany	Miejsca
-	1789r 	13		66
-	1791r	15		105		Metoda Jeffersona
-	1840r			223		Metoda Webstera
-	1850r			234		Metoda Hamiltona
-	1880r			325		Paradox Alabamy*
+	\noindent \textbf{Jak wyglądało głosowanie w USA?}
 	
-	1880r - Paradox Alabamy
-	275-350
-	Seatin Alabamu 
-	299 - 8
-	300 - 7
+	\begin{tabbing}
+		\hspace{4cm} \= \hspace{3cm} \= \kill
+		\textbf{Rok} \> \textbf{Stany} \> \textbf{Miejsca} \\
+		1789 \> 13 \> 66 \\
+		1791 \> 15 \> 105 \quad \textit{Metoda Jeffersona} \\
+		1840 \> \> 223 \quad \textit{Metoda Webstera} \\
+		1850 \> \> 234 \quad \textit{Metoda Hamiltona} \\
+		1880 \> \> 325 \quad \textit{Paradox Alabamy*} \\
+	\end{tabbing}
 	
-	1901 r			386		Metoda Hamiltona-Webstera
+	% Paradox Alabamy
+	\noindent \textbf{1880 - Paradox Alabamy:}
 	
-	\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
-		\hline
-		&		350-356&	357&	358-382&	383-385&386&	387-388&	389-390&	399-400\\\hline
-		Main&3&3&3&4&3&4&3&4\\\hline
-		Colorado&3&2&3&3&3&3&3&3\\	\hline
+	\begin{itemize}
+		\item Przedział miejsc: 275-350
+		\item Przydział dla Alabamy:
+		\begin{tabbing}
+			\hspace{2cm} \= \hspace{3cm} \kill
+			299 \> 8 miejsc \\
+			300 \> 7 miejsc \\
+		\end{tabbing}
+	\end{itemize}
+	
+	% Metoda Hamiltona-Webstera
+	\noindent \textbf{1901:} 386 miejsc, \textit{Metoda Hamiltona-Webstera}
+	
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+			\hline
+			& 350-356 & 357 & 358-382 & 383-385 & 386 & 387-388 & 389-390 & 399-400 \\
+			\hline
+			Main & 3 & 3 & 3 & 4 & 3 & 4 & 3 & 4 \\
+			\hline
+			Colorado & 3 & 2 & 3 & 3 & 3 & 3 & 3 & 3 \\
+			\hline
 		\end{tabular}
+	\end{center}
 	
-	1907r			391		Paradox Oklahomy (+5 miejsc dla 357 z tabeli wyżej) Metoda Webstera
+	% Paradox Oklahomy
+	\noindent \textbf{1907:} 391 miejsc, \textit{Paradox Oklahomy} (+5 miejsc dla 357), \textit{Metoda Webstera}
 	
-	1910r			433 	Metoda Hilla
+	% Dyskusja o metodach
+	\noindent \textbf{1910:} 433 miejsca, \textit{Metoda Hilla}
 	
+	\noindent \textbf{1910-1920:} Dyskusja: \textit{Metoda Webstera} czy \textit{Metoda Hilla}? \\
+	W 1930 roku uznano, że \textit{Metoda Webstera-Hilla} daje te same rezultaty.
 	
-	1910-1920 była dyskusja czy stosować metode Webstera, czy metode Hilla
-	W 1930r okazało się, że Metoda Webstera-Hilla daje te same rezultaty.
-	W 1940r 2 staty
+	% Porównanie metod w 1940
+	\noindent \textbf{1940:} Porównanie metod dla dwóch stanów:
 	
-	\begin{tabular}{|c|c|c|}\hline
-		&Hill&Webster\\\hline
-		Arcansas &7&6\\\hline
-		Michigan &17 &18\\\hline
-	\end{tabular}
+	\begin{center}
+		\begin{tabular}{|c|c|c|}
+			\hline
+			Stan & Metoda Hilla & Metoda Webstera \\
+			\hline
+			Arkansas & 7 & 6 \\
+			\hline
+			Michigan & 17 & 18 \\
+			\hline
+		\end{tabular}
+	\end{center}
 	
-	Od 1940 działa metoda Hilla.
+	Od 1940 roku obowiązuje \textit{Metoda Hilla}.
 	
+	% Definicja metod
 	\begin{definition}
-		Metoda rozdziału jest nazywana metodą dzielników \witw $\exists f: [0,\infty) \rightarrow \mathbf{N} :$ \begin{enumerate}[i)]
-			\item $ x\in \mathbf{Z}\Rightarrow f(x)=x$
-			\item rosnąca(niemalejąca) $x\leq y \Rightarrow f(x)\leq f(y)$
+		Metoda rozdziału nazywana jest metodą dzielników, jeśli istnieje funkcja 
+		$f: [0, \infty) \to \mathbb{N}$, taka że:
+		\begin{enumerate}[a)]
+			\item $x \in \mathbb{Z} \Rightarrow f(x) = x$
+			\item Funkcja jest rosnąca: $x \leq y \Rightarrow f(x) \leq f(y)$
 		\end{enumerate}
 		
-		$a_i=f(\frac{p_i}{v})$ dla $v$ według schematu - tak dobieramy $v$, że $\sum_{i=1}^{s}a_i=m$
+		\noindent Przydziały są obliczane jako $a_i = f\left(\frac{p_i}{v}\right)$, gdzie $v$ dobierane jest tak, aby $\sum_{i=1}^s a_i = m$. Poszczególne metody:
 		\begin{itemize}
-			\item Metoda Jeffersona $f(x)=\lfloor x\rfloor$
-			\item Metoda Adamnsa $f(x)=\lceil x\rceil$
-			\item Metoda Webstera $f(x=\begin{bmatrix}
-				k& x\in [k,\frac{2k+1}{2})\\
-				k+a & x \in [\frac{2k+1}{2},k+1]\\
-			\end{bmatrix}) k\in \mathbf{Z}$
-			
-			\item Metoda Hilla $f(x)=\begin{bmatrix}
-				k&x\in[k,\sqrt{k(k+1)})\\
-				k+1&x\in[\sqrt{k(k+1)},k+1]\\
-			\end{bmatrix}$ 
-			\item Metoda Deana $f(x)= \begin{bmatrix}
-				k &x\in [k, \frac{2k(k+1)}{2k+1})\\
-				k+1 & x\in [\frac{2k(k+1)}{2k+1},k+1]\\
-			\end{bmatrix}$
+			\item \textbf{Metoda Jeffersona:} $f(x) = \lfloor x \rfloor$
+			\item \textbf{Metoda Adamsa:} $f(x) = \lceil x \rceil$
+			\item \textbf{Metoda Webstera:}
+			\[
+			f(x) =
+			\begin{cases} 
+				k & x \in [k, \frac{2k+1}{2}) \\
+				k+1 & x \in [\frac{2k+1}{2}, k+1) \\
+			\end{cases}, \quad k \in \mathbb{Z}
+			\]
+			\item \textbf{Metoda Hilla:}
+			\[
+			f(x) =
+			\begin{cases} 
+				k & x \in [k, \sqrt{k(k+1)}) \\
+				k+1 & x \in [\sqrt{k(k+1)}, k+1) \\
+			\end{cases}
+			\]
+			\item \textbf{Metoda Deana:}
+			\[
+			f(x) =
+			\begin{cases} 
+				k & x \in [k, \frac{2k(k+1)}{2k+1}) \\
+				k+1 & x \in [\frac{2k(k+1)}{2k+1}, k+1) \\
+			\end{cases}
+			\]
 		\end{itemize}
-		
 	\end{definition}
 	
+	% Twierdzenie o metodzie dzielników
 	\begin{theorem}
-		Metoda dzielników spełnia
+		Metoda dzielników spełnia:
 		\begin{enumerate}[a)]
-			\item warunek populacji
-			\item warunek monotoniczności
+			\item warunek populacji,
+			\item warunek monotoniczności.
 		\end{enumerate}
 	\end{theorem}
 	
-	D: 
+	% Dowód twierdzenia o metodzie dzielników
+	\noindent \textbf{Dowód:} 
 	\begin{enumerate}[a)]
-		\item Dowód nie wprost
-		H: $\exists \bar{a_i} < a_i\: \bar{a_j}>a_j$ (star) oraz $\bar{p_i}>p_i (1) \: \bar{p_j}<p_j (2)$
-		Dla $a_i,a_j : v$
-		Dla $\bar{a_i},\bar{a_j} : u$
+		\item \textbf{Dowód nie wprost:} \\
+		Załóżmy, że $\exists \bar{a_i} < a_i$ i $\bar{a_j} > a_j$ (\textit{oznaczmy to jako (*))}, oraz że: 
+		\[
+		\bar{p_i} > p_i , \quad \bar{p_j} < p_j 
+		\]
+		Rozważmy:
+		\begin{itemize}
+			\item Dla $a_i, a_j$: parametr $v$,
+			\item Dla $\bar{a_i}, \bar{a_j}$: parametr $u$.
+		\end{itemize}
+		Przydziały są obliczane jako:
+		\[
+		\bar{a_i} = f\left(\frac{\bar{p_i}}{u}\right), \quad \bar{a_j} = f\left(\frac{\bar{p_j}}{u}\right),
+		\]
+		oraz
+		\[
+		a_i = f\left(\frac{p_i}{v}\right), \quad a_j = f\left(\frac{p_j}{v}\right).
+		\]
+		Funkcja $f$ jest rosnąca, co oznacza, że:
+		\[
+		g(x) > g(y) \implies x > y.
+		\]
+		Z założenia (*) wynika:
+		\[
+		f\left(\frac{\bar{p_i}}{u}\right) < f\left(\frac{p_i}{v}\right), \quad f\left(\frac{\bar{p_j}}{u}\right) > f\left(\frac{p_j}{v}\right).
+		\]
+		Z rosnącego charakteru $f$ mamy:
+		\[
+		\frac{\bar{p_i}}{u} < \frac{p_i}{v}, \quad \frac{\bar{p_j}}{u} > \frac{p_j}{v}.
+		\]
+		Przekształcając:
+		\[
+		\bar{p_j} < \frac{u}{v} \cdot p_j, \quad \bar{p_j} > \frac{u}{v} \cdot p_j.
+		\]
+		Z (1): $\frac{u}{v} > 1$, a z (2): $\frac{u}{v} < 1$, co prowadzi do sprzeczności.
 		
-		$\bar{a_i}=f(\frac{\bar{p_i}}{v})$	$ \bar{a_j}=f(\frac{\bar{p_j}}{v})$ 	
-		
-		$a_i=f(\frac{p_i}{v})$ $a_j=f(\frac{p_j}{v})$
-		
-		(R) g rosnąca \witw $g(x)>g(y) \Rightarrow x>y$
-		
-		z (star) $f(\frac{\bar{p_i}}{u})<f(\frac{p_i}{v})$
-		$f(\frac{\bar{p_j}}{u})>f(\frac{p_i}{v}) \overset{(R)}{\Rightarrow} \frac{\bar{p_i}}{u}<\frac{p_j}{v} \: \frac{\bar{p_i}}{u}>\frac{p_j}{v} \Rightarrow \bar{p_j}<\frac{u}{v}\cdot p_i , \bar{p_j}> \frac{u}{v} p_j$
-		z (1) $\frac{u}{v}>1$ 
-		z (2) $\frac{u}{v}<1$ sprzeczność
-		
-		\item $p_i<p_j \Rightarrow \frac{p_i}{v}> \frac{p_j}{v} \Rightarrow f(\frac{p_i}{v})>f(\frac{p_j}{v})$ a co przy założeniu metody dzielników z ii) daje tezę.
-	\end{enumerate} 
-	\begin{flushright}$\square$\end{flushright}
-	
-	\begin{wniosek}
-		Metoda dzielników nie spełnia warunku kwoty
-	\end{wniosek}
-	D: Tw Belińskiego-Younga
-	\begin{flushright}$\square$\end{flushright}
-	
-	\begin{theorem}
-		Metoda Hamilltona spełnia \begin{enumerate}[a)]
-			\item warunek quoty
-			\item warunek monotoniczności
-		\end{enumerate}
-	\end{theorem}
-	
-	D: \begin{enumerate}[a)]
-		\item $q_i=\lfloor g_j\rfloor$ $g_i-\lfloor g_j\rfloor=0$ to nic nie dodajemu lub
-		 $q_i<\lfloor g_j\rfloor$ nic nie dodajemy lub dodajemy jedną akcję $a_i=\lfloor g_i\rfloor$ lub $a_i=\lceil q_i\rceil$
-		\item $p_i>p_j \Rightarrow m\frac{p_i}{p}>m\frac{p_j}{p} \Rightarrow q_i>q_j$
-		\begin{enumerate}[i)]
-			\item $\lfloor q_i\rfloor>\lfloor q_j\rfloor\geq \lfloor q_j\rfloor + 1\geq a_j$
-			\item $\lfloor q_i\rfloor=\lfloor q_j\rfloor$
-			$q_i-\lfloor q_i\rfloor>q_j - \lfloor q_j\rfloor \Rightarrow a_i\geq a_j$
-		\end{enumerate}
+		\item Jeśli $p_i < p_j$, to:
+		\[
+		\frac{p_i}{v} > \frac{p_j}{v} \implies f\left(\frac{p_i}{v}\right) > f\left(\frac{p_j}{v}\right).
+		\]
+		Założenie metody dzielników oraz rosnący charakter $f$ prowadzą do tezy.
 	\end{enumerate}
+	\begin{flushright}
+		$\square$
+	\end{flushright}
 	
+	% Wniosek o metodzie dzielników
 	\begin{wniosek}
-		Metoda Hamilltona nie spełnia warunku populacji.
+		Metoda dzielników nie spełnia warunku kwoty.
 	\end{wniosek}
-	D: Tw B-Y
 	
+	\noindent \textbf{Dowód:} Twierdzenie Belińskiego-Younga.
+	\begin{flushright}
+		$\square$
+	\end{flushright}
+	
+	% Twierdzenie o metodzie Hamiltona
 	\begin{theorem}
-		Metoda Webstera dla $S=2, m=2$ spełnia warunki
+		Metoda Hamiltona spełnia:
 		\begin{enumerate}[a)]
-			\item quoty
-			\item monotoniczności
-			\item populacji
+			\item warunek kwoty,
+			\item warunek monotoniczności.
 		\end{enumerate}
 	\end{theorem}
-	D: \begin{enumerate}[a)]
-		\item $s=2$
-		B :$q_B=k+a$
-		C : $q_C=l+b$
-		$k,l \in \mathbf{Z}, a,b\in [0,1)$
-		\begin{enumerate}[i)]
-			\item $a = b = 0 \Rightarrow B\mapsto k, C\mapsto l$
-			\item $k+l+1=m,\: a +b =1$ 
-			B: k lub k+1
-			C: l lub l+1
-			TAB1
-			\item 
+	
+	% Dowód twierdzenia o metodzie Hamiltona
+	\noindent \textbf{Dowód:}
+	\begin{enumerate}[a)]
+		\item Rozważmy:
+		\[
+		q_i = \lfloor g_i \rfloor, \quad g_i - \lfloor g_i \rfloor = 0.
+		\]
+		W takim przypadku nic nie dodajemy lub:
+		\[
+		q_i < \lfloor g_i \rfloor, \quad a_i = 
+		\begin{cases} 
+			\lfloor g_i \rfloor, \\ 
+			\lceil g_i \rceil.
+		\end{cases}
+		\]
+		
+		\item Jeśli $p_i > p_j$, to:
+		\[
+		m \cdot \frac{p_i}{p} > m \cdot \frac{p_j}{p} \implies q_i > q_j.
+		\]
+		Rozważmy dwa przypadki:
+		\begin{enumerate}[a)]
+			\item $\lfloor q_i \rfloor > \lfloor q_j \rfloor$ lub $\lfloor q_j \rfloor + 1 \geq a_j$,
+			\item $\lfloor q_i \rfloor = \lfloor q_j \rfloor$, ale:
+			\[
+			q_i - \lfloor q_i \rfloor > q_j - \lfloor q_j \rfloor \implies a_i \geq a_j.
+			\]
 		\end{enumerate}
-		\item metoda dzielników
-		\item metoda dzielników
+	\end{enumerate}
+	\begin{flushright}
+		$\square$
+	\end{flushright}
+	
+	% Wniosek o metodzie Hamiltona
+	\begin{wniosek}
+		Metoda Hamiltona nie spełnia warunku populacji.
+	\end{wniosek}
+	
+	\noindent \textbf{Dowód:} Twierdzenie Belińskiego-Younga.
+	\begin{flushright}
+		$\square$
+	\end{flushright}
+	
+	% Twierdzenie o metodzie Webstera
+	\begin{theorem}
+		Metoda Webstera dla $S = 2, m = 2$ spełnia warunki:
+		\begin{enumerate}[a)]
+			\item kwoty,
+			\item monotoniczności,
+			\item populacji.
+		\end{enumerate}
+	\end{theorem}
+	
+	\noindent \textbf{Dowód:}
+	\begin{enumerate}[a)]
+		\item Dla $S = 2$ mamy:
+		\begin{align*}
+			q_B &= k + a, \\
+			q_C &= l + b,
+		\end{align*}
+		gdzie $k, l \in \mathbb{Z}$ oraz $a, b \in [0, 1)$. \\
+		Rozważmy przypadki:
+		\begin{enumerate}[a)]
+			\item Jeśli $a = b = 0$, to:
+			\[
+			B \mapsto k, \quad C \mapsto l.
+			\]
+			\item Jeśli $k + l + 1 = m$ oraz $a + b = 1$, to:
+			\begin{align*}
+				B &\mapsto k \text{ lub } k+1, \\
+				C &\mapsto l \text{ lub } l+1.
+			\end{align*}
+			\item \textit{Tabela przydziałów (TAB1)} (należy dodać tabelę dla jasności dowodu).
+		\end{enumerate}
+		
+		\item Zastosowanie metody dzielników.
+		
+		\item Rozważanie zgodności z warunkiem populacji.
 	\end{enumerate}
 	
-	\begin{definition}[Metoda wartościująca - XXI wiek]
-		S - zbiór stopni  (ocen wartości)
-		$M:W\rightarrow \{ f: K\rightarrow S\}$
-		
-		wyborca każdemu kandydatowi daje ocenę
-	\end{definition}
-	Przyznawanie metodą punktów Brody
-	Metoda n-głosów (1,1,1,1,0,0,0)
-	Metoda wartościująca - Wynik to jest słaby porządek w $K$ (w tym zwyciężca)
+	\begin{flushright}
+		$\square$
+	\end{flushright}
 	
+	% Definicja metody wartościującej
+	\begin{definition}[Metoda wartościująca -- XXI wiek]
+		Niech $S$ będzie zbiorem stopni (ocen wartości). Metoda $M: W \to \{ f: K \to S \}$ polega na tym, że wyborca każdemu kandydatowi przypisuje ocenę.
+	\end{definition}
+	
+	\noindent Przykłady metod:
+	\begin{itemize}
+		\item Przyznawanie punktów metodą Brody.
+		\item Metoda $n$-głosów, np. $(1,1,1,1,0,0,0)$.
+		\item Metoda wartościująca: wynik to słaby porządek w $K$ (w tym wyłonienie zwycięzcy).
+	\end{itemize}
+	
+	% Przykład metod wartościujących
 	\begin{example}
-		\begin{enumerate}[1.]
-			\item Metoda mediany
-			A kandydat, $\# W = n$
-			$s_1,\dots,s_n$ - oceny kandydata w rankingu od najlepszej
+		\begin{enumerate}[a)]
+			\item \textbf{Metoda mediany} \\
+			Dla kandydata $A$, gdzie $\# W = n$, oceny kandydata to $s_1, \dots, s_n$, uporządkowane w rankingu od najlepszej. \\
+			Wartość mediany (multivalue) definiujemy jako:
+			\[
+			m(A) =
+			\begin{cases}
+				S_{\lfloor \frac{n}{2} + 1 \rfloor}, & \text{gdy } n \text{ nieparzyste}, \\
+				\text{niższa z dwóch środkowych}, & \text{gdy } n \text{ parzyste}.
+			\end{cases}
+			\]
 			
-			(multivalue - środkowa)$m(A)=S_{\lfloor \frac{m}{2}+1\rfloor}$ czyli gdy n nieparzyste, to środkowa, a gdy n parzyste to niższa z dwóch środkowych
+			Przykład dla $n$ nieparzystego:
+			\begin{itemize}
+				\item Oceny: $S$ -- świetny, $D$ -- dobry, $P$ -- przeciętny, $Z$ -- zły, $F$ -- fatalny.
+				\item Dla 5 wyborców:
+				\begin{align*}
+					A &: S, D, \mathbf{D}, F, F, \\
+					B &: S, S, \mathbf{D}, Z, F, \\
+					C &: D, D, \mathbf{Z}, Z, Z.
+				\end{align*}
+			\end{itemize}
 			
-			Jak n nieparzyste
-			S - świetny
-			D - dobry
-			P - przeciętny
-			Z - zły
-			F - fatalny
-			5 wyborców
+			Przykład dla $n$ parzystego:
+			\begin{itemize}
+				\item Oceny: $W$ -- wyborny, $S$ -- smaczny, $Z$ -- zjadliwy, $N$ -- niejadalny.
+				\item Dla 4 wyborców:
+				\begin{align*}
+					A &: W, W, \mathbf{Z}, Z, \\
+					B &: W, S, \mathbf{Z}, N, \\
+					C &: Z, N, \mathbf{N}, N.
+				\end{align*}
+			\end{itemize}
+			\textit{Metoda znajduje zastosowanie w jury konkursów, gdzie dąży się do zadowolenia większości.}
 			
-			A : S,D,\textbf{D},F,F
-			B : S,S,\textbf{D},Z,F
-			C : D,D,\textbf{Z},Z,Z
+			\item \textbf{Metoda symetrycznej mediany} \\
+			Analogiczna do metody mediany, jednak w przypadku $n$ parzystego wybieramy lepszą z dwóch środkowych ocen:
+			\[
+			m^*(A) = S_{\frac{\lfloor n + 1 \rfloor}{2}}.
+			\]
 			
-			Jak n parzyste
-			W - wyborny
-			S - smaczny
-			Z - zjadliwy
-			N - niejadalny
-			
-			A: W,W,\textbf{Z},Z
-			B: W,S,\textbf{Z},N
-			C: Z,N,\textbf{N},N
-			
-			Stosuje się to w Jury konkursów (staramy się zadowolić większość)
-			
-			Nagroda I, II, III, IV, V stopnia.
-			Ponad 50\% osób za nagrodą n-tego stopnia
-			
-			$m(a)$ - multivalue - w tym momencie ma ponad połowę akceptacji
-			
-			\item Metoda symetrycznej mediany - analogiczne, przy czym $m*(A)=S_{\frac{\lfloor n+1\rfloor}{2}}$ jeżeli n nieparzyste to ze środka, a gdy n parzyste lepsza z dwóch środkowych
-			
-			\item Metoda Balińskiego-Larakiego (2011r) - Rida Laraki ur 1974r
-			
-			\begin{enumerate}[1.]
-				\item Przypisujemy $m(A),m(B)$
-				\item Jeśli $m(A)$ lepsza od $m(B) \Rightarrow$ A lepszy od B
-				\item Jeżeli $m(A)=m(B)$ - usuwamy tą ocenę z rankingu i powtarzamy procedurę z n-1 ocen itd.
+			\item \textbf{Metoda Balińskiego-Larakiego (2011)} \\
+			Procedura:
+			\begin{enumerate}[a)]
+				\item Wyznaczamy $m(A)$ i $m(B)$.
+				\item Jeśli $m(A)$ jest lepsze od $m(B)$, to $A$ jest lepszy od $B$.
+				\item Jeśli $m(A) = m(B)$, usuwamy tę ocenę z rankingu i powtarzamy procedurę z $n-1$ ocenami.
 			\end{enumerate}
+			Przykład:
+			\begin{align*}
+				A &: S, D, \mathbf{D}, F, F, \\
+				B &: S, S, \mathbf{D}, Z, F, \\
+				C &: D, D, \mathbf{Z}, Z, Z \quad \text{(odpada)}.
+			\end{align*}
+			Po kolejnych iteracjach wyłaniamy zwycięzcę.
 			
-			S - świetny
-			D - dobry
-			P - przeciętny
-			Z - zły
-			F - fatalny
-			
-			A: S,D,\textbf{D},F,F
-			B: S,S,\textbf{D},Z,F
-			C: D,D,\textbf{Z},Z,Z - odpada
-			D: S,D,\textbf{D},Z,Z
-			
-			A:S,D,\textbf{F},F - odpada
-			B:S,S,\textbf{Z},F
-			D:S,D,\textbf{Z},Z
-			
-			B: S,\textbf{D},F
-			D: S,\textbf{D},Z
-			
-			B: S,\textbf{F}
-			D: S,\textbf{Z} - wygrywa
-			
-			Wniosek: remis jest możliwy tylko w przypadku tych samych ocen
-			
+			\textbf{Wniosek:} Remis jest możliwy tylko w przypadku tych samych ocen.
 		\end{enumerate}
 	\end{example}
-	
 	
 	
 	
