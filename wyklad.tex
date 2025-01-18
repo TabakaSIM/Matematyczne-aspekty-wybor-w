@@ -2770,6 +2770,43 @@ $$
 	
 	Sprawdzenie (4), (5) do domu.
 	
+	\begin{zad}
+		Metoda Bolińskiego-Yonga - metoda wartościująca w sposób rekurencyjny\\
+		
+		Mamy dane wkłady akcjonariuszy $p_1,\dots,p_s$\\
+		
+		\begin{enumerate}[1.]
+			\item Zakładamy warunek początkowy $n=0$, $a_1=a_2=\cdot=a_s=0$
+			\item Mam $m$ przyznanych akcji dla $a_1,\dots,a_s$. Musimy przyznać $(m+1)$ akcję.
+			\item Liczymy $\frac{p_i}{1+a_i}$ - wartość potencjalną dla i-tego akcjonariusza. $(i=1,\dots,s)$
+			\item Kto ma największą wartość potencjalną jemu dajemy akcję z wyłączeniem tych, u których przepadkiem byłaby przekroczona górna quota, czyli:
+			
+			$$~ 1+a_i > \lceil q_i \rceil = \lceil \frac{(m+1)p_i}{p}\rceil$$ 
+		\end{enumerate}
+	
+	Wyznacz jak należało by rodzielić pierwsze 8 (12) akcji.
+	\end{zad}
+
+	Czyli uzupełnij tabelkę (zwróć szczególną uwagę na wiersz 7 i 11):\\\\
+	
+	\begin{center}
+		\begin{tabular}{||c||c||c|c|c||c|c|c||c|c|c||}\hline
+		&\Large$w$&\Large$q_1$&\Large$q_2$&\Large$q_3$&\Large$\frac{p_1}{1+a_1}$&\Large$\frac{p_2}{1+a_2}$&\Large$\frac{p_3}{1+a_3}$&\Large$a_1$&\Large$a_2$&\Large$a_3$\\\hline
+		1&100&0,07&0,22&0,71&0&0&1&7&22&\textbf{71}\\\hline
+		2&50&0,14&0,44&1,42&0&0&2&7&22&\textbf{35,5}\\\hline
+		3&&&&&&&&&&\\\hline
+		4&&&&&&&&&&\\\hline
+		5&&&&&&&&&&\\\hline
+		6&&&&&&&&&&\\\hline
+		7&&&&&&&&&&\\\hline
+		8&&&&&&&&&&\\\hline
+	\end{tabular}
+	\end{center}
+
+	\begin{zad}
+		Wykaż, że nie może zaistnieć sytuacja, że wszystkie wartości potencjalne akcjonariuszy przekraczają górną quotę.
+	\end{zad}
+	
 	\begin{flushright}
 		$\square$
 	\end{flushright}
