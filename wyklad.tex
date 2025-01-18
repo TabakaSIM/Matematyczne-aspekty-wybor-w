@@ -25,6 +25,7 @@
 %\usepackage[colorlinks=true, linkcolor=blue, urlcolor=red, citecolor=green]{hyperref}
 \usepackage{fontawesome5}
 \usepackage{mathtools}
+\usepackage{multirow} % Required for merging rows
 
 \newgeometry{tmargin=2cm, bmargin=2cm, lmargin=2cm, rmargin=2cm} 
 
@@ -2613,16 +2614,63 @@ $$
 	% Twierdzenie Saariego
 	\begin{theorem}[Twierdzenie Saariego (1992)]
 		Z: $K = \{k_1, \dots, k_n\}$, $n \geq 3$.  
-		T: Istnieje model, w którym $k_i$ wygrywa samodzielnie metodą $i$-głosów $(i = 1, \dots, n-1)$, natomiast $k_n$ wygrywa metodą punktów Bordy.
+		T: Istnieje model, w którym $k_i$ wygrywa samodzielnie metodą $i$-głosów $(i = 1, \dots, n-1)$, natomiast $k_n$ wygrywa metodą punktów Bordy. (Bez dowodu)
 	\end{theorem}
+
+	\begin{example} \end{example} \begin{enumerate}[a)]
 	
-	TODO Przykłady 17.3
+	\item \begin{tabular}{|c|c|c|c|}\hline
+		3&2&2&4\\\hline
+		A&A&B&C\\\hline
+		B&C&C&B\\\hline
+		C&B&A&A\\\hline
+	\end{tabular}\\\\
+
+	Metoda 1-głosu - wygrywa A (5 głosów)\\
+	Metoda 2-głosów - wygrywa B (9 głosów)\\
+	Metoda punktów Bordy - wygrywa C (12 punktów)\\\\
+
+	\item \begin{tabular}{|c|c|c|c|}\hline
+		2&2&2&3\\\hline
+		A&A&C&D\\\hline
+		B&D&B&B\\\hline
+		C&C&D&C\\\hline
+		D&B&A&A\\\hline
+	\end{tabular}\\\\
+
+	Metoda 1-głosu - wygrywa A (4 głosy)\\
+	Metoda 2-głosów - wygrywa B (7 głosów)\\
+	Metoda 2-głosów - wygrywa C (9 głosów)\\
+	Metoda punktów Bordy - wygrywa D (15 punktów)
+	
+	\end{enumerate} 
+	
 	
 	\begin{definition}[Grupowa metoda n-głosów]
 		Grupowa metoda n-głosów - wyborca głosuje na n kandydatów, wygrywa n z największą liczbą głosów.
 	\end{definition}
 	
-	TODO 17.4
+	\begin{example}
+		
+	\end{example}
+	
+	\begin{tabular}{|c|c|c|c|c|}\hline
+		&30&30&20&20\\\hline
+		1&A&A&V&C\\\hline
+		2&B&C&C&B\\\hline
+		3&C&B&A&A\\\hline
+	\end{tabular}\\\\
+
+	Głosowanie na 1 głos\\
+	A - 60 - wygrywa\\
+	B - 20\\
+	C - 20\\\\
+	
+	Głosowanie na 2 głosy\\
+	A - 60\\
+	B - 70 - wygrywa\\
+	C - 70 - wygrywa
+	
 	
 	\begin{theorem}
 		$\# K \geq 2n+1$, $n \geq 1$, $\# W$ odpowiednio duża.
@@ -2636,51 +2684,91 @@ $$
 	
 	Dowód: Idea dla $n = 3$, $2n+1 = 7$:
 	
-	Tabela 17.5: Wypełniamy odpowiednio rzędami, dając kandydata w tej kolumnie, w której go jeszcze nie było.
+	\begin{tabular}{|c|ccc|cccc|}\hline
+		&$\circ$&$\circ$&$\circ$&$\square$&$\square$&$\square$&$\square$\\\hline
+		1&$k_1$&$k_2$&$k_3$&$k_4$&$k_5$&$k_6$&$k_7$\\
+		2&$k_2$&$k_3$&$k_1$&$k_5$&$k_6$&$k_7$&$k_4$\\
+		3&$k_3$&$k_1$&$k_2$&$k_6$&$k_7$&$k_4$&$k_5$\\\hline
+		4&&&&$k_7$&$k_4$&$k_5$&$k_6$\\\hline
+		5&\multicolumn{7}{|l|}{Wypełniamy odpowiedno rzędami,}\\
+		6&\multicolumn{7}{|l|}{dając kandydata w tej kulumnie,}\\
+		7&\multicolumn{7}{|l|}{w której go jeszcze nie było.}\\\hline
+	\end{tabular}\\
+
+	Zbiory $\circ$ i $\square$ są równoliczne.\\\\
 	
 	Zarys ogólny:
 	
-	Tabela 17.6: W tych grupach mamy po $p$ wyborców, każdy z $k_{n+1}, \dots, k_{2n+1}$ pojawia się z częstotliwością $w\left(\frac{1+2n\epsilon}{2(n+1)}\right)$.
+	\begin{tabular}{|c|cccc|cccc|}\hline
+		&\multicolumn{4}{c|}{$n$ grup}&\multicolumn{4}{c|}{$n+1$ grup}\\\hline
+		&$p$&$p$&$\dots$&$p$&$q$&$q$&$\dots$&$q$\\\hline
+		1&$k_1$&$k_2$&&$k_n$&$k_{n+1}$&$k_{n+1}$&&$k_{2n+1}$\\
+		2&$k_2$&$k_3$&&$k_1$&$k_{n+2}$&$k_{n+2}$&&$k_{n+1}$\\
+		3&$k_3$&$k_4$&&$k_2$&$k_{n+3}$&$k_{n+3}$&&$k_{n+2}$\\
+		
+		$\vdots$&&&&&&&&\\
+		
+		$n-1$&$k_{n-1}$&$k_n$&&$k_{n-2}$&$k_{2n-2}$&$k_{2n-1}$&$k_{2n-1}$&$k_{2n-1}$\\
+		$n$&$k_n$&$k_1$&&$k_{n-1}$&$k_{2n-1}$&$k_{2n+1}$&&$k_{2n-1}$\\\hline
+		$n+1$&\multicolumn{4}{c|}{*}&$k_{2n}$&$k_{n+1}$&&$k_{2n}$\\\hline
+		$n+2$&\multicolumn{8}{|c|}{ }\\
+		
+		$\vdots$&\multicolumn{8}{|c|}{$\Delta$}\\
+		
+		$2n+1$&\multicolumn{8}{|c|}{ }\\\hline
+	\end{tabular}\\\\
 	
-	$\Delta$: W każdym rzędzie (miejsca $n+1, \dots, 2n+1$) każdy z kandydatów $k_{n+1}, \dots, k_{2n+1}$ pojawia się $w\left(\frac{2n\epsilon+1}{2(n+1)}\right)$ razy, a każdy z $k_1, \dots, k_n$ pojawia się $w\left(\frac{1}{2n}-\epsilon\right)$ razy. Wstawiamy każdego w kolumnę, w której go jeszcze nie było. \\
+	 * - W tych grupach mamy po $p$ wyborców, każdy z $k_{n+1}, \dots, k_{2n+1}$ pojawia się z częstotliwością $w\left(\frac{1+2n\epsilon}{2(n+1)}\right)$.\\
 	
-	0) Dobrze zdefiniowane: \\
-	1) $nw\left(\frac{1}{2n}+\epsilon\right) > nw\left(\frac{1}{2(n+1)} - \epsilon + \frac{\epsilon}{n+1}\right)$, czyli $p > q$. \\
-	2) $nw\left(\frac{1}{2n}+\epsilon\right) < nw\left(\frac{1}{2(n+1)} - \epsilon + \frac{\epsilon}{n+1}\right)$. \\
-	3) $nw\left(\frac{1}{2n}+\epsilon\right) > \frac{w}{2}$. \\
-	4) $nw\left(\frac{1}{2(n+1)}-\epsilon + \frac{\epsilon}{2(n+1)}\right) + \frac{2}{n+1} > \frac{w}{2}$. \\
+	$\Delta$ - W każdym rzędzie (miejsca $n+1, \dots, 2n+1$) każdy z kandydatów $k_{n+1}, \dots, k_{2n+1}$ pojawia się $w\left(\frac{2n\epsilon+1}{2(n+1)}\right)$ razy, a każdy z $k_1, \dots, k_n$ pojawia się $w\left(\frac{1}{2n}-\epsilon\right)$ razy. Wstawiamy każdego w kolumnę, w której go jeszcze nie było. \\
 	
-	Okaże się, że dla $\epsilon < \frac{1}{2(2n^2+2)}$ będzie ok. Dobieramy $n$ tak, aby wyszły liczby całkowite.
+	Możemy zadać sobie pytania co do poprawności takiego rozkładu, mianowicie:
 	
-	(0) a) Suma w rzędzie $= w$:
-	\[
-	np + (n+1)q = nw\left(\frac{1}{2n}+\epsilon\right) + (n+1)w\left(\frac{1}{2(n+1)}-\epsilon + \frac{\epsilon}{n+1}\right) =\]\[ =w\left[\frac{1}{2} + n\epsilon + \frac{n+1}{2(n+1)} - (n+1)\epsilon + \frac{(n+1)\epsilon}{n+1}\right] = w.
-	\]
-	b) Czy w każdym miejscu liczba $> 0$? Dla $p$ jest ok:
-	\[
-	\frac{1}{2(n+1)} + \frac{\epsilon(1-n-1)}{n+1} > 0, \quad n\epsilon < \frac{1}{2}, \quad \epsilon < \frac{1}{2n}.
-	\]
-	c) Czy suma każdego przy $n+1$ miejsc jest $\leq w$:
-	\[
-	wn\left(\frac{1}{2n}+\epsilon\right) = w\left(\frac{1}{2} + n\epsilon\right) < w, \quad n\epsilon < \frac{1}{2}, \quad \epsilon < \frac{1}{2n}.
-	\]
+	\begin{enumerate}[1)]
+		\item Dobrze zdefiniowane \\
+		\item  $nw\left(\frac{1}{2n}+\epsilon\right) > nw\left(\frac{1}{2(n+1)} - \epsilon + \frac{\epsilon}{n+1}\right)$, czyli $p > q$. \\
+		\item  $nw\left(\frac{1}{2n}+\epsilon\right) < nw\left(\frac{1}{2(n+1)} - \epsilon + \frac{\epsilon}{n+1}\right)$. \\
+		\item  $nw\left(\frac{1}{2n}+\epsilon\right) > \frac{w}{2}$. \\
+		\item  $nw\left(\frac{1}{2(n+1)}-\epsilon + \frac{\epsilon}{2(n+1)}\right) + \frac{2}{n+1} > \frac{w}{2}$. \\
+	\end{enumerate}
+
 	
-	\[
-	w\left(\frac{n}{2(n+1)}-\epsilon n + \frac{\epsilon n}{n+1}+\frac{1}{n+1}\right) = w\left(\frac{n+2}{2(n+1)}-\epsilon n\left(1+\frac{1}{n+1}\right)\right) < w.
-	\]
-	Głosy na $k_i$ do miejsc $n+1$, $(i=n+1, \dots, 2n+1)$.
+	Okaże się, że dla $\epsilon < \frac{1}{2(2n^2+2)}$ będzie ok. Dobieramy $n$ tak, aby wyszły liczby całkowite.\\
 	
-	(1) $w\left(\frac{1}{2n+1}+\epsilon\right) > w\left(\frac{1}{2(n+1)}-\epsilon + \frac{\epsilon}{n+1}\right)$ -- oczywiste (prawa strona jest silnie mniejsza od lewej).
+	D:
 	
-	(2) $nw\left(\frac{1}{2n}+\epsilon\right) < nw\left(\frac{1}{2(n+1)} -\epsilon + \frac{\epsilon}{n+1}\right)$:
-	\[
-	\frac{1}{2} + n\epsilon < \frac{n+1}{2(n+1)} - (n+1)\left(\frac{n+1\epsilon - \epsilon}{n+1}\right) + \frac{1}{n+1}.
-	\]
-	\[
-	n\epsilon < \frac{1}{n+1} - n\epsilon, \quad 2n\epsilon < \frac{1}{n+1}, \quad \epsilon < \frac{1}{2n(n+1)}.
-	\]
+	\begin{enumerate}[1)]
+		\item  a) Suma w rzędzie $= w$:
+		\[
+		np + (n+1)q = nw\left(\frac{1}{2n}+\epsilon\right) + (n+1)w\left(\frac{1}{2(n+1)}-\epsilon + \frac{\epsilon}{n+1}\right) =\]\[ =w\left[\frac{1}{2} + n\epsilon + \frac{n+1}{2(n+1)} - (n+1)\epsilon + \frac{(n+1)\epsilon}{n+1}\right] = w.
+		\]
+		b) Czy w każdym miejscu liczba $> 0$? Dla $p$ jest ok:
+		\[
+		\frac{1}{2(n+1)} + \frac{\epsilon(1-n-1)}{n+1} > 0, \quad n\epsilon < \frac{1}{2}, \quad \epsilon < \frac{1}{2n}.
+		\]
+		c) Czy suma każdego przy $n+1$ miejsc jest $\leq w$:
+		\[
+		wn\left(\frac{1}{2n}+\epsilon\right) = w\left(\frac{1}{2} + n\epsilon\right) < w, \quad n\epsilon < \frac{1}{2}, \quad \epsilon < \frac{1}{2n}.
+		\]
+		
+		\[
+		w\left(\frac{n}{2(n+1)}-\epsilon n + \frac{\epsilon n}{n+1}+\frac{1}{n+1}\right) = w\left(\frac{n+2}{2(n+1)}-\epsilon n\left(1+\frac{1}{n+1}\right)\right) < w.
+		\]
+		Głosy na $k_i$ do miejsc $n+1$, $(i=n+1, \dots, 2n+1)$.
+		
+		\item  $w\left(\frac{1}{2n+1}+\epsilon\right) > w\left(\frac{1}{2(n+1)}-\epsilon + \frac{\epsilon}{n+1}\right)$ -- oczywiste (prawa strona jest silnie mniejsza od lewej).
+		
+		\item  $nw\left(\frac{1}{2n}+\epsilon\right) < nw\left(\frac{1}{2(n+1)} -\epsilon + \frac{\epsilon}{n+1}\right)$:
+		\[
+		\frac{1}{2} + n\epsilon < \frac{n+1}{2(n+1)} - (n+1)\left(\frac{n+1\epsilon - \epsilon}{n+1}\right) + \frac{1}{n+1}.
+		\]
+		\[
+		n\epsilon < \frac{1}{n+1} - n\epsilon, \quad 2n\epsilon < \frac{1}{n+1}, \quad \epsilon < \frac{1}{2n(n+1)}.
+		\]
+	\end{enumerate}
 	
-	Sprawdzenie (3), (4) do domu.
+	
+	Sprawdzenie (4), (5) do domu.
 	
 	\begin{flushright}
 		$\square$
