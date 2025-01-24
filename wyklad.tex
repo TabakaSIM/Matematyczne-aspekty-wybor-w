@@ -25,7 +25,7 @@
 %\usepackage[colorlinks=true, linkcolor=blue, urlcolor=red, citecolor=green]{hyperref}
 \usepackage{fontawesome5}
 \usepackage{mathtools}
-\usepackage{multirow} % Required for merging rows
+%\usepackage{multirow} 		% Required for merging rows
 
 \newgeometry{tmargin=2cm, bmargin=2cm, lmargin=2cm, rmargin=2cm} 
 
@@ -154,7 +154,8 @@
 	\tableofcontents
 	\newpage
 \section{Preliminaria}
-\subsection{Jak wyglądają aktualnie wybory?}
+\subsection{Wstęp}
+\subsubsection{Jak wyglądają aktualnie wybory?}
 \Komentarz{Materiał ten nie ma w żadnym stopniu charakteru politycznego, a wyłącznie charakter matematyczny.}
 
 \begin{example}
@@ -273,7 +274,7 @@ W bloku A znajdowały się dwie partie: PZK (Partia Zwolenników Kawy) i PZH (Pa
 
 \Komentarz{I tym oto sposobem wygrywają osoby, które dostają 2 lub 1 głos.}
 
-\subsection{\href{http://www.racjonalista.pl/kk.php/s,9848/k,3}{Prawo Ciesielskiego}}
+\subsubsection{\href{http://www.racjonalista.pl/kk.php/s,9848/k,3}{Prawo Ciesielskiego}}
 
 Rozważmy głosowanie względem 2 partii z 7 mandatami:
 
@@ -334,7 +335,7 @@ jeśli $\exists{k_1,k_2\in K}: W_1=\{w_{1},w_{2},\dots,w_{i}\}$ głosowali na $k
 	\item Metoda porządkowa (MP) – wynik to słaby porządek na zbiorze $K$,
 	\item Metoda rozdziału (MR) – wynik to podział pewnych dóbr między kandydatów.
 \end{enumerate}
-\subsubsection{Metoda zwyciężcy}
+\subsection{Metoda zwyciężcy}
 \begin{definition}[Klasyczna metoda zwycięzcy]
 	Klasyczna metoda zwycięzcy (klasyczna MZ) polega na tym, że każdy wyborca głosuje na dokładnie jednego kandydata. Zbiór
 	$$\Sigma = \{m:W\rightarrow K\}$$
@@ -505,7 +506,7 @@ jeśli $\exists{k_1,k_2\in K}: W_1=\{w_{1},w_{2},\dots,w_{i}\}$ głosowali na $k
 	
 	Tak więc zawsze wygrywa ten, kto ma ponad połowę głosów.
 	\begin{flushright}$\square$\end{flushright}
-	\subsubsection{MZU - Metoda zakładająca uporządkowanie}
+	\subsection{MZU - Metoda zakładająca uporządkowanie}
 	\begin{definition}[Metoda zakładająca uporządkowanie]
 		Metoda zwycięzcy jest metodą zakładającą uporządkowanie (MZU) \textit{wtedy i tylko wtedy}, gdy $\forall_{w\in W}$ ustala $K$ kandydatów w liniowym porządku, a jego głos zależy od tego porządku.
 	\end{definition}
@@ -1380,7 +1381,7 @@ $$
 		Dla grupy $B + 6r$ (burmistrz i 6 radnych) wyznaczyć indeksy Shapleya–Shubika.
 	\end{zad}
 	
-	\subsubsection{Metody porządkowe}
+	\subsection{Metody porządkowe}
 	
 	\begin{definition}[Słaby porządek]
 		Zbiór $K$ jest słabo uporządkowany wtedy i tylko wtedy, gdy $\exists R$ — relacja równoważności w $K$ taka, że $K / R$ jest uporządkowany liniowo przez relację $\leq$. 
@@ -2422,6 +2423,8 @@ $$
 		$\square$
 	\end{flushright}
 	
+	\subsubsection{Metoda wartościująca}
+	
 	% Definicja metody wartościującej
 	\begin{definition}[Metoda wartościująca -- XXI wiek]
 		Niech $S$ będzie zbiorem stopni (ocen wartości). Metoda $M: W \to \{ f: K \to S \}$ polega na tym, że wyborca każdemu kandydatowi przypisuje ocenę.
@@ -2561,7 +2564,7 @@ $$
 	\]
 	% Definicja: Metoda odporna na nieobecność
 	\begin{definition}[Metoda odporna na nieobecność]
-		Metoda (MP, MW) jest odporna na nieobecność wtedy i tylko wtedy (w.i.t.w.), gdy:
+		Metoda (MP, MW) jest odporna na nieobecność wtedy i tylko wtedy, gdy:
 		\[
 		\forall_{M,N} \forall_{A,B} 
 		\begin{bmatrix}
@@ -2656,7 +2659,7 @@ $$
 	
 	\begin{tabular}{|c|c|c|c|c|}\hline
 		&30&30&20&20\\\hline
-		1&A&A&V&C\\\hline
+		1&A&A&B&C\\\hline
 		2&B&C&C&B\\\hline
 		3&C&B&A&A\\\hline
 	\end{tabular}\\\\
@@ -2767,8 +2770,11 @@ $$
 		\]
 	\end{enumerate}
 	
-	
 	Sprawdzenie (4), (5) do domu.
+	
+	\begin{flushright}
+		$\square$
+	\end{flushright}
 	
 	\begin{zad}
 		Metoda Bolińskiego-Yonga - metoda wartościująca w sposób rekurencyjny\\
@@ -2776,7 +2782,7 @@ $$
 		Mamy dane wkłady akcjonariuszy $p_1,\dots,p_s$\\
 		
 		\begin{enumerate}[1.]
-			\item Zakładamy warunek początkowy $n=0$, $a_1=a_2=\cdot=a_s=0$
+			\item Zakładamy warunek początkowy $m=0$, $a_1=a_2=\cdot=a_s=0$
 			\item Mam $m$ przyznanych akcji dla $a_1,\dots,a_s$. Musimy przyznać $(m+1)$ akcję.
 			\item Liczymy $\frac{p_i}{1+a_i}$ - wartość potencjalną dla i-tego akcjonariusza. $(i=1,\dots,s)$
 			\item Kto ma największą wartość potencjalną jemu dajemy akcję z wyłączeniem tych, u których przepadkiem byłaby przekroczona górna quota, czyli:
@@ -2787,11 +2793,11 @@ $$
 	Wyznacz jak należało by rodzielić pierwsze 8 (12) akcji.
 	\end{zad}
 
-	Czyli uzupełnij tabelkę (zwróć szczególną uwagę na wiersz 7 i 11):\\\\
+	Czyli uzupełnij tabelkę dla władó§w akcjonariuszy 7, 22, 71  (zwróć szczególną uwagę na wiersz 7 i 11):\\\\
 	
 	\begin{center}
 		\begin{tabular}{||c||c||c|c|c||c|c|c||c|c|c||}\hline
-		&\Large$w$&\Large$q_1$&\Large$q_2$&\Large$q_3$&\Large$\frac{p_1}{1+a_1}$&\Large$\frac{p_2}{1+a_2}$&\Large$\frac{p_3}{1+a_3}$&\Large$a_1$&\Large$a_2$&\Large$a_3$\\\hline
+		&\Large$w$&\Large$q_1$&\Large$q_2$&\Large$q_3$&\Large$a_1$&\Large$a_2$&\Large$a_3$&\Large$\frac{p_1}{1+a_1}$&\Large$\frac{p_2}{1+a_2}$&\Large$\frac{p_3}{1+a_3}$\\\hline
 		1&100&0,07&0,22&0,71&0&0&1&7&22&\textbf{71}\\\hline
 		2&50&0,14&0,44&1,42&0&0&2&7&22&\textbf{35,5}\\\hline
 		3&&&&&&&&&&\\\hline
@@ -2807,9 +2813,6 @@ $$
 		Wykaż, że nie może zaistnieć sytuacja, że wszystkie wartości potencjalne akcjonariuszy przekraczają górną quotę.
 	\end{zad}
 	
-	\begin{flushright}
-		$\square$
-	\end{flushright}
 	
 	\newpage
 	\section{Deser}
