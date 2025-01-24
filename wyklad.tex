@@ -2777,7 +2777,7 @@ $$
 	\end{flushright}
 	
 	\begin{zad}
-		Metoda Bolińskiego-Yonga - metoda wartościująca w sposób rekurencyjny\\
+		Metoda Balińskiego-Yonga - metoda wartościująca w sposób rekurencyjny\\
 		
 		Mamy dane wkłady akcjonariuszy $p_1,\dots,p_s$\\
 		
@@ -2787,7 +2787,7 @@ $$
 			\item Liczymy $\frac{p_i}{1+a_i}$ - wartość potencjalną dla i-tego akcjonariusza. $(i=1,\dots,s)$
 			\item Kto ma największą wartość potencjalną jemu dajemy akcję z wyłączeniem tych, u których przepadkiem byłaby przekroczona górna quota, czyli:
 			
-			$$~ 1+a_i > \lceil q_i \rceil = \lceil \frac{(m+1)p_i}{p}\rceil$$ 
+			$$~ 1+a_i > \lceil q_i \rceil = \left\lceil \frac{(m+1)p_i}{p}\right\rceil$$ 
 		\end{enumerate}
 	
 	Wyznacz jak należało by rodzielić pierwsze 8 (12) akcji.
@@ -2810,22 +2810,65 @@ $$
 	\end{center}
 
 	\begin{zad}
-		Wykaż, że nie może zaistnieć sytuacja, że wszystkie wartości potencjalne akcjonariuszy przekraczają górną quotę.
+		Wykazać, że nie może zaistnieć sytuacja, w której wszyscy akcjonariusze przekroczą górną quotę.
 	\end{zad}
 	
 	
 	\newpage
 	\section{Deser}
+	
+	\begin{theorem}[Gibbarda-Satterthwaite'a (1973,1975)]
+		Z: MZU, decyzyjna, $\# K \geq 3, \# w \geq 2$, $\forall_{A\in K} \exists$ model $M$ w którym $A$ wygrywa oraz metoda ta nie jest dyktaturą
+		T: Metoda jest podatna na manipulację, tzn 	$\exists_{ \text{model}} \exists_{w \in W}$ i taki $w$ zagłosuje inaczej niż w tym modelu, to zwyciężca zmieni się na bardziej odpowiadającego wyborcy $w$.
+	\end{theorem}
+	
+	{\textbf{Kompromis Jagielloński}}
+	
+	Wojciech Słomczyński, Karol Życzkowski\\\\
+	
+	Próg przy którym wniosek jest przyjęty
+	
+	$$q=\frac{1}{2} \left(1+\frac{\sqrt{N_1+\dots+N_k}}{\sqrt{N_1}+\dots+\sqrt{N_k}}\right)$$ 
+	
+	gdzie $N_i$ - populacja kraju\\\\
+	
+	{\textbf{Wbory w roku 1990}}
+	
+	§3 Progi wejścia
+	§3.1 $P\geq 5\%$
+	§3.2 $K\geq 8\%$
+	§3.3 Jeżeli nic lub któryś z warunków przez tylko 1 komitet to progi są obniżane do 
+	
+	$P\geq 3\%$\\
+	$K\geq 5\%$\\\\
+	
+	\begin{tabular}{|c|c|c|}\hline
+		Czy wchodzi? & Głosy & Czy wchodzi po zmianie progu?\\\hline
+		+&20,4(K)&+\\\hline
+		+&15,4(P)&+\\\hline
+		+&10,6(P)&+\\\hline
+		+&7,3(P)&+\\\hline
+		-&6,4(K)&+\\\hline
+		+&5,7(P)&+\\\hline
+		+&5,4(P)&+\\\hline
+		+&4,9(P)&+\\\hline
+		-&4,4(P)&+\\\hline
+		-&4,0(P)&+\\\hline
+		-&3,2(P)&+\\\hline
+		
+	\end{tabular}\\\\
+	
+		{\textbf{Przypadek wyborów w Krakowie z dwoma kartami}}\\\\
+		
+		{\textbf{Metoda Capińskiego - średnia na nogę czołówki}}
+		
+		TAB 24.1
+		
+		{\textbf{Metoda Ciesielskiego}}
 	\begin{center}
 		{\fontsize{30}{36}\selectfont\faBirthdayCake}
 	\end{center} 
 	
-	
-	
-	
-	
-	
-	W sumie to deseru jeszcze nie ma, ale ma być na ostatnim wykładzie!!! \\\\
 	Egzamin 31 stycznia 11:00
 	
 		
