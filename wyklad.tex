@@ -2294,7 +2294,7 @@ $$
 		\]
 		Funkcja $f$ jest rosnąca, co oznacza, że:
 		\[
-		g(x) > g(y) \implies x > y.
+		f(x) > f(y) \implies x > y.
 		\]
 		Z założenia (*) wynika:
 		\[
@@ -2306,9 +2306,9 @@ $$
 		\]
 		Przekształcając:
 		\[
-		\bar{p_j} < \frac{u}{v} \cdot p_j, \quad \bar{p_j} > \frac{u}{v} \cdot p_j.
+		\bar{p_i} < \frac{u}{v} \cdot p_i, \quad \bar{p_j} > \frac{u}{v} \cdot p_j.
 		\]
-		Z (1): $\frac{u}{v} > 1$, a z (2): $\frac{u}{v} < 1$, co prowadzi do sprzeczności.
+		Otrzymujemy z pierwszej nierówności: $\frac{u}{v} > 1$, a z drugiej nierówności: $\frac{u}{v} < 1$, co prowadzi do sprzeczności.
 		
 		\item Jeśli $p_i < p_j$, to:
 		\[
@@ -2344,14 +2344,14 @@ $$
 	\begin{enumerate}[a)]
 		\item Rozważmy:
 		\[
-		q_i = \lfloor g_i \rfloor, \quad g_i - \lfloor g_i \rfloor = 0.
+		q_i = \lfloor q_i \rfloor, \quad q_i - \lfloor q_i \rfloor = 0.
 		\]
 		W takim przypadku nic nie dodajemy lub:
 		\[
-		q_i < \lfloor g_i \rfloor, \quad a_i = 
+		q_i < \lfloor q_i \rfloor, \quad a_i = 
 		\begin{cases} 
-			\lfloor g_i \rfloor, \\ 
-			\lceil g_i \rceil.
+			\lfloor q_i \rfloor, \\ 
+			\lceil q_i \rceil.
 		\end{cases}
 		\]
 		
@@ -2501,16 +2501,16 @@ $$
 	
 	% Definicja: Metoda rankingowo niezależna od ubocznych opcji
 	\begin{definition}[Metoda rankingowo niezależna od ubocznych opcji]
-		Metoda wartościująca jest rankingowo niezależna od ubocznych opcji wtedy i tylko wtedy (w.i.t.w.), gdy:
+		Metoda wartościująca jest rankingowo niezależna od ubocznych opcji wtedy i tylko wtedy, gdy:
 		\[
-		\forall M, N \, \forall A, B \, 
+		\forall_{ M, N} \, \forall_ {A, B} \, 
 		\begin{bmatrix}
 			M, N \text{ -- modele} \\
 			K_M = K_N \cup \{C\}, \, C \notin K_M \\
-			\forall v \in W \, \textbf{ oceny } v \text{ w } M = \text{ oceny } v \text{ w } N
+			\forall v \in W \, \text{ oceny } v \text{ w } M = \text{ oceny } v \text{ w } N
 		\end{bmatrix}
 		\Rightarrow 
-		(A \underset{M}{<} B \, \text{w.i.t.w.} \, A \underset{N}{<} B).
+		(A \underset{M}{<} B \, \Leftrightarrow \, A \underset{N}{<} B).
 		\]
 	\end{definition}
 	
@@ -2540,8 +2540,8 @@ $$
 	\end{tabular}
 	\hspace{1cm}
 	\begin{bmatrix}
-		A \text{ -- 3 głosy} \\
-		B \text{ -- 2 głosy}
+		A \text{ -- 3 punkty} \\
+		B \text{ -- 2 punkty}
 	\end{bmatrix}
 	\quad A \underset{M}{>} B
 	\]
@@ -2557,8 +2557,8 @@ $$
 	\end{tabular}
 	\hspace{1cm}
 	\begin{bmatrix}
-		A \text{ -- 3 głosy} \\
-		B \text{ -- 4 głosy}
+		A \text{ -- 3 punkty} \\
+		B \text{ -- 4 punkty}
 	\end{bmatrix}
 	\quad A \underset{M}{<} B
 	\]
@@ -2569,9 +2569,9 @@ $$
 		\forall_{M,N} \forall_{A,B} 
 		\begin{bmatrix}
 			M, N \text{ -- modele} \\
-			W_N = W_M \cup W^*, \quad W^* \cap W_M \neq \emptyset \\
-			v \in W_M \Rightarrow \textbf{ głos } v \text{ w } M = \textbf{ głos } v \text{ w } N \\
-			A \underset{M}{<} B \quad \text{oraz} \quad \forall_{v \in W^*} A \overset{v,N}{B}
+			W_N = W_M \cup W^*, \quad W^* \cap W_M = \emptyset \\
+			v \in W_M \Rightarrow \text{ głos } v \text{ w } M = \text{ głos } v \text{ w } N \\
+			A \underset{M}{<} B \quad \text{oraz} \quad \forall_{v \in W^*} A \overset{v,N}{<}B
 		\end{bmatrix}
 		\Rightarrow A \underset{N}{<} B.
 		\]
@@ -2643,7 +2643,7 @@ $$
 
 	Metoda 1-głosu - wygrywa A (4 głosy)\\
 	Metoda 2-głosów - wygrywa B (7 głosów)\\
-	Metoda 2-głosów - wygrywa C (9 głosów)\\
+	Metoda 3-głosów - wygrywa C (9 głosów)\\
 	Metoda punktów Bordy - wygrywa D (15 punktów)
 	
 	\end{enumerate} 
@@ -2705,9 +2705,9 @@ $$
 	\begin{tabular}{|c|cccc|cccc|}\hline
 		&\multicolumn{4}{c|}{$n$ grup}&\multicolumn{4}{c|}{$n+1$ grup}\\\hline
 		&$p$&$p$&$\dots$&$p$&$q$&$q$&$\dots$&$q$\\\hline
-		1&$k_1$&$k_2$&&$k_n$&$k_{n+1}$&$k_{n+1}$&&$k_{2n+1}$\\
-		2&$k_2$&$k_3$&&$k_1$&$k_{n+2}$&$k_{n+2}$&&$k_{n+1}$\\
-		3&$k_3$&$k_4$&&$k_2$&$k_{n+3}$&$k_{n+3}$&&$k_{n+2}$\\
+		1&$k_1$&$k_2$&&$k_n$&$k_{n+1}$&$k_{n+2}$&&$k_{2n+1}$\\
+		2&$k_2$&$k_3$&&$k_1$&$k_{n+2}$&$k_{n+3}$&&$k_{n+1}$\\
+		3&$k_3$&$k_4$&&$k_2$&$k_{n+3}$&$k_{n+4}$&&$k_{n+2}$\\
 		
 		$\vdots$&&&&&&&&\\
 		
@@ -2782,7 +2782,7 @@ $$
 		Mamy dane wkłady akcjonariuszy $p_1,\dots,p_s$\\
 		
 		\begin{enumerate}[1.]
-			\item Zakładamy warunek początkowy $m=0$, $a_1=a_2=\cdot=a_s=0$
+			\item Zakładamy warunek początkowy $m=0$, $a_1=a_2=\dots=a_s=0$
 			\item Mam $m$ przyznanych akcji dla $a_1,\dots,a_s$. Musimy przyznać $(m+1)$ akcję.
 			\item Liczymy $\frac{p_i}{1+a_i}$ - wartość potencjalną dla i-tego akcjonariusza. $(i=1,\dots,s)$
 			\item Kto ma największą wartość potencjalną jemu dajemy akcję z wyłączeniem tych, u których przepadkiem byłaby przekroczona górna quota, czyli:
@@ -2793,7 +2793,7 @@ $$
 	Wyznacz jak należało by rodzielić pierwsze 8 (12) akcji.
 	\end{zad}
 
-	Czyli uzupełnij tabelkę dla władó§w akcjonariuszy 7, 22, 71  (zwróć szczególną uwagę na wiersz 7 i 11):\\\\
+	Czyli uzupełnij tabelkę dla wkładów akcjonariuszy 7, 22, 71  (zwróć szczególną uwagę na wiersz 7 i 11):\\\\
 	
 	\begin{center}
 		\begin{tabular}{||c||c||c|c|c||c|c|c||c|c|c||}\hline
