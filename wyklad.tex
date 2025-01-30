@@ -312,13 +312,13 @@ $K$ - zbiór wszystkich kandydatów.
 \end{definition}
 
 \begin{definition}[Metoda anonimowa]
-	Metoda jest anonimowa, \textit{wtedy i tylko wtedy} (w skrócie: \witw), gdy wszyscy wyborcy są traktowani tak samo, \witw $\forall_{x,y \in W}$ zamiana głosów $x$ i $y$ nie zmienia wyniku.
+	Metoda jest anonimowa \witw gdy wszyscy wyborcy są traktowani tak samo, to znaczy \witw $\forall_{x,y \in W}$ zamiana głosów $x$ i $y$ nie zmienia wyniku.
 \end{definition}
 
 \Komentarz{Alternatywnie, metoda nie jest anonimowa \witw $\exists_{x,y \in W}$ takie, że zamiana głosów $x$ i $y$ \textit{istotnie} zmienia wynik.}
 
 \begin{definition}[Metoda neutralna]
-	Metoda jest neutralna, \witw wszyscy kandydaci są traktowani tak samo, \witw $\forall_{x,y \in K}$ zamiana ról $x$ i $y$ nie zmienia wyniku.
+	Metoda jest neutralna \witw wszyscy kandydaci są traktowani tak samo, to znaczy \witw $\forall_{x,y \in K}$ zamiana ról $x$ i $y$ nie zmienia wyniku.
 \end{definition}
 
 \Komentarz{Alternatywnie, metoda nie jest neutralna \witw $\exists_{x,y \in K}$ takie, że zamiana ról $x$ i $y$ \textit{istotnie} zmienia wynik, dokładniej definiując:\\
@@ -356,12 +356,12 @@ jeśli $\exists{k_1,k_2\in K}: W_1=\{w_{1},w_{2},\dots,w_{i}\}$ głosowali na $k
 \end{definition}
 
 \begin{example}[Przykłady metod głosowania]
-	\textbf{Metody klasyczne:}
 \end{example}
+\subsection{Metody klasyczne:}
 \begin{enumerate}[1)]
 	\item Dyktatura – $\exists_{\;p \in W}$: wynik jest tożsamy z głosem $p$.
 	\item Monarchia – dany kandydat $k \in K$ wygrywa niezależnie od głosowania.
-	\item Metoda większości – wygrywa kandydat (lub kandydaci), który(a) otrzymał(a) najwięcej głosów.
+	\item Metoda większości – wygrywa kandydat (lub kandydaci), który otrzymał najwięcej głosów.
 	\item Metoda bezwzględnej większości – wygrywa kandydat $k \in K$, który otrzymał co najmniej $\lfloor\frac{\# W}{2}\rfloor + 1$ głosów.
 	\item Metoda super większości – wygrywa kandydat, który uzyskał co najmniej $q$ głosów, gdzie $q > \frac{\# W}{2}$.
 	\item Metoda status quo – \textit{Założenie:} $\exists$ pewien stan z jednym zwycięzcą.
@@ -370,15 +370,15 @@ jeśli $\exists{k_1,k_2\in K}: W_1=\{w_{1},w_{2},\dots,w_{i}\}$ głosowali na $k
 		\item jeśli metoda daje wynik, zwycięża "nowy" kandydat,
 		\item jeśli metoda nie daje wyniku, zwycięża dotychczasowy kandydat.
 	\end{itemize}
-	Przykład: referendum.
+	\Komentarz{Przykładem metody status quo jest referendum.}
 	\item Metoda większości ważonej – $(W = \{a_1,\dots,a_n\})$, gdzie głos $a_i$ ma wagę $w_i \geq 0$. Wygrywa ten, kto otrzyma ponad $\frac{w_1 + \dots + w_n}{2}$ punktów.
 	\item Metoda głosowania blokowego – $W = W_1 \cup \dots \cup W_n$, gdzie $W_k$ to zbiór wyborców bloku. $W_k$ podejmuje decyzję większością głosów. W przypadku remisu wybierają zwycięzcę w $W_k$. Głos z $W_k$ ma wagę $i_k$. Wygrywa kandydat z największą liczbą punktów.
 	
-	\textbf{Metody semi-klasyczne:}
+	\subsection{Metody semi-klasyczne:}
 	\item Metoda n-głosów – każdy wyborca głosuje na $n$ kandydatów, a zwycięża ten, kto uzyska najwięcej głosów.
 	\item Szeroka metoda n-głosów - każdy głosuje na n kandydatów, ale mamy n zwyciężców (lub więcej w przypadku remisu na ostatnim "wygrywającym" miejscu)
 	
-	\textbf{Metoda ani klasyczna, ani semi-klasyczna:}
+	\subsection{Metoda ani klasyczna, ani semi-klasyczna:}
 	\item Metoda punktowa – każdy wyborca $w \in W$ ma do rozdysponowania $p$ punktów $(p \in \mathbb{N})$ między kandydatów. Zwycięża kandydat z największą liczbą punktów.
 \end{enumerate}
 
@@ -390,9 +390,9 @@ jeśli $\exists{k_1,k_2\in K}: W_1=\{w_{1},w_{2},\dots,w_{i}\}$ głosowali na $k
 	Metoda zwycięzcy jest prawie decyzyjna \witw w każdym modelu wyłania co najwyżej jednego zwycięzcę. Sytuacja, w której nie ma zwycięzcy, zachodzi wtedy, gdy więcej niż jeden kandydat uzyskał tę samą, najwyższą liczbę punktów.
 \end{definition}
 
-\begin{exercise}[Z ćwiczeń]
+\begin{zad}
 	Zbadaj kto jest zwycięzcą w głosowaniu przez 99 osób na kandydatów: \textbf{Anastazy}, \textbf{Bermudy}, \textbf{Cezary}, jeśli otrzymano następujące wyniki metodą porządkową:
-\end{exercise}
+\end{zad}
 
 	\begin{tabular}{|c|c|}\hline
 		Liczba głosów	& Wynik porządkowy\\\hline
@@ -404,7 +404,7 @@ jeśli $\exists{k_1,k_2\in K}: W_1=\{w_{1},w_{2},\dots,w_{i}\}$ głosowali na $k
 		18 				& CBA\\\hline
 	\end{tabular}\\
 	
-\begin{exercise}
+\begin{zad}
 	Dane są wyniki głosowania:\\\\
 	\begin{tabular}{|c|c|}\hline
 		Imię		& Liczba głosów\\\hline
@@ -412,9 +412,9 @@ jeśli $\exists{k_1,k_2\in K}: W_1=\{w_{1},w_{2},\dots,w_{i}\}$ głosowali na $k
 		Małgosia    & 1\\\hline
 	\end{tabular}\\\\
 	Zrób tak, by Małgosia wygrała.
-\end{exercise}
+\end{zad}
 
-\begin{exercise}
+\begin{zad}
 	Uzupełnij tabelę:\\
 	\begin{tabular}{|c|c|c|c|}\hline
 		& Anonimowa & Neutralna & Efektywna\\\hline
@@ -422,7 +422,7 @@ jeśli $\exists{k_1,k_2\in K}: W_1=\{w_{1},w_{2},\dots,w_{i}\}$ głosowali na $k
 		Monarchia   &+&-&+\\\hline
 		Metoda Większości &+&+&+\\\hline
 	\end{tabular}\\
-\end{exercise}
+\end{zad}
 
 
 
@@ -435,7 +435,7 @@ jeśli $\exists{k_1,k_2\in K}: W_1=\{w_{1},w_{2},\dots,w_{i}\}$ głosowali na $k
 		Mamy klasyczną metodę zwycięzcy, taką że $\# K=2$, a głosowanie odbywa się według zasady bezwzględnej większości. Wówczas metoda jest prawie decyzyjna.
 	\end{stwierdzenie}
 	
-	\textit{Dowód:}
+	\noindent \textbf{Dowód:}
 	\begin{enumerate}[1$^\circ$]
 		\item Załóżmy, że liczba wyborców $\# W$ jest nieparzysta - OK.
 		\item Liczba wyborców $\# W$ jest parzysta:
@@ -452,7 +452,7 @@ jeśli $\exists{k_1,k_2\in K}: W_1=\{w_{1},w_{2},\dots,w_{i}\}$ głosowali na $k
 	
 	\begin{definition}[Metoda monotoniczna ze względu na zwycięzcę]
 		\textbf{Z:} MZ - klasyczna lub semi-klasyczna.
-		Metoda jest monotoniczna ze względu na zwycięzcę, \textit{wtedy i tylko wtedy}, gdy kandydat $A$ jest zwycięzcą, a jeśli wybierzemy kandydata $B$ różnego od $A$ ($B\neq A$) oraz jego grupę wyborców, to jeśli ta grupa zmieni swoje głosy bez straty dla $A$ (czyli zmiana nastąpi zgodnie z następującymi dozwolonymi operacjami):
+		Metoda jest monotoniczna ze względu na zwycięzcę, \textit{wtedy i tylko wtedy}, gdy kandydat $A$ jest zwycięzcą, a jeśli wybierzemy kandydata $B$ różnego od $A$ ($B\neq A$) oraz jego grupę wyborców, to jeśli ta grupa zmieni swoje głosy bez straty dla $A$ (czyli zmiana nastąpi zgodnie z następującymi dozwolonymi operacjami):\\
 		
 		\begin{tabular}{|c|c|c|}
 			\hline
@@ -461,7 +461,7 @@ jeśli $\exists{k_1,k_2\in K}: W_1=\{w_{1},w_{2},\dots,w_{i}\}$ głosowali na $k
 			- - & $\Rightarrow$ & - - \\\hline
 			+ + & $\Rightarrow$ & + + \\\hline
 			- + & $\Rightarrow$ & + - \\\hline
-		\end{tabular}
+		\end{tabular}\\
 		
 		to: $\Rightarrow$ $A$ nadal wygrywa.
 	\end{definition}
@@ -473,6 +473,8 @@ jeśli $\exists{k_1,k_2\in K}: W_1=\{w_{1},w_{2},\dots,w_{i}\}$ głosowali na $k
 		
 		\Komentarz{Często kwota wyrażana jest w procentach, a wówczas stosuje się nieraz nierówność słabą.}
 	\end{definition}
+
+	\newpage
 	\begin{theorem}[Maya - \textit{Kenneth Maya, 1952r}]
 		\textbf{Z:} Klasyczna metoda zwycięzcy oraz $\# K = 2$. Jeżeli metoda ta jest metodą:
 		\begin{enumerate}[(1)]
@@ -484,7 +486,7 @@ jeśli $\exists{k_1,k_2\in K}: W_1=\{w_{1},w_{2},\dots,w_{i}\}$ głosowali na $k
 		$\Rightarrow$ jest metodą bezwzględnej większości.
 	\end{theorem}
 	
-	\textit{Dowód:}
+	\noindent \textbf{Dowód:}
 	Załóżmy, że $A,B$ to kandydaci.\\
 	$\overset{(1)}{\Rightarrow}$ interesują nas liczby głosów, które otrzymali kandydaci. Załóżmy:\\
 	$A$ - $a$ głosów\\
@@ -512,10 +514,10 @@ jeśli $\exists{k_1,k_2\in K}: W_1=\{w_{1},w_{2},\dots,w_{i}\}$ głosowali na $k
 	
 	\section{MZU - Metoda zakładająca uporządkowanie}
 	\begin{definition}[Metoda zakładająca uporządkowanie]
-		Metoda zwycięzcy jest metodą zakładającą uporządkowanie (MZU) \textit{wtedy i tylko wtedy}, gdy $\forall_{w\in W}$ ustala $K$ kandydatów w liniowym porządku, a jego głos zależy od tego porządku.
+		Metoda zwycięzcy jest metodą zakładającą uporządkowanie (MZU) \witw gdy $\forall_{w\in W}$ wyborca $w$ ustala $K$ kandydatów w liniowym porządku, a jego głos zależy od tego porządku.
 	\end{definition}
 	
-	\textbf{Zapis:}\\\\
+	\noindent \textbf{Zapis:}\\\\
 	$A\overset{w,m}{<}B$ w modelu $m$ oznacza, że wyborca $w$ stawia $B$ wyżej niż $A$.\\
 	$A\overset{w}{<}B$ - gdy wiadomo, jaki model.
 	
@@ -535,8 +537,8 @@ jeśli $\exists{k_1,k_2\in K}: W_1=\{w_{1},w_{2},\dots,w_{i}\}$ głosowali na $k
 			
 			\item Metoda odrzuceń ostatniego – Jak w metodzie Coombsa, przy czym odrzucamy „do oporu”. Gdy nie można nikogo więcej odrzucić, wygrywają wszyscy, którzy pozostali.
 			
-			\begin{example}
-				Różnica między metodą Coombsa a metodą odrzucania ostatniego.\\
+			\Komentarz{
+				Różnica między metodą Coombsa a metodą odrzucania ostatniego.
 				
 				\textbf{Metoda Coombsa}\\
 				\begin{tabular}{|c|c|c|c|}\hline
@@ -545,7 +547,7 @@ jeśli $\exists{k_1,k_2\in K}: W_1=\{w_{1},w_{2},\dots,w_{i}\}$ głosowali na $k
 					II pozycja & A & C & A \\\hline
 					III pozycja & B & A & C \\\hline
 				\end{tabular}\\\\
-				Wygrywa $B$, bo ma ponad 50\% pierwszych miejsc.\\\\
+				Wygrywa $B$, bo ma ponad 50\% pierwszych miejsc.\\
 				
 				\textbf{Metoda odrzuceń ostatniego}\\
 				\begin{tabular}{|c|c|c|c|}\hline
@@ -553,9 +555,9 @@ jeśli $\exists{k_1,k_2\in K}: W_1=\{w_{1},w_{2},\dots,w_{i}\}$ głosowali na $k
 					I pozycja & C & B & B \\\hline
 					II pozycja & \xout{A} & C & A \\\hline
 					III pozycja & \sout{B} & \xout{A} & C \\\hline
-				\end{tabular}\\\\
+				\end{tabular}\\
 				Kolejność odrzuceń: B, A, C – C wygrywa.
-			\end{example}
+			}
 			
 			\item Metoda Copelanda (Arthur H. Copeland, 1898–1970, matematyk) – Porównujemy parami kandydatów. Ten, kto więcej razy zostaje oceniony wyżej, dostaje 1 pkt, a w przypadku remisu obaj dostają po 0,5 pkt.
 			
@@ -574,10 +576,10 @@ jeśli $\exists{k_1,k_2\in K}: W_1=\{w_{1},w_{2},\dots,w_{i}\}$ głosowali na $k
 		\end{enumerate}
 			
 			
-		\textbf{UWAGA – w szczególności:}\\
+		\Komentarz{W szczególności:\\\\
 		Metoda Bordy: $P(n-1, n-2, \dots, 1, 0)$\\
 		Metoda większości: $P(1,0, \dots, 0)$\\
-		Metoda $k$ głosów: $P(\underset{\text{k razy}}{1,1,\dots,1}, 0, \dots, 0)$
+		Metoda $k$ głosów: $P(\underset{\text{k razy}}{1,1,\dots,1}, 0, \dots, 0)$}
 	\end{example}
 		
 		\begin{definition}[Monotoniczność ze względu na transpozycję]
@@ -589,7 +591,12 @@ jeśli $\exists{k_1,k_2\in K}: W_1=\{w_{1},w_{2},\dots,w_{i}\}$ głosowali na $k
 				A\\
 				B\\
 				*
-			\end{bmatrix}$
+			\end{bmatrix} \Rightarrow \begin{bmatrix}
+			\Delta\\
+			B\\
+			A\\
+			*
+		\end{bmatrix}$
 		}
 		
 		{\textbf{Umowa:}} Jeśli nie jest zaznaczone inaczej, to w $K,W$ różne oznaczenia oznaczają różnych kandydatów (wyborców).
@@ -634,7 +641,7 @@ jeśli $\exists{k_1,k_2\in K}: W_1=\{w_{1},w_{2},\dots,w_{i}\}$ głosowali na $k
 		\begin{theorem}
 			MZU, anonimowa, neutralna $\Rightarrow$ metoda nie jest decyzyjna.
 		\end{theorem}
-		\textit{Dowód.} Rozważmy $\# K = 2$, $\# W = 2n$ i otrzymane głosy.\\
+		\noindent \textbf{Dowód:} Rozważmy $\# K = 2$, $\# W = 2n$ i otrzymane głosy.\\
 		
 		\begin{tabular}{|c|c|c|}\hline
 			Głosy&n&n\\\hline
@@ -661,33 +668,37 @@ jeśli $\exists{k_1,k_2\in K}: W_1=\{w_{1},w_{2},\dots,w_{i}\}$ głosowali na $k
 		\begin{theorem}
 			MZU spełnia kryterium Condorceta $\Rightarrow$ jest jednoznacznie większościowa.
 		\end{theorem}
-		\textit{Dowód.} A ma ponad połowę pierwszych miejsc $\Rightarrow$ A - kandydat Condorceta $\Rightarrow$ A jest jedynym zwycięzcą.		
+		\noindent \textbf{Dowód:} A ma ponad połowę pierwszych miejsc $\Rightarrow$ A - kandydat Condorceta $\Rightarrow$ A jest jedynym zwycięzcą.		
 		
 		\begin{flushright}$\square$\end{flushright}
 		
 		\begin{theorem}
 			MZU spełnia słabe $IIA$, a $A$ spełnia kryterium Condorceta $\Rightarrow$ spełnia słabą zasadę Pareto.
 		\end{theorem}
-		\textit{Dowód.} Rozważmy $M$ $\forall_{W} A\overset{w,M}{<}B \overset{?}{\Rightarrow}$ $A$ nie wygrywa w $M$.
+		\noindent \textbf{Dowód:} Rozważmy $M$ $\forall_{W} A\overset{w,M}{<}B \overset{?}{\Rightarrow}$ $A$ nie wygrywa w $M$.\\\\
 		
-		Rozważmy model $N$: dla każdego wyborcy przesuwamy $A$ i $B$ na szczyt, $[B,A,reszta]$ $A\overset{w,M}{<}B$ \witw $A\overset{w,N}{<}B$.
-		
-		W $N$: $B$ jest kandydatem Condorceta.
-		
-		W $N$: $B$ jest jedynym zwycięzcą, $B$ wygrywa, $A$ nie wygrywa. 
+		Rozważmy model $N$ w którym dla każdego wyborcy przesuwamy $A$ i $B$ na szczyt, czyli do postaci 
+		$$\begin{bmatrix}
+			B\\
+			A\\
+			\text{reszta}
+		\end{bmatrix}$$
+		Spełnione jest zatem $A\overset{w,M}{<}B$ \witw $A\overset{w,N}{<}B$.\\\\
+		W $N$: $B$ jest kandydatem Condorceta.\\
+		W $N$: $B$ jest jedynym zwycięzcą, $B$ wygrywa, $A$ nie wygrywa. \\
 		
 		$\overset{\textbf{Słabe IIA}}{\Rightarrow}$ $A$ nie wygrywa w $M$.
 		\begin{flushright}$\square$\end{flushright}
 		
 		\begin{theorem}
-			MZU, monotoniczna ze względu na transpozycje, \witw $\forall_{M - \text{model}} \forall_{A\in K} \forall_{B_1,\dots,B_n\in A} (A\neq B, \text{ ale może być } B_i=B_j)$
+			MZU, monotoniczna ze względu na transpozycje \witw $\forall_{M - \text{model}} \forall_{A\in K} \forall_{B_1,\dots,B_n\in A} (A\neq B, \text{ ale może być } B_i=B_j)$
 			$\forall_{w_1,\dots,w_n\in W}$ (może być $w_i=w_j$)
 			
 			Jeżeli w modelu $M$ wygrywa $A$, to model $N$ utworzony przez $[\Delta, B_i, A, *] \rightarrow [\Delta, A, B_i, *]$ dla $i=1,\dots,n$ $\Rightarrow$ w $N$ dalej wygrywa $A$.
 			
 		\end{theorem}
 		
-		\textit{Dowód.} $\Leftarrow$ oczywiste.
+		\noindent \textbf{Dowód:} $\Leftarrow$ oczywiste.
 		
 		$\Rightarrow$ Stosujemy założenie $n$ razy (robimy $n$ skoków i dalej wygrywa $A$).
 		
@@ -931,13 +942,13 @@ jeśli $\exists{k_1,k_2\in K}: W_1=\{w_{1},w_{2},\dots,w_{i}\}$ głosowali na $k
 			\end{tabular} $A$-przegrany Condorceta, ale $A$ wygrywa
 			 
 		\end{enumerate}
-		
+		\newpage
 		\begin{lemma}[Lemat o decyzyjności]
 			Z: MZU, efektywna, $\#K\geq3$, $\#W\geq2$.
 			Metoda spełnia słabą zasadę Pareto i słabe IIA
 			$\Rightarrow$ jest decyzyjna.
-		\end{lemma} \newpage
-		Dowód: Wiemy, że zwycięzca istnieje (chcemy wykazać, że jest jedyny).
+		\end{lemma} 
+		\noindent \textbf{Dowód:} Wiemy, że zwycięzca istnieje (chcemy wykazać, że jest jedyny).
 		Załóżmy, że $A$ i $B$ są zwycięzcami w modelu $M$ oraz
 		$W=X\cup Y$ \begin{tabular}{|c|c|}\hline
 			X & Y \\\hline
@@ -1619,7 +1630,7 @@ $$
 		Teza: $\{T \subset W : T \text{ spełnia (DEC)}\}$ jest ultrafiltrem.
 	\end{theorem}
 	
-	Dowód:
+	\noindent \textbf{Dowód:}
 	\begin{enumerate}
 		\item $D \neq \emptyset$: $W \in D$ (z P).
 		
@@ -1684,7 +1695,7 @@ $$
 		Podane warunki są równoważne.
 	\end{lemma}
 	
-	Dowód:
+	\noindent \textbf{Dowód:}
 	\begin{itemize}
 		\item ($\Rightarrow$): $M : x \in T \Leftrightarrow a \overset{x,N}{<} b$ i $a \underset{N}{<} b \overset{(I)}{\Rightarrow} a \underset{M}{<} b$.
 		\item ($\Leftarrow$): Weźmy $N$ spełniający założenia. Wtedy:
@@ -1701,7 +1712,7 @@ $$
 		\end{enumerate}
 	\end{lemma}
 	
-	Dowód:
+	\noindent \textbf{Dowód:}
 	\begin{enumerate}
 		\item[Ad 1.] Rozważmy $M: x \in T \Leftrightarrow c \overset{x,M}{<} b$. Czy $c \underset{M}{<} b$?
 		Rozważmy model $N$, gdzie:
@@ -1716,7 +1727,7 @@ $$
 		$\exists_{a,b, a\neq b} \; a\underset{T}{*}b \Leftrightarrow \forall_{c,d, c\neq d} \; c\underset{T}{*}d$
 	\end{lemma}
 	
-	Dowód: (wynika bezpośrednio z wcześniejszego lematu, ale formalny dowód)  
+	\noindent \textbf{Dowód:} (wynika bezpośrednio z wcześniejszego lematu, ale formalny dowód)  
 	
 	$\Leftarrow$ oczywiste  
 	
@@ -1736,7 +1747,7 @@ $$
 		$S \subset W, S\neq \emptyset, \; \exists_{a\neq b} \; a\underset{S}{*}b \Rightarrow S\in D$
 	\end{lemma}
 	
-	Dowód:  
+	\noindent \textbf{Dowód:} 
 	$M\in \Sigma, \; p,q \in K, \; \forall_{x\in S} \; p\overset{x,M}{<}q \overset{?}{\Rightarrow} p\underset{M}{<}q$  
 	
 	$T:=\{ x\in W : p\overset{x,M}{<}q\}, \; S\subset T$  
@@ -1772,7 +1783,7 @@ $$
 	
 	\textbf{Wracając do Twierdzenia Arrowa:}  
 	
-	Dowód końcowy:  
+	\noindent \textbf{Dowód końcowy:}  
 	
 	$T\subset W$ Czy $T \in D$ lub $W\setminus T \in D$?  
 	
@@ -1805,7 +1816,7 @@ $$
 		Jeśli $f : \Sigma \to S(K)$ spełnia (P) i (I), to $\exists_{w \in W} \; \forall_{M \in \Sigma} \; M(w) = f(M)$.
 	\end{wniosek}
 	
-	Dowód: Jeśli $W$ jest skończony, to $\exists_w \; \{w\}$ spełnia warunek (DEC).  
+	\noindent \textbf{Dowód:} Jeśli $W$ jest skończony, to $\exists_w \; \{w\}$ spełnia warunek (DEC).  
 	Wówczas:
 	\[
 	\forall_{a, b \in K} \forall_{M \in \Sigma} \; (a \overset{w, M}{<} b \Rightarrow a \underset{M}{<} b).
@@ -1819,7 +1830,7 @@ $$
 		Jeśli metoda porządkowa (MP) spełnia zasadę Pareto oraz IIA, to MP jest dyktaturą porządkową.
 	\end{wniosek}
 	
-	Dowód: Z poprzedniego wniosku wynika, że dla $w$, dla którego $\{w\}$ jest zbiorem decyzyjnym, $w$ jest dyktatorem.
+	\noindent \textbf{Dowód:} Z poprzedniego wniosku wynika, że dla $w$, dla którego $\{w\}$ jest zbiorem decyzyjnym, $w$ jest dyktatorem.
 	\begin{zad}
 		Sprawdzić, czy 
 		\[
@@ -1923,13 +1934,13 @@ $$
 		$W=\frac{p}{m} \quad \text{- wartość akcji (jednej)}$
 		
 		
-		$q_1:= m\cdot \frac{p_1}{p} = \frac{p_1}{\frac{p}{m}} = \frac{p_1}{W} \quad \text{- quota}$
+		$q_i:= m\cdot \frac{p_i}{p} = \frac{p_i}{\frac{p}{m}} = \frac{p_i}{W} \quad \text{- quota}$
 		
 		
-		$\lfloor q_1 \rfloor=\lfloor \frac{m\cdot p_i}{p} \rfloor \quad \text{- dolna quota}$
+		$\lfloor q_i \rfloor=\lfloor \frac{m\cdot p_i}{p} \rfloor \quad \text{- dolna quota}$
 		
 		
-		$\lceil q_1 \rceil=\lceil \frac{m\cdot p_i}{p} \rceil \quad \text{- górna quota}$
+		$\lceil q_i \rceil=\lceil \frac{m\cdot p_i}{p} \rceil \quad \text{- górna quota}$
 		
 	\end{definition}
 	
@@ -2058,115 +2069,189 @@ $$
 	\end{example}
 	
 	\begin{theorem}
-		Metoda Jeffersona \witw wyznacznie liczby akcji za pomocą ilorazów.
+		Metoda Jeffersona \witw wyznaczaniu liczb akcji za pomocą ilorazów.
 	\end{theorem}
-	D: $m$ akcji, rozpatrzmy ilorazy $p_i$ przez $1,2,3,4,\dots$
+	
+	\noindent \textbf{Dowód:} Niech $m$ będzie liczbą akcji. Rozpatrzmy ilorazy $p_i$ przez $1, 2, 3, 4, \dots$
+	
 	\begin{tabular}{c|c}
-		$\alpha:$&$\alpha_1,\alpha_2,\alpha_3,\dots$\\\hline
-		$\beta:$&$\beta_1,\beta_2,\beta_3,\dots$\\\hline
-		$\gamma:$&$\gamma_1,\gamma_2,\gamma_3,\dots$\\\hline
+		$\alpha:$ & $\alpha_1, \alpha_2, \alpha_3, \dots$ \\ \hline
+		$\beta:$ & $\beta_1, \beta_2, \beta_3, \dots$ \\ \hline
+		$\gamma:$ & $\gamma_1, \gamma_2, \gamma_3, \dots$ \\ \hline
 	\end{tabular}
 	
-	$t$ - największy z wyników nie dający akcji\\
-	$T$ - najmniejszy z wyników dający akcje
-	\begin{flushright}$\square$\end{flushright}
+	Niech:
+	\begin{itemize}
+		\item $t$ - największy z wyników nie dający akcji,
+		\item $T$ - najmniejszy z wyników dający akcje.
+	\end{itemize}
 	
-	 \begin{stwierdzenie}
-	 	$\forall_{v\in (t,T)}$ Metoda Jeffersona z wartością umowną $v$ daje nam w sumie $m$ akcji $t<v<T$.
-	 	
-	 	$p_i:$ układ $i$ daje $a_i$ akcji
-	 	
-	 	$v$ - umowna wartość akcji
-	 	$\overset{~}{q}=\frac{p_i}{v}$ - umowna quota
-	 	
-	 	Metoda Jeffersona = Metoda d'Hondta
-	 	
-	 	Dzielimy wtedy przez kolejne dodatnie liczby całkowitych m największych liczb wyznczone liczby przypisywanych akcji.
-	 \end{stwierdzenie}
+	\begin{flushright}
+		$\square$
+	\end{flushright}
 	
-	$\frac{p+i}{1},\frac{p+i}{2},\dots,\frac{p+i}{a_i},\frac{p+i}{a_i+1}$\\
-	$\frac{p+i}{a_i}$ - daje TAK\\
-	$\frac{p+i}{a_i+1}$ - daje NIE\\
-	$\frac{p+i}{a_i}\geq T, \qquad \frac{p+i}{a_i+1}\leq t$\\\\
-	
-	$\frac{p+i}{a_i+1}\leq t < v < T \leq \frac{p+i}{a_i}$\\
-	$\frac{p+i}{a_i+1}<v<\frac{p+i}{a_i}$\\
-	$\frac{1}{a_i}<\frac{v}{p_i}<\frac{1}{a_i}$\\
-	$a_i<\frac{p+i}{v}<1+a_i$\\
-	$a_i=\lfloor \frac{p+i}{v}\rfloor$ - przy tym $v$ odpowiedni efekt\\\\
-	
-	$S$ - liczba akcjonariuszy\\
-	$m$ - liczba akcji\\
-	$p_1,\dots,p_S$ - układy $(p=p_1+\dots+p_S)$\\
-	$a_1,\dots,a_S$ - akcje\\
-	
-	D: $S\geq 4, m\geq 7, \epsilon<\frac{1}{2} (\epsilon>0), b,c>0$
-	
-	Model - zakładamy, że spełniane są warunki quoty i monotoniczności
-	
-	\begin{tabular}{c|c|c|c}
-		&Układ&Quota&akcji\\
-		$p_1$&$b(5+\epsilon)$&$5+\epsilon$&$5,6$\\
-		$p_2$&$b\cdot\frac{2}{3}$&$\frac{2}{3}$&$0,1$\\
-		$p_3$&$b\cdot(\frac{2}{3}-\frac{\epsilon}{3})$&$\frac{2}{3}-\frac{\epsilon}{3}$&$0,1$\\
-		$p_4$&$b\cdot(\frac{2}{3}-\frac{2\epsilon}{3})$&$\frac{2}{3}-\frac{2\epsilon}{3}$&$0,1$\\
-		$p_5$&&&\\
-		$\vdots$&&&\\
-		$p_S$&&&\\
-	\end{tabular}
-	Od $p_5$ do $p_S$ całkowite wielokrotności $b$ dają w sumie $\frac{(m-7)b}{mb}$ i jest ich $m-7$
-	
-	Zachodzi również $p_1>p_2>p_3>p_4$
-	$a_1\geq a_2 \geq a_3 \geq a_4 \Rightarrow a_4=0$, bo $a_1+a_2+a_3 = 7$
-	
-	Ma być $p_i,\bar{p_i}\in \mathbf{Z}$
-	Np. $c=6\cdot13\cdot600$
-	$b=6\cdot10\cdot600$
-	$z=\frac{1}{600}$
-	$\frac{c}{d}=\frac{13}{10}$
-	$1,25<1,3<1,33$
-	
-	$p_1=6\cdot10\cdot600\cdot\frac{3001}{600}=6\cdot30010<6,13\cdot600\cdot\frac{2399}{600}=6\cdot31187=\bar{p_1}$
-	$p_4=6\cdot10\cdot600\cdot\frac{2}{3}\cdot\frac{599}{600}=40\cdot5599=23960>6\cdot13\cdot600\cdot\frac{301}{600}=23478=\bar{p_4}$
-	$p_4>\bar{p_4}$
-	
-	\begin{theorem}[Tw Balińskiego-Younga]
-		Dla $S\geq 4$ i $m\geq 7$ nie istnieje metoda spełniająca jednocześnie warunki \begin{itemize}
-			\item quoty
-			\item monotniczności
-			\item populacji
+	\begin{stwierdzenie}
+		Dla każdego $v \in (t, T)$ Metoda Jeffersona z wartością umowną $v$ daje w sumie $m$ akcji, gdzie $t < v < T$.
+		
+		\noindent \textbf{Dowód:} Niech:
+		\begin{itemize}
+			\item $p_i$: układ $i$ daje $a_i$ akcji,
+			\item $v$ - umowna wartość akcji,
+			\item $\overset{~}{q} = \frac{p_i}{v}$ - umowna quota.
 		\end{itemize}
+		
+		Metoda Jeffersona jest równoważna Metodzie d'Hondta. Dzielimy wtedy przez kolejne dodatnie liczby całkowite, a największe liczby wyznaczają przypisywane akcje.
+	\end{stwierdzenie}
+	
+	Rozważmy:
+	\[
+	\frac{p_i}{1}, \frac{p_i}{2}, \dots, \frac{p_i}{a_i}, \frac{p_i}{a_i + 1}
+	\]
+	gdzie:
+	\begin{itemize}
+		\item $\frac{p_i}{a_i}$ - daje TAK,
+		\item $\frac{p_i}{a_i + 1}$ - daje NIE,
+		\item $\frac{p_i}{a_i} \geq T$,
+		\item $\frac{p_i}{a_i + 1} \leq t$.
+	\end{itemize}
+	
+	Zachodzi:
+	\[
+	\frac{p_i}{a_i + 1} \leq t < v < T \leq \frac{p_i}{a_i}
+	\]
+	czyli:
+	\[
+	\frac{p_i}{a_i + 1} < v < \frac{p_i}{a_i}
+	\]
+	co można przekształcić do:
+	\[
+	\frac{1}{a_i} < \frac{v}{p_i} < \frac{1}{a_i}
+	\]
+	oraz:
+	\[
+	a_i < \frac{p_i}{v} < 1 + a_i
+	\]
+	Stąd:
+	\[
+	a_i = \left\lfloor \frac{p_i}{v} \right\rfloor
+	\]
+	co daje odpowiedni efekt dla danego $v$.
+	
+	\begin{flushright}
+		$\square$
+	\end{flushright}
+
+	\begin{theorem}[Tw. Balińskiego-Younga]
+	Dla $S \geq 4$ i $m \geq 7$ nie istnieje metoda spełniająca jednocześnie warunki:
+	\begin{itemize}
+		\item quoty,
+		\item monotoniczności,
+		\item populacji.
+	\end{itemize}
 	\end{theorem}
 	
+	\noindent \textbf{Dowód:} Niech:
+	\begin{itemize}
+		\item $S$ - liczba akcjonariuszy,
+		\item $m$ - liczba akcji,
+		\item $p_1, \dots, p_S$ - układy $(p = p_1 + \dots + p_S)$,
+		\item $a_1, \dots, a_S$ - akcje.
+	\end{itemize}
+	
+	Zakładamy:
+	\[
+	S \geq 4, \quad m \geq 7, \quad \epsilon < \frac{1}{2} \ (\epsilon > 0), \quad b, c > 0
+	\]
+	
+	Model zakłada, że spełnione są warunki quoty i monotoniczności.
+	
 	\begin{tabular}{c|c|c|c}
-		&Układ&Quota&akcji\\
-		$\bar{p_1}$&$c(4-\epsilon)$&$4-\epsilon$&$3,4$\\
-		$\bar{p_2}$&$c(2-\frac{\epsilon}{2})$&$2-\frac{\epsilon}{2}$&$1,2$\\
-		$\bar{p_3}$&$c(1+\frac{\epsilon}{2})$&$\frac{1}{2}+\frac{\epsilon}{2}$&$0,1$\\
-		$\bar{p_4}$&$c(1+\frac{\epsilon}{2})$&$\frac{1}{2}+\frac{\epsilon}{2}$&$0,1$\\
-		$\bar{p_5}$&&&\\
-		$\vdots$&&&\\
-		$\bar{p_S}$&&&\\
+		& Układ & Quota & akcji \\ \hline
+		$p_1$ & $b(5 + \epsilon)$ & $5 + \epsilon$ & $5, 6$ \\ \hline
+		$p_2$ & $b \cdot \frac{2}{3}$ & $\frac{2}{3}$ & $0, 1$ \\ \hline
+		$p_3$ & $b \cdot \left(\frac{2}{3} - \frac{\epsilon}{3}\right)$ & $\frac{2}{3} - \frac{\epsilon}{3}$ & $0, 1$ \\ \hline
+		$p_4$ & $b \cdot \left(\frac{2}{3} - \frac{2\epsilon}{3}\right)$ & $\frac{2}{3} - \frac{2\epsilon}{3}$ & $0, 1$ \\ \hline
+		$p_5$ & & & \\ \hline
+		$\vdots$ & & & \\ \hline
+		$p_S$ & & & \\ \hline
 	\end{tabular}
-	całkowite wielokrotności $c$ dają w sumie $\frac{c(m-7)}{mc}$
 	
-	$\bar{p_1}>\bar{p_2}>\bar{p_3}>\bar{p_4}$
-	$\bar{a_1}\geq\bar{a_2}\geq\bar{a_3}\geq\bar{a_4}$
-	$\Sigma = 7,\bar{a_4}=1$
+	Od $p_5$ do $p_S$ całkowite wielokrotności $b$ dają w sumie $\frac{(m - 7)b}{mb}$ i jest ich $m - 7$.
 	
-	$a_1>\bar{a_1}, a_n<\bar{a_n}$
-	Jeśli można tak dobrać $b_1, b_2: p_1<\bar{p_1}, p_n>\bar{p_n}$
-	$b(5+\epsilon)>c(4-\epsilon)$
-	$b(\frac{2}{3}-\frac{2\epsilon}{3}>c(\frac{1}{2}+\epsilon))$
-	$\Rightarrow \frac{c}{b}\geq \frac{3}{4}$ i $\frac{c}{b}\leq \frac{4}{3}$
+	Zachodzi również:
+	\[
+	p_1 > p_2 > p_3 > p_4
+	\]
+	oraz:
+	\[
+	a_1 \geq a_2 \geq a_3 \geq a_4 \Rightarrow a_4 = 0, \quad \text{bo} \quad a_1 + a_2 + a_3 = 7
+	\]
 	
-	daje sprzeczność z warunku populacji
-	 
+	Ma być:
+	\[
+	p_i, \bar{p_i} \in \mathbf{Z}
+	\]
 	
-	\vspace{3cm}
+	\begin{tabular}{c|c|c|c}
+		& Układ & Quota & akcji \\ \hline
+		$\bar{p_1}$ & $c(4 - \epsilon)$ & $4 - \epsilon$ & $3, 4$ \\ \hline
+		$\bar{p_2}$ & $c\left(2 - \frac{\epsilon}{2}\right)$ & $2 - \frac{\epsilon}{2}$ & $1, 2$ \\ \hline
+		$\bar{p_3}$ & $c\left(1 + \frac{\epsilon}{2}\right)$ & $\frac{1}{2} + \frac{\epsilon}{2}$ & $0, 1$ \\ \hline
+		$\bar{p_4}$ & $c\left(1 + \frac{\epsilon}{2}\right)$ & $\frac{1}{2} + \frac{\epsilon}{2}$ & $0, 1$ \\ \hline
+		$\bar{p_5}$ & & & \\ \hline
+		$\vdots$ & & & \\ \hline
+		$\bar{p_S}$ & & & \\ \hline
+	\end{tabular}
 	
+	Całkowite wielokrotności $c$ dają w sumie $\frac{c(m - 7)}{mc}$.
 	
-	\noindent \textbf{Jak wyglądało głosowanie w USA?}
+	Zachodzi:
+	\[
+	\bar{p_1} > \bar{p_2} > \bar{p_3} > \bar{p_4}
+	\]
+	oraz:
+	\[
+	\bar{a_1} \geq \bar{a_2} \geq \bar{a_3} \geq \bar{a_4}, \quad \Sigma = 7, \quad \bar{a_4} = 1
+	\]
+	
+	Jeśli można tak dobrać $b_1, b_2$:
+	\[
+	p_1 < \bar{p_1}, \quad p_n > \bar{p_n}
+	\]
+	to:
+	\[
+	b(5 + \epsilon) > c(4 - \epsilon)
+	\]
+	\[
+	b\left(\frac{2}{3} - \frac{2\epsilon}{3}\right) > c\left(\frac{1}{2} + \epsilon\right)
+	\]
+	co prowadzi do:
+	\[
+	\frac{c}{b} \geq \frac{5}{4} \quad \text{i} \quad \frac{c}{b} \leq \frac{4}{3}
+	\]
+	co daje sprzeczność z warunkiem populacji.\\\\
+	
+	Np.:
+	\[
+	c = 6 \cdot 13 \cdot 600, \quad b = 6 \cdot 10 \cdot 600, \quad z = \frac{1}{600}, \quad \frac{c}{d} = \frac{13}{10}, \quad 1,25 < 1,3 < 1,33
+	\]
+	
+	Przykładowe wartości:
+	\[
+	p_1 = 6 \cdot 10 \cdot 600 \cdot \frac{3001}{600} = 6 \cdot 30010 < 6,13 \cdot 600 \cdot \frac{2399}{600} = 6 \cdot 31187 = \bar{p_1}
+	\]
+	\[
+	p_4 = 6 \cdot 10 \cdot 600 \cdot \frac{2}{3} \cdot \frac{599}{600} = 40 \cdot 5599 = 23960 > 6 \cdot 13 \cdot 600 \cdot \frac{301}{600} = 23478 = \bar{p_4}
+	\]
+	\[
+	p_4 > \bar{p_4}
+	\]
+
+	\begin{flushright}
+		$\square$
+	\end{flushright}
+	\newpage
+	\subsection{Jak wyglądało głosowanie w USA?}
 	
 	\begin{tabbing}
 		\hspace{4cm} \= \hspace{3cm} \= \kill
@@ -2433,6 +2518,43 @@ $$
 		$\square$
 	\end{flushright}
 	
+	\begin{zad}
+		Metoda Balińskiego-Yonga - metoda wartościująca w sposób rekurencyjny\\
+		
+		Mamy dane wkłady akcjonariuszy $p_1,\dots,p_s$
+		
+		\begin{enumerate}[1.]
+			\item Zakładamy warunek początkowy $m=0$, $a_1=a_2=\dots=a_s=0$
+			\item Mam $m$ przyznanych akcji dla $a_1,\dots,a_s$. Musimy przyznać $(m+1)$ akcję.
+			\item Liczymy $\frac{p_i}{1+a_i}$ - wartość potencjalną dla i-tego akcjonariusza. $(i=1,\dots,s)$
+			\item Kto ma największą wartość potencjalną jemu dajemy akcję z wyłączeniem tych, u których przepadkiem byłaby przekroczona górna quota, czyli:
+			
+			$$~ 1+a_i > \lceil q_i \rceil = \left\lceil \frac{(m+1)p_i}{p}\right\rceil$$ 
+		\end{enumerate}
+		
+		Wyznacz jak należało by rodzielić pierwsze 8 (12) akcji.
+	\end{zad}
+	
+	Czyli uzupełnij tabelkę dla wkładów akcjonariuszy 7, 22, 71  (zwróć szczególną uwagę na wiersz 7 i 11):\\
+	
+	\begin{center}
+		\begin{tabular}{||c||c||c|c|c||c|c|c||c|c|c||}\hline
+			&\Large$w$&\Large$q_1$&\Large$q_2$&\Large$q_3$&\Large$a_1$&\Large$a_2$&\Large$a_3$&\Large$\frac{p_1}{1+a_1}$&\Large$\frac{p_2}{1+a_2}$&\Large$\frac{p_3}{1+a_3}$\\\hline
+			1&100&0,07&0,22&0,71&0&0&1&7&22&\textbf{71}\\\hline
+			2&50&0,14&0,44&1,42&0&0&2&7&22&\textbf{35,5}\\\hline
+			3&&&&&&&&&&\\\hline
+			4&&&&&&&&&&\\\hline
+			5&&&&&&&&&&\\\hline
+			6&&&&&&&&&&\\\hline
+			7&&&&&&&&&&\\\hline
+			8&&&&&&&&&&\\\hline
+		\end{tabular}
+	\end{center}
+	
+	\begin{zad}
+		Wykazać, że nie może zaistnieć sytuacja, w której wszyscy akcjonariusze przekroczą górną quotę.
+	\end{zad}
+	
 	\newpage
 	
 	\section{Metoda wartościująca}
@@ -2664,7 +2786,7 @@ $$
 	\begin{definition}[Grupowa metoda n-głosów]
 		Grupowa metoda n-głosów - wyborca głosuje na n kandydatów, wygrywa n z największą liczbą głosów.
 	\end{definition}
-	
+	\newpage
 	\begin{example}
 		
 	\end{example}
@@ -2697,7 +2819,7 @@ $$
 		\end{itemize}
 	\end{theorem}
 	
-	Dowód: Idea dla $n = 3$, $2n+1 = 7$:
+	\noindent \textbf{Dowód:} Idea dla $n = 3$, $2n+1 = 7$:
 	
 	\begin{tabular}{|c|ccc|cccc|}\hline
 		&$\circ$&$\circ$&$\circ$&$\square$&$\square$&$\square$&$\square$\\\hline
@@ -2788,42 +2910,6 @@ $$
 		$\square$
 	\end{flushright}
 	
-	\begin{zad}
-		Metoda Balińskiego-Yonga - metoda wartościująca w sposób rekurencyjny\\
-		
-		Mamy dane wkłady akcjonariuszy $p_1,\dots,p_s$\\
-		
-		\begin{enumerate}[1.]
-			\item Zakładamy warunek początkowy $m=0$, $a_1=a_2=\dots=a_s=0$
-			\item Mam $m$ przyznanych akcji dla $a_1,\dots,a_s$. Musimy przyznać $(m+1)$ akcję.
-			\item Liczymy $\frac{p_i}{1+a_i}$ - wartość potencjalną dla i-tego akcjonariusza. $(i=1,\dots,s)$
-			\item Kto ma największą wartość potencjalną jemu dajemy akcję z wyłączeniem tych, u których przepadkiem byłaby przekroczona górna quota, czyli:
-			
-			$$~ 1+a_i > \lceil q_i \rceil = \left\lceil \frac{(m+1)p_i}{p}\right\rceil$$ 
-		\end{enumerate}
-	
-	Wyznacz jak należało by rodzielić pierwsze 8 (12) akcji.
-	\end{zad}
-
-	Czyli uzupełnij tabelkę dla wkładów akcjonariuszy 7, 22, 71  (zwróć szczególną uwagę na wiersz 7 i 11):\\\\
-	
-	\begin{center}
-		\begin{tabular}{||c||c||c|c|c||c|c|c||c|c|c||}\hline
-		&\Large$w$&\Large$q_1$&\Large$q_2$&\Large$q_3$&\Large$a_1$&\Large$a_2$&\Large$a_3$&\Large$\frac{p_1}{1+a_1}$&\Large$\frac{p_2}{1+a_2}$&\Large$\frac{p_3}{1+a_3}$\\\hline
-		1&100&0,07&0,22&0,71&0&0&1&7&22&\textbf{71}\\\hline
-		2&50&0,14&0,44&1,42&0&0&2&7&22&\textbf{35,5}\\\hline
-		3&&&&&&&&&&\\\hline
-		4&&&&&&&&&&\\\hline
-		5&&&&&&&&&&\\\hline
-		6&&&&&&&&&&\\\hline
-		7&&&&&&&&&&\\\hline
-		8&&&&&&&&&&\\\hline
-	\end{tabular}
-	\end{center}
-
-	\begin{zad}
-		Wykazać, że nie może zaistnieć sytuacja, w której wszyscy akcjonariusze przekroczą górną quotę.
-	\end{zad}
 	
 	
 	\newpage
