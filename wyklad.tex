@@ -588,13 +588,13 @@ jeśli $\exists{k_1,k_2\in K}: W_1=\{w_{1},w_{2},\dots,w_{i}\}$ głosowali na $k
 		
 		\Komentarz{Zmiana polega na zamienieniu kolejności uporządkowania $A$ i $B$. Dodatkowo porządek ten był na wykładzie zapisany pionowo. $\begin{bmatrix}
 				\Delta\\
-				A\\
 				B\\
+				A\\
 				*
 			\end{bmatrix} \Rightarrow \begin{bmatrix}
 			\Delta\\
-			B\\
 			A\\
+			B\\
 			*
 		\end{bmatrix}$
 		}
@@ -625,7 +625,7 @@ jeśli $\exists{k_1,k_2\in K}: W_1=\{w_{1},w_{2},\dots,w_{i}\}$ głosowali na $k
 			Metoda jest jednoznacznie większościowa \witw $\forall_M$ kandydat $A$ w $M$ ma ponad połowę pierwszych miejsc $\Rightarrow A$ - jedyny zwycięzca.
 		\end{definition}
 		
-		\begin{definition}[Metoda słabo niezależna od ubocznych opcji]
+		\begin{definition}[Metoda słabo niezależna od ubocznych opcji IIA]
 			Metoda słabo niezależna od ubocznych opcji spełnia warunek niezależności porażki od ubocznych opcji (spełnia słaby warunek $IIA$) \witw
 			
 			$\forall_{A,B\in K} \forall_{M,N - modele}$ spełnia 
@@ -1525,7 +1525,7 @@ $$
 	
 	Z zasady Pareto:
 	\[
-	B \underset{M}{(w)<} A \underset{M}{<} D \underset{M}{<} C \underset{M}{<} B
+	B \underset{M}{<} A \underset{M}{<} D \underset{M}{<} C \underset{M}{<} B
 	\]
 	co prowadzi do sprzeczności.		
 	\begin{flushright}$\square$\end{flushright}
@@ -2008,6 +2008,22 @@ $$
 			\textbf{Paradoks Oklahomy}\\
 			Po zmianie liczby akcjonariuszy i akcji, np. $S=4,\: m=13, \: W=76,9$, także mogą wystąpić sprzeczne wyniki.
 			
+			\[
+			\begin{array}{|c|c|c|c|}
+				\hline
+				p_i & q_i & \lfloor q_i \rfloor & \text{Wynik} \\\hline
+				7264183 & 37606 & 37,606 & 38 \\
+				694466 & 3595 & 3,595 & 3 \\
+				-- & -- & -- & -- \\\hline
+			\end{array}\Rightarrow\begin{array}{|c|c|c|c|}
+				\hline
+				p_i & q_i & \lfloor q_i \rfloor & \text{Wynik} \\\hline
+				7264183 & 37606 & 37,606 & 38 \\
+				694466 & 3595 & 3,595 & 3 \\
+				-- & -- & -- & -- \\\hline
+			\end{array}
+			\]
+			
 			\item \textbf{Metoda Jeffersona}\\
 			Bierzemy liczbę $v$ (umowną wartość akcji), obliczamy:
 			\[
@@ -2332,6 +2348,7 @@ $$
 			\item $x \in \mathbb{Z} \Rightarrow f(x) = x$
 			\item Funkcja jest rosnąca: $x \leq y \Rightarrow f(x) \leq f(y)$
 		\end{enumerate}
+	\end{definition}
 		
 		\noindent Przydziały są obliczane jako $a_i = f\left(\frac{p_i}{v}\right)$, gdzie $v$ dobierane jest tak, aby $\sum_{i=1}^s a_i = m$. Poszczególne metody:
 		\begin{itemize}
@@ -2362,7 +2379,7 @@ $$
 			\end{cases}
 			\]
 		\end{itemize}
-	\end{definition}
+	
 	
 	% Twierdzenie o metodzie dzielników
 	\begin{theorem}

@@ -1,0 +1,491 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc} %polskie znaki
+\usepackage[T1]{fontenc}	%polskie znaki
+\usepackage{amsmath}		%matematyczne znaczki :3
+\usepackage{enumerate}		%Dodatkowe opcje do funkcji enumerate
+\usepackage{geometry} 		%Ustawianie marginesow
+\usepackage{graphicx}		%Grafika
+\usepackage{wrapfig}		%Grafika obok textu
+\usepackage{float}			%Allows H in figure
+\usepackage{hyperref}		%Allows hyperlinks
+%\pagestyle{empty} 			%usuwa nr strony
+\usepackage{todonotes}		%Todo notatki
+\usepackage{lipsum}         %Lorem text
+\usepackage{ntheorem}   	% for theorem-like environments
+\usepackage{mdframed}   	% for framing
+\usepackage{subcaption}		% subfigure (image placing)
+\usepackage{pdfcomment}		% Komentarze (z bazowego pdf'a)
+\usepackage{xparse}			% New commands with optional arguments
+\usepackage{ifthen}			% If then - funkcje!
+\usepackage{expl3}			% Deklarowanie zmiennych
+\usepackage{pgf}			% Aktualne rachunki \pgfmathparse{}
+\usepackage{amsmath} 		% For mathematical symbols and structures
+\usepackage{amsfonts}		% Zbiór liczb naturalnych + formatowanie
+\usepackage{ulem}			% Przekreślony text
+%\usepackage[colorlinks=true, linkcolor=blue, urlcolor=red, citecolor=green]{hyperref}
+\usepackage{fontawesome5}
+\usepackage{mathtools}
+%\usepackage{multirow} 		% Required for merging rows
+
+\newgeometry{tmargin=2cm, bmargin=2cm, lmargin=2cm, rmargin=2cm} 
+
+%Counter commands{
+	\newcounter{definicja}
+	\setcounter{definicja}{1} 
+	\newcounter{twierdzenie}
+	\setcounter{twierdzenie}{1} 
+	\newcounter{przyklady}
+	\setcounter{przyklady}{1} 
+	\newcounter{wnioski}
+	\setcounter{wnioski}{1} 
+	
+	\newcommand{\counter}[1]{
+		\arabic{#1} \stepcounter{#1} 
+	}
+	\newcommand{\counterreset}[1]{\setcounter{#1}{1}}
+	%}
+
+%Define styles{
+	\theoremstyle{break}
+	\theoreminframepreskip{0.5cm}
+	\theoremheaderfont{\bfseries}
+	\newmdtheoremenv[%
+	linecolor=white,%
+	innertopmargin=\topskip,
+	shadowsize=0,%
+	innertopmargin=5,%
+	innerbottommargin=5,%
+	leftmargin=10,%
+	rightmargin=10,%
+	backgroundcolor=gray!20,%
+	innertopmargin=0pt,%
+	ntheorem]{zad}{Zadanie}
+	
+	\mdfdefinestyle{zadanie}{
+		linecolor=white,%
+		innertopmargin=5,%
+		innerbottommargin=5,%
+		leftmargin=10,%
+		rightmargin=10,%
+		backgroundcolor=gray!20,%
+		innertopmargin=8,
+		innerbottommargin=8,
+		skipabove = 5,
+	}
+	\mdfdefinestyle{wzor}{
+		linecolor=cyan,%
+		linewidth=2pt,%
+		innertopmargin=8,
+		innerbottommargin=8,
+		leftmargin=10,%
+		rightmargin=10,%
+		backgroundcolor = white, 
+		fontcolor = black,
+		skipabove = 5,
+		skipbelow = 5,
+	}
+	%}
+
+%Zadania templatex%{
+	\newcommand{\Obramowka}[1]{
+		\begin{mdframed}[style=wzor]
+			\centering #1
+		\end{mdframed}
+	}
+	\newcommand{\Komentarz}[1]{
+		\begin{mdframed}[style=zadanie]
+			\textbf{Komentarz}\\
+			#1
+		\end{mdframed}
+	}
+	
+	%}
+
+% Set spacing before and after theorems
+\setlength{\theorempreskipamount}{20pt}  % Space above the theorem
+\setlength{\theorempostskipamount}{20pt} % Space below the theorem
+
+\newtheorem{definition}{Definicja}[section]
+
+\newtheorem{theorem}{Twierdzenie}[section]
+\newtheorem{lemma}{Lemat}[section]
+\newtheorem{wniosek}{Wniosek}[theorem]
+\newtheorem{example}{Przykład}[section]
+\newtheorem{exercise}{Ćwiczenie}[section]
+\newtheorem{stwierdzenie}{Stwierdzenie}[section]
+\newtheorem{obserwacja}{Obserwacja}[section]
+
+
+\newcommand{\tg}{\text{tg}}
+\newcommand{\ctg}{\text{ctg}}
+\newcommand{\witw}{$\Leftrightarrow$}
+\newcommand{\wynika}{$\Rightarrow$}
+\newcommand{\UkladRownan}[2]{
+	$\left\{
+	\begin{array}{l}
+		#1 \\
+		#2
+	\end{array}
+	\right.$
+}
+\begin{document}
+	\section{Notatnki}
+	\begin{definition}[Metoda anonimowa]
+		Metoda jest anonimowa \witw gdy wszyscy wyborcy są traktowani tak samo, to znaczy \witw $\forall_{x,y \in W}$ zamiana głosów $x$ i $y$ nie zmienia wyniku.
+	\end{definition}
+	
+	\begin{definition}[Metoda neutralna]
+		Metoda jest neutralna \witw wszyscy kandydaci są traktowani tak samo, to znaczy \witw $\forall_{x,y \in K}$ zamiana ról $x$ i $y$ nie zmienia wyniku.
+	\end{definition}
+
+	\begin{definition}[Metoda efektywna]
+		Metoda zwycięzcy jest efektywna \witw zawsze wyłania przynajmniej jednego zwycięzcę.
+	\end{definition}
+
+	\begin{definition}[Metoda decyzyjna]
+		Metoda zwycięzcy jest decyzyjna \witw w każdym modelu wyłania dokładnie jednego zwycięzcę.
+	\end{definition}
+	
+	\begin{definition}[Metoda prawie decyzyjna]
+		Metoda zwycięzcy jest prawie decyzyjna \witw w każdym modelu wyłania co najwyżej jednego zwycięzcę. Sytuacja, w której nie ma zwycięzcy, zachodzi wtedy, gdy więcej niż jeden kandydat uzyskał tę samą, najwyższą liczbę punktów.
+	\end{definition}
+
+	\begin{definition}[Kryterium jednoznacznej bezwzględnej większości]
+		Metoda zwycięzcy (MZ) spełnia kryterium jednoznacznej bezwzględnej większości, \textit{wtedy i tylko wtedy}, gdy kandydat, który otrzyma ponad 50\% głosów, jest jedynym zwycięzcą.
+	\end{definition}
+
+	\begin{definition}[Metoda monotoniczna ze względu na zwycięzcę]
+		\textbf{Z:} MZ - klasyczna lub semi-klasyczna.
+		Metoda jest monotoniczna ze względu na zwycięzcę, \textit{wtedy i tylko wtedy}, gdy kandydat $A$ jest zwycięzcą, a jeśli wybierzemy kandydata $B$ różnego od $A$ ($B\neq A$) oraz jego grupę wyborców, to jeśli ta grupa zmieni swoje głosy bez straty dla $A$ (czyli zmiana nastąpi zgodnie z następującymi dozwolonymi operacjami):\\
+		
+		\begin{tabular}{|c|c|c|}
+			\hline
+			M & $\Rightarrow$ & N \\\hline
+			A B & $\Rightarrow$ & A B \\\hline
+			- - & $\Rightarrow$ & - - \\\hline
+			+ + & $\Rightarrow$ & + + \\\hline
+			- + & $\Rightarrow$ & + - \\\hline
+		\end{tabular}\\
+		
+		to: $\Rightarrow$ $A$ nadal wygrywa.
+	\end{definition}
+
+	\begin{theorem}[Maya - \textit{Kenneth Maya, 1952r}]
+		\textbf{Z:} Klasyczna metoda zwycięzcy oraz $\# K = 2$. Jeżeli metoda ta jest metodą:
+		\begin{enumerate}[(1)]
+			\item anonimową
+			\item neutralną
+			\item monotoniczną ze względu na zwycięzcę
+			\item prawie decyzyjną
+		\end{enumerate}
+		$\Rightarrow$ jest metodą bezwzględnej większości.
+	\end{theorem}
+
+	\begin{definition}[Metoda zakładająca uporządkowanie]
+		Metoda zwycięzcy jest metodą zakładającą uporządkowanie (MZU) \witw gdy $\forall_{w\in W}$ wyborca $w$ ustala $K$ kandydatów w liniowym porządku, a jego głos zależy od tego porządku.
+	\end{definition}
+
+	\begin{definition}[Monotoniczność ze względu na transpozycję]
+		MZU jest monotoniczna ze względu na transpozycje \witw $\forall_{M-\text{model}} \forall_{w\in W} \forall_{A,B\in K}$, jeśli w $M$ głosuje się $[\Delta, B, A, *]$ i w $M$ wygrywa $A$, to w $N$, gdzie zmiana polega na $[\Delta, A, B, *]$, również wygrywa $A$.
+	\end{definition}
+
+	\begin{definition}[Słaba zasada Pareto]
+		MZU spełnia słabą zasadę Pareto \witw $\forall_M (\exists_{A,B\in K}\forall_{w\in W} A\overset{w,M}{<}B) \Rightarrow A$ nie wygrywa w $M$.
+	\end{definition}
+	
+	\begin{definition}[Kandydat Condorceta]
+		$A\in K$ jest kandydatem Condorceta (zwycięzcą Condorceta) \witw w "bezpośrednich porównaniach" $A$ jest lepszy od każdego innego kandydata \witw $\forall_{B \in K}: B\neq A \quad \#\{w: B\overset{w,M}{<}A\}>\#\{w: B\overset{w,M}{>}A\}$.
+	\end{definition}
+
+	\begin{definition}[Przegrany Condorceta]
+		$A\in K$ to przegrany Condorceta (w modelu $M$) \witw $\forall_{B \in K}: B\neq A \quad\#\{w: B\overset{w,M}{<}A\}<\#\{w: B\overset{w,M}{>}A\}$.
+	\end{definition}
+	
+	\begin{definition}[Kryterium Condorceta]
+		Metoda spełnia kryterium Condorceta \witw $\forall_M:$ Istnieje kandydat Condorceta (w $M$) $\Rightarrow A$ - jedyny zwycięzca w $M$.
+	\end{definition}
+	
+	\begin{definition}[Kryterium przegranych Condorceta]			
+		Metoda spełnia kryterium przegranych Condorceta \witw $\forall_M:$ Istnieje przegrany Condorceta $A$ w $M$ $\Rightarrow A$ nie wygrywa w $M$.
+	\end{definition}
+	
+	\begin{definition}[Metoda jednoznacznie większościowa]
+		Metoda jest jednoznacznie większościowa \witw $\forall_M$ kandydat $A$ w $M$ ma ponad połowę pierwszych miejsc $\Rightarrow A$ - jedyny zwycięzca.
+	\end{definition}
+	
+	\begin{definition}[Metoda słabo niezależna od ubocznych opcji IIA]
+		Metoda słabo niezależna od ubocznych opcji spełnia warunek niezależności porażki od ubocznych opcji (spełnia słaby warunek $IIA$) \witw
+		
+		$\forall_{A,B\in K} \forall_{M,N - modele}$ spełnia 
+		$\begin{bmatrix}
+			\forall_{w\in W} (B\overset{w,M}{<}A) \text{\witw} (B\overset{w,N}{<}A) \\
+			\text{A wygrywa w M, B nie wygrywa w M}		 
+		\end{bmatrix}$	$\Rightarrow$ B nie wygrywa w N.\\\\
+		
+		Innymi słowy: zmiany nie wpływające na relacje przegrany-zwycięzca nie mogą dać przegrywającemu zwycięstwa.		
+		
+	\end{definition}
+
+	\begin{theorem}
+		MZU, anonimowa, neutralna $\Rightarrow$ metoda nie jest decyzyjna.
+	\end{theorem}
+
+	\begin{theorem}
+		MZU spełnia kryterium Condorceta $\Rightarrow$ jest jednoznacznie większościowa.
+	\end{theorem}
+
+	\begin{lemma}[Lemat o decyzyjności]
+		Z: MZU, efektywna, $\#K\geq3$, $\#W\geq2$.
+		Metoda spełnia słabą zasadę Pareto i słabe IIA
+		$\Rightarrow$ jest decyzyjna.
+	\end{lemma} 
+
+	\begin{theorem}[Twierdzenie Arrowa dla metod zwycięzcy (1951)]
+		Załóżmy: $\# K \geq 3, \#W\geq2$, MZU, efektywna, spełnia słabą zasadę Pareto i słabe IIA $\Rightarrow$ dyktatura.
+	\end{theorem}
+
+	\begin{wniosek}[Twierdzenie Arrowa o niemożliwości]
+		Załóżmy, że $\# K \geq 3$, $\# W \geq 2$. Wówczas: nie istnieje metoda zakładająca uporządkowanie (MZU) efektywna, która jednocześnie spełnia następujące warunki:
+		\begin{enumerate}[-]
+			\item anonimowa,
+			\item słabą zasadę Pareto,
+			\item słabe kryterium niezależności od opcji ubocznych (IIA).
+		\end{enumerate}
+	\end{wniosek}
+
+	\begin{theorem}[Twierdzenie Taylora o niemożliwości]
+		Dla $\# K \geq 3$, $\# W \geq 3$:  
+		nie istnieje MZU efektywna, która spełnia jednocześnie kryterium Condorceta oraz słabe kryterium niezależności od ubocznych opcji (IIA).
+	\end{theorem}
+
+	$$
+	\begin{bmatrix}
+		\Sigma = \{ M: W \rightarrow K \} & \Sigma = \{ M: W \rightarrow \{ \text{TAK}, \text{NIE} \} \} \\
+		f:\Sigma \rightarrow P(K) & f:\Sigma \rightarrow \{ \text{TAK}, \text{NIE} \}
+	\end{bmatrix}
+	$$
+	
+	\begin{definition}[Założenia metody TAK/NIE]
+		Założenia:´
+		
+		\begin{itemize}
+			\item $\forall_{w \in W} \; w : \text{TAK} \Rightarrow \text{wynik: TAK}$,
+			\item $\forall_{w \in W} \; w : \text{NIE} \Rightarrow \text{wynik: NIE}$.
+		\end{itemize}
+	\end{definition}
+
+	\begin{definition}[Koalicja wygrywająca]
+		Podzbiór $A \subset W$ jest koalicją wygrywającą wtedy i tylko wtedy, gdy:  
+		$$\{x \in A : x \text{ głosuje TAK} \} \Rightarrow \text{wynik: TAK.}$$
+	\end{definition}
+	
+	\begin{definition}[Monotoniczność metody TAK/NIE]
+		Metoda TAK/NIE jest monotoniczna wtedy i tylko wtedy, gdy:  
+		$$
+		\begin{bmatrix}
+			A \subset A_1 \\
+			A \text{ jest koalicją wygrywającą}
+		\end{bmatrix}
+		\Rightarrow A_1 \text{ jest koalicją wygrywającą.}
+		$$
+	\end{definition}
+	
+	\begin{definition}[Wskaźnik Banzhafa]
+		Załóżmy, że $W = \{a_1, \dots, a_n\}$.  
+		Wskaźnik Banzhafa dla $a_i$ jest równy liczbie:
+		$$B(a_i) = \# \{ A : a_i \in A \; \text{i $a_i$ jest decydujący dla $A$} \}.$$
+	\end{definition}
+	
+	\begin{definition}[Indeks Banzhafa (Penrose’a–Banzhafa)]
+		Indeks Banzhafa dla $a_i$ definiuje się jako:
+		$$I_B(a_i) = \frac{B(a_i)}{B(a_1) + \dots + B(a_n)}.$$
+	\end{definition}
+
+	\begin{definition}[Wskaźnik/Indeks Shapleya–Shubika]
+		Dla metody monotonicznej:  
+		Porządkujemy wyborców jako $W = (w_1, \dots, w_n)$.  
+		W ciągu $(w_1, \dots, w_n)$ wyborca $w_k$ jest wpływającym wyborcą, jeśli:
+		\[
+		\{w_1, \dots, w_{k-1}\} \text{ nie tworzy koalicji wygrywającej, a } \{w_1, \dots, w_k\} \text{ już tak.}
+		\]
+		
+		Wskaźnik Shapleya–Shubika:
+		\[
+		S(w_k) = \# \{\text{ciągi, w których } w_k \text{ jest wpływającym wyborcą}\}.
+		\]
+		
+		Indeks Shapleya–Shubika:
+		\[
+		I_S(w_k) = \frac{S(w_k)}{n!}.
+		\]
+	\end{definition}
+
+	\begin{definition}[Słaby porządek]
+		Zbiór $K$ jest słabo uporządkowany wtedy i tylko wtedy, gdy $\exists R$ — relacja równoważności w $K$ taka, że $K / R$ jest uporządkowany liniowo przez relację $\leq$. 
+		
+		Dla $a, b \in K$ definiujemy: 
+		\[
+		a < b \overset{\text{def}}{\Leftrightarrow} [a]_R < [b]_R,
+		\]
+		gdzie relacja jest przechodnia i słabo antysymetryczna.
+	\end{definition}
+
+	\begin{definition}[Metoda porządkowa (MP)]
+		Każdy wyborca porządkuje kandydatów w sposób liniowy.
+		
+		Wynik wyborów jest słabym porządkiem w zbiorze $K$:
+		\begin{itemize}
+			\item $L(K) = \{(K, \leq) : \leq \text{ jest porządkiem w } K\}$,
+			\item $S(K) = \{(K, \leq) : \leq \text{ jest słabym porządkiem w } K\}$.
+		\end{itemize}
+		
+		Zapis formalny:
+		\[
+		\Sigma = \{ M : W \rightarrow L(K) \}, \quad f : \Sigma \rightarrow S(K).
+		\]
+	\end{definition}
+
+	\begin{definition}[Porządkowa zasada Pareto]
+		Metoda porządkowa (MP) spełnia (porządkową) zasadę Pareto wtedy i tylko wtedy, gdy:
+		\[
+		\forall_M \forall_{A, B \in K} \left( \forall_w \; A \overset{w, M}{<} B \right) \Rightarrow A \underset{M}{<} B.
+		\]
+	\end{definition}
+	
+	\begin{definition}[Metoda spełniająca postulat liberalizmu Sena]
+		Metoda spełnia postulat liberalizmu Sena, jeśli:
+		\[
+		\forall_{w \in W} \exists_{A, B \in K \; (A \neq B)} \; \left( A \overset{w, M}{<} B \Rightarrow A \underset{M}{<} B \right) \text{ oraz } \left( A \overset{w, M}{>} B \Rightarrow A \underset{M}{>} B \right).
+		\]
+	\end{definition}
+	
+	\begin{theorem}[Twierdzenie Sena]
+		Niech $\# K \geq 2$ oraz $\# W \geq 2$. Wtedy:
+		Nie istnieje metoda spełniająca jednocześnie:
+		\begin{enumerate}
+			\item zasadę Pareto,
+			\item postulat liberalizmu Sena.
+		\end{enumerate}
+	\end{theorem}
+
+	\begin{definition}[Filtr]
+		Niech $X$ będzie zbiorem. Podzbiór $F \subset P(X)$, gdzie $F \neq \emptyset$, nazywamy **filtrem**, jeśli spełnia następujące warunki:
+		\begin{enumerate}[1)]
+			\item $\emptyset \notin F$
+			\item Jeśli $A, B \in F$, to $A \cap B \in F$
+			\item Jeśli $A \in F$ oraz $A \subset B \subset X$, to $B \in F$
+		\end{enumerate}
+	\end{definition}
+
+	\begin{definition}[Ultrafiltr]
+		Podzbiór $F \subset P(X)$ nazywamy **ultrafiltrem**, jeśli spełnia następujące warunki:
+		\begin{enumerate}[1)]
+			\item $F$ jest filtrem.
+			\item Dla każdego $A \subset X$ zachodzi dokładnie jedno z dwóch: $A \in F$ albo $X \setminus A \in F$.
+		\end{enumerate}
+	\end{definition}
+
+	\begin{definition}[Liberalizm Senna]
+		\[
+		\forall_{w \in W} \exists_{a, b \in K; a \neq b} \forall_M \; w \text{ decyduje o } (a, b)
+		\]
+	\end{definition}
+
+	\begin{theorem}
+		Dla $K$ i $W$ istnieje metoda spełniająca postulat liberalizmu Senna \textit{wtedy i tylko wtedy}, gdy $\# W < \# K$.
+	\end{theorem}
+
+	\begin{definition}[Warunki sensowności metody rozdziału]
+		\begin{enumerate}[1.]
+			\item (Warunek quoty) $\lfloor q_i \rfloor \leq a_i \leq \lceil q_i \rceil$ (uwzględniając $q_i \in \mathbb{Z} \Rightarrow g_i = a_i$)
+			\item (Warunek monotoniczności) $p_i > p_j \Rightarrow a_i \geq a_j$ (analogicznie w drugą stronę)
+			\item (Warunek populacji) Dla $S, m$ danych:
+			\[
+			p_1, \dots, p_s \longmapsto a_1, \dots, a_s
+			\]
+			jeśli nastąpiła zmiana:
+			\[
+			\bar{p_1}, \dots, \bar{p_s} \longrightarrow \bar{a_1}, \dots, \bar{a_s},
+			\]
+			to:
+			\[
+			!\exists_{i,j} \bar{p_i}>p_i, \bar{a_i}<a_i \quad \text{oraz} \quad \bar{p_j}<p_j, \bar{a_j}>a_j
+			\]
+			\item (Warunek monotoniczności akcji) Dla $p_1,\dots,p_n$ stałych, jeśli $\bar{m}>m$, to $\forall_i \bar{a_i} \geq a_i$.
+		\end{enumerate}
+		Nie mogą zajść wszystkie te warunki na raz.
+	\end{definition}
+
+		\textbf{Paradoks Alabamy}\\
+	Dla $S=3$, $m=10$, $W=100$, po zmianie liczby akcji na $m=11$, $W=90,9$, wyniki się zmieniają:
+	\[
+	\begin{array}{|c|c|c|c|}
+		\hline
+		p_i & q_i & \lfloor q_i \rfloor & \text{Wynik} \\\hline
+		145 & 1,45 & 1 & 2 \\
+		340 & 3,40 & 3 & 3 \\
+		515 & 5,15 & 5 & 5 \\\hline
+		\Sigma=1000 & & 9 & 10 \\\hline
+	\end{array}\Rightarrow\begin{array}{|c|c|c|c|}
+		\hline
+		p_i & q_i & \lfloor q_i \rfloor & \text{Wynik} \\\hline
+		145 & 1,595 & 1 & 1 \\
+		340 & 3,740 & 3 & 4 \\
+		515 & 5,665 & 5 & 6 \\\hline
+		\Sigma=1000 & & 9 & 11 \\\hline
+	\end{array}
+	\]
+	
+	\textbf{Paradoks Oklahomy}\\
+	Po zmianie liczby akcjonariuszy i akcji, np. $S=4,\: m=13, \: W=76,9$, także mogą wystąpić sprzeczne wyniki.
+	
+	\begin{theorem}[Tw. Balińskiego-Younga]
+		Dla $S \geq 4$ i $m \geq 7$ nie istnieje metoda spełniająca jednocześnie warunki:
+		\begin{itemize}
+			\item quoty,
+			\item monotoniczności,
+			\item populacji.
+		\end{itemize}
+	\end{theorem}
+
+	\begin{definition}[Metoda dzielników]
+		Metoda rozdziału nazywana jest metodą dzielników, jeśli istnieje funkcja 
+		$f: [0, \infty) \to \mathbb{N}$, taka że:
+		\begin{enumerate}[a)]
+			\item $x \in \mathbb{Z} \Rightarrow f(x) = x$
+			\item Funkcja jest rosnąca: $x \leq y \Rightarrow f(x) \leq f(y)$
+		\end{enumerate}
+	\end{definition}
+
+	\begin{definition}[Metoda wartościująca -- XXI wiek]
+		Niech $S$ będzie zbiorem stopni (ocen wartości). Metoda $M: W \to \{ f: K \to S \}$ polega na tym, że wyborca każdemu kandydatowi przypisuje ocenę.
+	\end{definition}
+
+	\begin{definition}[Metoda rankingowo niezależna od ubocznych opcji]
+		Metoda wartościująca jest rankingowo niezależna od ubocznych opcji wtedy i tylko wtedy, gdy:
+		\[
+		\forall_{ M, N} \, \forall_ {A, B} \, 
+		\begin{bmatrix}
+			M, N \text{ -- modele} \\
+			K_M = K_N \cup \{C\}, \, C \notin K_M \\
+			\forall v \in W \, \text{ oceny } v \text{ w } M = \text{ oceny } v \text{ w } N
+		\end{bmatrix}
+		\Rightarrow 
+		(A \underset{M}{<} B \, \Leftrightarrow \, A \underset{N}{<} B).
+		\]
+	\end{definition}
+
+		\begin{definition}[Metoda odporna na nieobecność]
+		Metoda (MP, MW) jest odporna na nieobecność wtedy i tylko wtedy, gdy:
+		\[
+		\forall_{M,N} \forall_{A,B} 
+		\begin{bmatrix}
+			M, N \text{ -- modele} \\
+			W_N = W_M \cup W^*, \quad W^* \cap W_M = \emptyset \\
+			v \in W_M \Rightarrow \text{ głos } v \text{ w } M = \text{ głos } v \text{ w } N \\
+			A \underset{M}{<} B \quad \text{oraz} \quad \forall_{v \in W^*} A \overset{v,N}{<}B
+		\end{bmatrix}
+		\Rightarrow A \underset{N}{<} B.
+		\]
+	\end{definition}
+\end{document}
