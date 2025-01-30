@@ -1991,15 +1991,22 @@ $$
 			\begin{array}{|c|c|c|c|}
 				\hline
 				p_i & q_i & \lfloor q_i \rfloor & \text{Wynik} \\\hline
-				145 & 1,595 & 1 & 1 \\
-				340 & 3,740 & 3 & 4 \\
-				515 & 5,665 & 5 & 6 \\\hline
+				145 & 1,45 & 1 & 2 \\
+				340 & 3,40 & 3 & 3 \\
+				515 & 5,15 & 5 & 5 \\\hline
 				\Sigma=1000 & & 9 & 10 \\\hline
-			\end{array}
+			\end{array}\Rightarrow\begin{array}{|c|c|c|c|}
+			\hline
+			p_i & q_i & \lfloor q_i \rfloor & \text{Wynik} \\\hline
+			145 & 1,595 & 1 & 1 \\
+			340 & 3,740 & 3 & 4 \\
+			515 & 5,665 & 5 & 6 \\\hline
+			\Sigma=1000 & & 9 & 11 \\\hline
+		\end{array}
 			\]
 			
 			\textbf{Paradoks Oklahomy}\\
-			Po zmianie liczby akcjonariuszy i akcji, np. $S=4,\: m=13, \: W=96,9$, także mogą wystąpić sprzeczne wyniki.
+			Po zmianie liczby akcjonariuszy i akcji, np. $S=4,\: m=13, \: W=76,9$, także mogą wystąpić sprzeczne wyniki.
 			
 			\item \textbf{Metoda Jeffersona}\\
 			Bierzemy liczbę $v$ (umowną wartość akcji), obliczamy:
@@ -2318,7 +2325,7 @@ $$
 	Od 1940 roku obowiązuje \textit{Metoda Hilla}.
 	
 	% Definicja metod
-	\begin{definition}
+	\begin{definition}[Metoda dzielników]
 		Metoda rozdziału nazywana jest metodą dzielników, jeśli istnieje funkcja 
 		$f: [0, \infty) \to \mathbb{N}$, taka że:
 		\begin{enumerate}[a)]
