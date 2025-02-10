@@ -2164,7 +2164,7 @@ $$
 		$\square$
 	\end{flushright}
 
-	\begin{theorem}[Tw. Balińskiego-Younga]
+	\begin{theorem}[Balińskiego-Younga]
 	Dla $S \geq 4$ i $m \geq 7$ nie istnieje metoda spełniająca jednocześnie warunki:
 	\begin{itemize}
 		\item quoty,
@@ -2177,7 +2177,7 @@ $$
 	\begin{itemize}
 		\item $S$ - liczba akcjonariuszy,
 		\item $m$ - liczba akcji,
-		\item $p_1, \dots, p_S$ - układy $(p = p_1 + \dots + p_S)$,
+		\item $p_1, \dots, p_S$ - wkłady $(p = p_1 + \dots + p_S)$,
 		\item $a_1, \dots, a_S$ - akcje.
 	\end{itemize}
 	
@@ -2186,10 +2186,10 @@ $$
 	S \geq 4, \quad m \geq 7, \quad \epsilon < \frac{1}{2} \ (\epsilon > 0), \quad b, c > 0
 	\]
 	
-	Model zakłada, że spełnione są warunki quoty i monotoniczności.
+	Model M zakłada, że spełnione są warunki quoty i monotoniczności.
 	
 	\begin{tabular}{c|c|c|c}
-		& Układ & Quota & akcji \\ \hline
+		& Wkład & Quota & akcji \\ \hline
 		$p_1$ & $b(5 + \epsilon)$ & $5 + \epsilon$ & $5, 6$ \\ \hline
 		$p_2$ & $b \cdot \frac{2}{3}$ & $\frac{2}{3}$ & $0, 1$ \\ \hline
 		$p_3$ & $b \cdot \left(\frac{2}{3} - \frac{\epsilon}{3}\right)$ & $\frac{2}{3} - \frac{\epsilon}{3}$ & $0, 1$ \\ \hline
@@ -2199,7 +2199,7 @@ $$
 		$p_S$ & & & \\ \hline
 	\end{tabular}
 	
-	Od $p_5$ do $p_S$ całkowite wielokrotności $b$ dają w sumie $\frac{(m - 7)b}{mb}$ i jest ich $m - 7$.
+	$b$ dobieramy w taki sposób, aby $p_1,\dots,p_S$ były liczbami całkowitymi. Oraz aby $p_5+\dots+p_S$ dawały $m-7$ akcji.
 	
 	Zachodzi również:
 	\[
@@ -2210,13 +2210,10 @@ $$
 	a_1 \geq a_2 \geq a_3 \geq a_4 \Rightarrow a_4 = 0, \quad \text{bo} \quad a_1 + a_2 + a_3 = 7
 	\]
 	
-	Ma być:
-	\[
-	p_i, \bar{p_i} \in \mathbf{Z}
-	\]
+	Tworzymy podobny model $N$\\
 	
 	\begin{tabular}{c|c|c|c}
-		& Układ & Quota & akcji \\ \hline
+		& Wkład & Quota & akcji \\ \hline
 		$\bar{p_1}$ & $c(4 - \epsilon)$ & $4 - \epsilon$ & $3, 4$ \\ \hline
 		$\bar{p_2}$ & $c\left(2 - \frac{\epsilon}{2}\right)$ & $2 - \frac{\epsilon}{2}$ & $1, 2$ \\ \hline
 		$\bar{p_3}$ & $c\left(1 + \frac{\epsilon}{2}\right)$ & $\frac{1}{2} + \frac{\epsilon}{2}$ & $0, 1$ \\ \hline
@@ -2226,7 +2223,10 @@ $$
 		$\bar{p_S}$ & & & \\ \hline
 	\end{tabular}
 	
-	Całkowite wielokrotności $c$ dają w sumie $\frac{c(m - 7)}{mc}$.
+	Mamy zatem:
+	\[
+	p_i, \bar{p_i} \in \mathbf{Z}
+	\]
 	
 	Zachodzi:
 	\[
@@ -2237,18 +2237,16 @@ $$
 	\bar{a_1} \geq \bar{a_2} \geq \bar{a_3} \geq \bar{a_4}, \quad \Sigma = 7, \quad \bar{a_4} = 1
 	\]
 	
-	Jeśli można tak dobrać $b_1, b_2$:
+	Jeśli można tak dobrać $b,c$ to otrzymujemy, że:
 	\[
 	p_1 < \bar{p_1}, \quad p_n > \bar{p_n}
 	\]
 	to:
 	\[
-	b(5 + \epsilon) > c(4 - \epsilon)
-	\]
-	\[
+	b(5 + \epsilon) > c(4 - \epsilon) \qquad
 	b\left(\frac{2}{3} - \frac{2\epsilon}{3}\right) > c\left(\frac{1}{2} + \epsilon\right)
 	\]
-	co prowadzi do:
+	co prowadzi do (przy $\epsilon \rightarrow \infty$)
 	\[
 	\frac{c}{b} \geq \frac{5}{4} \quad \text{i} \quad \frac{c}{b} \leq \frac{4}{3}
 	\]
