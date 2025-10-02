@@ -204,7 +204,7 @@ System ten działa w następujący sposób:
 	Artyści  & 1950          & 975           &       &       & 0\\\hline
 \end{tabular}\\
 
-Partia \textbf{Rybacy} prowadziła kampanię przeciwko \textbf{Myśliwym}, w wyniku czego liczba otrzymanych głosów zmieniła się następująco:
+Załóżmy teraz, że partia \textbf{Rybacy} prowadziła kampanię przeciwko \textbf{Myśliwym}, w wyniku czego liczba otrzymanych głosów zmieniła się następująco:
 \begin{itemize}
 	\item Partia \textbf{Rybacy} zyskała 400 głosów (+400)
 	\item Partia \textbf{Myśliwi} straciła 600 głosów (-600)
@@ -213,12 +213,12 @@ Partia \textbf{Rybacy} prowadziła kampanię przeciwko \textbf{Myśliwym}, w wyn
 
 \begin{tabular}{|c|c|c|c|c|c|}\hline
 	Nazwa    & Głosy $:1$ & $:2$ & $:3$ & $:4$ & Mandaty\\\hline
-	Rybacy   & \textbf{6400} & \textbf{3200} & 2133 &       & 3\\\hline
+	Rybacy   & \textbf{6400} & \textbf{3200} & 2133 &       & 2\\\hline
 	Myśliwi  & \textbf{5100} & \textbf{2550} & 1700 &       & 2\\\hline
-	Artyści  & \textbf{2150} & 1075          &      &       & 0\\\hline
+	Artyści  & \textbf{2150} & 1075          &      &       & 1\\\hline
 \end{tabular}\\
 
-\Komentarz{Tym oto sposobem partia \textbf{Myśliwi} stracili jeden mandat na rzecz partii \textbf{Artyści}.}
+\Komentarz{Tym oto sposobem partia \textbf{Myśliwi} stracił§a jeden mandat na rzecz partii \textbf{Artyści}.}
 
 \begin{example}
 	Rozważmy wyniki głosowania dla dwóch partii z 6 mandatami do rozdania.
@@ -279,11 +279,11 @@ Rozważmy głosowanie względem 2 partii z 7 mandatami:
 
 \begin{tabular}{|c|c|c|c|c|c|c|}\hline
 	Nazwa        & Głosy:1 & :3 & :5  & :7  & :9  & Mandaty\\\hline
-	Kelnerzy     & \textbf{1050} & \textbf{350} & \textbf{210} & 150 & 117  & 4\\\hline
-	Sportowcy    & \textbf{1008} & \textbf{336} & 202  & 144 &      & 3\\\hline
+	Kelnerzy     & \textbf{1050} & \textbf{350} & \textbf{210} & \textbf{150} & 117  & 4\\\hline
+	Sportowcy    & \textbf{1008} & \textbf{336} & \textbf{202}  & 144 &      & 3\\\hline
 \end{tabular}\\
 
-Partia \textbf{Sportowcy} postanowiła się rozdzielić na dwie partie i startować osobno:
+Na ten moment wygrywa partia \textbf{Kelnerzy} 4 mandatami. Partia \textbf{Sportowcy} postanowiła się rozdzielić na dwie partie i startować osobno:
 
 \begin{tabular}{|c|c|c|c|c|c|c|}\hline
 	Nazwa        & Głosy:1 & :3 & :5  & :7  & :9  & Mandaty\\\hline
@@ -300,8 +300,8 @@ Partia \textbf{Sportowcy} postanowiła się rozdzielić na dwie partie i startow
 \section{Metody głosowania (system wyborczy)}
 
 Wprowadźmy kilka oznaczeń, niech: \\
-\\ $W$ - zbiór wszystkich wyborców, \\
-$K$ - zbiór wszystkich kandydatów.
+\\ $\textbf{W}$ - zbiór wszystkich wyborców, \\
+$\textbf{K}$ - zbiór wszystkich kandydatów.
 \begin{itemize}
 	\item Ten sam układ głosów (zestaw głosów) daje ten sam wynik (funkcja).
 	\item Każdy układ głosów daje jakiś wynik (może być $\emptyset$).
@@ -312,16 +312,22 @@ $K$ - zbiór wszystkich kandydatów.
 \end{definition}
 
 \begin{definition}[Metoda anonimowa]
-	Metoda jest anonimowa \witw gdy wszyscy wyborcy są traktowani tak samo, to znaczy \witw $\forall_{x,y \in W}$ zamiana głosów $x$ i $y$ nie zmienia wyniku.
+	Metoda jest anonimowa \witw gdy wszyscy wyborcy są traktowani tak samo, to znaczy \begin{center}
+		$\forall_{x,y \in W}$ zamiana głosów $x$ i $y$ nie zmienia wyniku.
+	\end{center}
 \end{definition}
 
-\Komentarz{Alternatywnie, metoda nie jest anonimowa \witw $\exists_{x,y \in W}$ takie, że zamiana głosów $x$ i $y$ \textit{istotnie} zmienia wynik.}
+\Komentarz{Alternatywnie, metoda nie jest anonimowa kiedy \begin{center}
+		 $\exists_{x,y \in W}$ takie, że zamiana głosów $x$ i $y$ \textit{istotnie} zmienia wynik.
+\end{center}}
 
 \begin{definition}[Metoda neutralna]
-	Metoda jest neutralna \witw wszyscy kandydaci są traktowani tak samo, to znaczy \witw $\forall_{x,y \in K}$ zamiana ról $x$ i $y$ nie zmienia wyniku.
+	Metoda jest neutralna gdy wszyscy kandydaci są traktowani tak samo, to znaczy \begin{center}
+		$\forall_{x,y \in K}$ zamiana ról $x$ i $y$ nie zmienia wyniku.
+	\end{center}
 \end{definition}
 
-\Komentarz{Alternatywnie, metoda nie jest neutralna \witw $\exists_{x,y \in K}$ takie, że zamiana ról $x$ i $y$ \textit{istotnie} zmienia wynik, dokładniej definiując:\\
+\Komentarz{Alternatywnie, metoda nie jest neutralna  \begin{center}$\exists_{x,y \in K}$ takie, że zamiana ról $x$ i $y$ \textit{istotnie} zmienia wynik,\end{center} dokładniej definiując:\\\\
 jeśli $\exists{k_1,k_2\in K}: W_1=\{w_{1},w_{2},\dots,w_{i}\}$ głosowali na $k_1$, a $W_2=\{w_{i+1},w_{i+2},\dots,w_{j}\}$ głosowali na $k_2$ to jeżeli kandydaci Ci "zamienią się" wyborcami (zbiorami $W_1,W_2$), to $k_1$ i $k_2$ zamienią się wynikami.}
 
 \begin{definition}
@@ -355,8 +361,6 @@ jeśli $\exists{k_1,k_2\in K}: W_1=\{w_{1},w_{2},\dots,w_{i}\}$ głosowali na $k
 	Metoda zwycięzcy jest efektywna \witw zawsze wyłania przynajmniej jednego zwycięzcę.
 \end{definition}
 
-\begin{example}[Przykłady metod głosowania]
-\end{example}
 \subsection{Metody klasyczne:}
 \begin{enumerate}[1)]
 	\item Dyktatura – $\exists_{\;p \in W}$: wynik jest tożsamy z głosem $p$.
@@ -392,9 +396,9 @@ jeśli $\exists{k_1,k_2\in K}: W_1=\{w_{1},w_{2},\dots,w_{i}\}$ głosowali na $k
 
 \begin{zad}
 	Zbadaj kto jest zwycięzcą w głosowaniu przez 99 osób na kandydatów: \textbf{Anastazy}, \textbf{Bermudy}, \textbf{Cezary}, jeśli otrzymano następujące wyniki metodą porządkową:
-\end{zad}
-
-	\begin{tabular}{|c|c|}\hline
+	
+	\begin{center}
+		\begin{tabular}{|c|c|}\hline
 		Liczba głosów	& Wynik porządkowy\\\hline
 		18        		& ABC\\\hline
 		15    			& ACB\\\hline
@@ -402,7 +406,9 @@ jeśli $\exists{k_1,k_2\in K}: W_1=\{w_{1},w_{2},\dots,w_{i}\}$ głosowali na $k
 		8 				& BCA\\\hline
 		16     			& CAB\\\hline
 		18 				& CBA\\\hline
-	\end{tabular}\\
+	\end{tabular}
+	\end{center}
+\end{zad}
 	
 \begin{zad}
 	Dane są wyniki głosowania:\\\\
@@ -418,14 +424,14 @@ jeśli $\exists{k_1,k_2\in K}: W_1=\{w_{1},w_{2},\dots,w_{i}\}$ głosowali na $k
 	Uzupełnij tabelę:\\
 	\begin{tabular}{|c|c|c|c|}\hline
 		& Anonimowa & Neutralna & Efektywna\\\hline
-		Dyktatura   &-&+&+\\\hline
-		Monarchia   &+&-&+\\\hline
-		Metoda Większości &+&+&+\\\hline
+		Dyktatura   &&&\\\hline
+		Monarchia   &&&\\\hline
+		Metoda Większości &&&\\\hline
 	\end{tabular}\\
 \end{zad}
 
 
-
+\newpage
 
 	\begin{definition}[Kryterium jednoznacznej bezwzględnej większości]
 		Metoda zwycięzcy (MZ) spełnia kryterium jednoznacznej bezwzględnej większości, \textit{wtedy i tylko wtedy}, gdy kandydat, który otrzyma ponad 50\% głosów, jest jedynym zwycięzcą.
@@ -452,16 +458,19 @@ jeśli $\exists{k_1,k_2\in K}: W_1=\{w_{1},w_{2},\dots,w_{i}\}$ głosowali na $k
 	
 	\begin{definition}[Metoda monotoniczna ze względu na zwycięzcę]
 		\textbf{Z:} MZ - klasyczna lub semi-klasyczna.
-		Metoda jest monotoniczna ze względu na zwycięzcę, \textit{wtedy i tylko wtedy}, gdy kandydat $A$ jest zwycięzcą, a jeśli wybierzemy kandydata $B$ różnego od $A$ ($B\neq A$) oraz jego grupę wyborców, to jeśli ta grupa zmieni swoje głosy bez straty dla $A$ (czyli zmiana nastąpi zgodnie z następującymi dozwolonymi operacjami):\\
 		
-		\begin{tabular}{|c|c|c|}
+		Metoda jest monotoniczna ze względu na zwycięzcę, \textit{wtedy i tylko wtedy}, gdy kandydat $A$ jest zwycięzcą, a jeśli wybierzemy kandydata $B$ różnego od $A$ ($B\neq A$) oraz jego grupę wyborców, to jeśli ta grupa zmieni swoje głosy bez straty dla $A$ (czyli zmiana nastąpi zgodnie z następującymi dozwolonymi operacjami):
+		
+		\begin{center}
+			\begin{tabular}{|c|c|c|}
 			\hline
 			M & $\Rightarrow$ & N \\\hline
 			A B & $\Rightarrow$ & A B \\\hline
 			- - & $\Rightarrow$ & - - \\\hline
 			+ + & $\Rightarrow$ & + + \\\hline
 			- + & $\Rightarrow$ & + - \\\hline
-		\end{tabular}\\
+		\end{tabular}
+		\end{center}
 		
 		to: $\Rightarrow$ $A$ nadal wygrywa.
 	\end{definition}
@@ -514,11 +523,13 @@ jeśli $\exists{k_1,k_2\in K}: W_1=\{w_{1},w_{2},\dots,w_{i}\}$ głosowali na $k
 	
 	\section{MZU - Metoda zakładająca uporządkowanie}
 	\begin{definition}[Metoda zakładająca uporządkowanie]
-		Metoda zwycięzcy jest metodą zakładającą uporządkowanie (MZU) \witw gdy $\forall_{w\in W}$ wyborca $w$ ustala $K$ kandydatów w liniowym porządku, a jego głos zależy od tego porządku.
+		Metoda zwycięzcy jest metodą zakładającą uporządkowanie (MZU) gdy \begin{center}
+			$\forall_{w\in W}$ wyborca $w$ ustala $K$ kandydatów w liniowym porządku, a jego głos zależy od tego porządku.
+		\end{center}
 	\end{definition}
 	
 	\noindent \textbf{Zapis:}\\\\
-	$A\overset{w,m}{<}B$ w modelu $m$ oznacza, że wyborca $w$ stawia $B$ wyżej niż $A$.\\
+	$A\overset{w,m}{<}B$ - w modelu $m$ oznacza, że wyborca $w$ stawia $B$ wyżej niż $A$.\\
 	$A\overset{w}{<}B$ - gdy wiadomo, jaki model.
 	
 	\begin{example}
@@ -547,8 +558,9 @@ jeśli $\exists{k_1,k_2\in K}: W_1=\{w_{1},w_{2},\dots,w_{i}\}$ głosowali na $k
 					II pozycja & A & C & A \\\hline
 					III pozycja & B & A & C \\\hline
 				\end{tabular}\\\\
-				Wygrywa $B$, bo ma ponad 50\% pierwszych miejsc.\\
-				
+				Wygrywa $B$, bo ma ponad 50\% pierwszych miejsc.} \newpage
+			\Komentarz{
+				Kontynuacja...\\
 				\textbf{Metoda odrzuceń ostatniego}\\
 				\begin{tabular}{|c|c|c|c|}\hline
 					Liczba: & 4 & 2 & 3 \\\hline
@@ -602,31 +614,43 @@ jeśli $\exists{k_1,k_2\in K}: W_1=\{w_{1},w_{2},\dots,w_{i}\}$ głosowali na $k
 		{\textbf{Umowa:}} Jeśli nie jest zaznaczone inaczej, to w $K,W$ różne oznaczenia oznaczają różnych kandydatów (wyborców).
 		
 		\begin{definition}[Słaba zasada Pareto]
-			MZU spełnia słabą zasadę Pareto \witw $\forall_M (\exists_{A,B\in K}\forall_{w\in W} A\overset{w,M}{<}B) \Rightarrow A$ nie wygrywa w $M$.
+			MZU spełnia słabą zasadę Pareto gdy \begin{center}
+				$\forall_M (\exists_{A,B\in K}\forall_{w\in W} A\overset{w,M}{<}B) \Rightarrow A$ nie wygrywa w $M$.
+			\end{center}
 		\end{definition}
 		
 		\begin{definition}[Kandydat Condorceta]
-			$A\in K$ jest kandydatem Condorceta (zwycięzcą Condorceta) \witw w "bezpośrednich porównaniach" $A$ jest lepszy od każdego innego kandydata \witw $\forall_{B \in K}: B\neq A \quad \#\{w: B\overset{w,M}{<}A\}>\#\{w: B\overset{w,M}{>}A\}$.
+			$A\in K$ jest kandydatem Condorceta (zwycięzcą Condorceta) gdy w "bezpośrednich porównaniach" $A$ jest lepszy od każdego innego kandydata czyli \begin{center}
+				$\forall_{B \in K}: B\neq A \quad \#\{w: B\overset{w,M}{<}A\}>\#\{w: B\overset{w,M}{>}A\}$.
+			\end{center}
 		\end{definition}
 		
 		\begin{definition}[Przegrany Condorceta]
-			$A\in K$ to przegrany Condorceta (w modelu $M$) \witw $\forall_{B \in K}: B\neq A \quad\#\{w: B\overset{w,M}{<}A\}<\#\{w: B\overset{w,M}{>}A\}$.
+			$A\in K$ to przegrany Condorceta (w modelu $M$) gdy \begin{center}
+				$\forall_{B \in K}: B\neq A \quad\#\{w: B\overset{w,M}{<}A\}<\#\{w: B\overset{w,M}{>}A\}$.
+			\end{center}
 		\end{definition}
 		
 		\begin{definition}[Kryterium Condorceta]
-			Metoda spełnia kryterium Condorceta \witw $\forall_M:$ Istnieje kandydat Condorceta (w $M$) $\Rightarrow A$ - jedyny zwycięzca w $M$.
+			Metoda spełnia kryterium Condorceta gdy \begin{center}
+				$\forall_M$ istnieje kandydat Condorceta (w $M$) $\Rightarrow A$ - jedyny zwycięzca w $M$.
+			\end{center}
 		\end{definition}
 		
 		\begin{definition}[Kryterium przegranych Condorceta]			
-			Metoda spełnia kryterium przegranych Condorceta \witw $\forall_M:$ Istnieje przegrany Condorceta $A$ w $M$ $\Rightarrow A$ nie wygrywa w $M$.
+			Metoda spełnia kryterium przegranych Condorceta gdy \begin{center}
+				$\forall_M$ istnieje przegrany Condorceta $A$ w $M$ $\Rightarrow A$ nie wygrywa w $M$.
+			\end{center}
 		\end{definition}
 		
 		\begin{definition}[Metoda jednoznacznie większościowa]
-			Metoda jest jednoznacznie większościowa \witw $\forall_M$ kandydat $A$ w $M$ ma ponad połowę pierwszych miejsc $\Rightarrow A$ - jedyny zwycięzca.
+			Metoda jest jednoznacznie większościowa gdy \begin{center}
+				$\forall_M$ kandydat $A$ w $M$ ma ponad połowę pierwszych miejsc $\Rightarrow A$ - jedyny zwycięzca.
+			\end{center}
 		\end{definition}
 		
 		\begin{definition}[Metoda słabo niezależna od ubocznych opcji IIA]
-			Metoda słabo niezależna od ubocznych opcji spełnia warunek niezależności porażki od ubocznych opcji (spełnia słaby warunek $IIA$) \witw
+			Metoda słabo niezależna od ubocznych opcji spełnia warunek niezależności porażki od ubocznych opcji (spełnia słaby warunek $IIA$) gdy
 			
 			$\forall_{A,B\in K} \forall_{M,N - modele}$ spełnia 
 			$\begin{bmatrix}
@@ -673,9 +697,9 @@ jeśli $\exists{k_1,k_2\in K}: W_1=\{w_{1},w_{2},\dots,w_{i}\}$ głosowali na $k
 		\begin{flushright}$\square$\end{flushright}
 		
 		\begin{theorem}
-			MZU spełnia słabe $IIA$, a $A$ spełnia kryterium Condorceta $\Rightarrow$ spełnia słabą zasadę Pareto.
+			MZU spełnia słabe $IIA$ oraz kryterium Condorceta $\Rightarrow$ spełnia słabą zasadę Pareto.
 		\end{theorem}
-		\noindent \textbf{Dowód:} Rozważmy $M$ $\forall_{W} A\overset{w,M}{<}B \overset{?}{\Rightarrow}$ $A$ nie wygrywa w $M$.\\\\
+		\noindent \textbf{Dowód:} Mamy dany model $M$ w którym $\forall_{w\in W} A\overset{w,M}{<}B \overset{?}{\Rightarrow}$ $A$ nie wygrywa w $M$.\\\\
 		
 		Rozważmy model $N$ w którym dla każdego wyborcy przesuwamy $A$ i $B$ na szczyt, czyli do postaci 
 		$$\begin{bmatrix}
@@ -691,17 +715,13 @@ jeśli $\exists{k_1,k_2\in K}: W_1=\{w_{1},w_{2},\dots,w_{i}\}$ głosowali na $k
 		\begin{flushright}$\square$\end{flushright}
 		
 		\begin{theorem}
-			MZU, monotoniczna ze względu na transpozycje \witw $\forall_{M - \text{model}} \forall_{A\in K} \forall_{B_1,\dots,B_n\in A} (A\neq B, \text{ ale może być } B_i=B_j)$
-			$\forall_{w_1,\dots,w_n\in W}$ (może być $w_i=w_j$)
-			
-			Jeżeli w modelu $M$ wygrywa $A$, to model $N$ utworzony przez $[\Delta, B_i, A, *] \rightarrow [\Delta, A, B_i, *]$ dla $i=1,\dots,n$ $\Rightarrow$ w $N$ dalej wygrywa $A$.
-			
+			MZU, monotoniczna ze względu na transpozycje \witw($\forall_{M - \text{model}} \forall_{A\in K} \forall_{B_1,\dots,B_n\in A} (A\neq B, \text{ ale może być } B_i=B_j) \forall_{w_1,\dots,w_n\in W}$ (może być $w_i=w_j$), jeżeli w modelu $M$ wygrywa $A$, to model $N$ utworzony przez $[\Delta, B_i, A, *] \rightarrow [\Delta, A, B_i, *]$ dla $i=1,\dots,n$ $\Rightarrow$ w $N$ dalej wygrywa $A$.)
 		\end{theorem}
-		
+				
 		\noindent \textbf{Dowód:} $\Leftarrow$ oczywiste.
 		
 		$\Rightarrow$ Stosujemy założenie $n$ razy (robimy $n$ skoków i dalej wygrywa $A$).
-		
+		\begin{flushright}$\square$\end{flushright}
 		\begin{example}
 			
 		\end{example}
@@ -714,9 +734,7 @@ jeśli $\exists{k_1,k_2\in K}: W_1=\{w_{1},w_{2},\dots,w_{i}\}$ głosowali na $k
 			\item Metoda prezydencka - rozważamy dwóch kandydatów z największą liczbą pierwszych miejsc. Porównujemy ich "bezpośrednio". Jeśli na drugim miejscu jest remis, wszyscy z drugiego miejsca "przechodzą do finału" i tam stosujemy metodę Copelanda.
 		\end{enumerate}
 		
-		Metoda punktów Bordy jest monotoniczna ze względu na transpozycję.
-		
-		$A$ wygrywa. Niech $A$ zdobędzie 1 punkt więcej. Innym się nie zwiększyło $\Rightarrow$ $A$ dalej wygrywa.\\\\
+		\subsection{Własności metod wyborczych}
 		
 		\begin{tabular}{|p{2.5cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|c|p{2cm}|}\hline
 			Metoda & Kryterium Condorceta & Kryterium przegranego Condorceta & Słaba zasada Pareto & Monoto- niczność ze względu na transpozycję & IIA & Jedno- znaczna większość\\\hline
@@ -729,6 +747,11 @@ jeśli $\exists{k_1,k_2\in K}: W_1=\{w_{1},w_{2},\dots,w_{i}\}$ głosowali na $k
 			Dyktatura &-(7)&-(7)&+&+(O)&+&-(7)\\\hline
 			Terminażowa &+&+&-(8)&+&-(9)&+\\\hline
 		\end{tabular}\\\\
+		
+		Metoda punktów Bordy jest monotoniczna ze względu na transpozycję.\\
+		
+		$A$ wygrywa. Niech $A$ zdobędzie 1 punkt więcej. Innym się nie zwiększyło $\Rightarrow$ $A$ dalej wygrywa.\\\\
+		
 		
 		\begin{enumerate}[D1)]
 			\item \textbf{Metoda Bordy, Kryterium przegranego Condorceta} $\forall_w A<B$ Punkty $A$ < Punkty $B$. W punktacji $A$ zdobywa 1 punkt za każdą parę $(B, w)$, w której wyborca $w$ umieszcza $B$ wyżej niż $A$. 
@@ -942,7 +965,6 @@ jeśli $\exists{k_1,k_2\in K}: W_1=\{w_{1},w_{2},\dots,w_{i}\}$ głosowali na $k
 			\end{tabular} $A$-przegrany Condorceta, ale $A$ wygrywa
 			 
 		\end{enumerate}
-		\newpage
 		\begin{lemma}[Lemat o decyzyjności]
 			Z: MZU, efektywna, $\#K\geq3$, $\#W\geq2$.
 			Metoda spełnia słabą zasadę Pareto i słabe IIA
@@ -990,7 +1012,7 @@ jeśli $\exists{k_1,k_2\in K}: W_1=\{w_{1},w_{2},\dots,w_{i}\}$ głosowali na $k
 		
 		Załóżmy, że $A$ wygrywa w $R$ $\Rightarrow$ $C$ nie wygrywa w $Q$. Wobec tego w $R$ wygrywa $B$.
 		
-		Porównajmy $M$ i $R$: relacje $A$-$B$ w $M$ i $R$ są takie same. Wobec tego z IIA $\Rightarrow$ w $M$ $A$ nie wygrywa \faBolt
+		Porównajmy $M$ i $R$: relacje $A/B$ w $M$ i $R$ są takie same. Wobec tego z IIA $\Rightarrow$ w $M$ $A$ nie wygrywa \faBolt
 		\begin{flushright}$\square$\end{flushright}
 		
 		
@@ -1104,7 +1126,7 @@ jeśli $\exists{k_1,k_2\in K}: W_1=\{w_{1},w_{2},\dots,w_{i}\}$ głosowali na $k
 			W $Q$ wygrywa $A$, $B$ nie wygyrwa.
 			
 			Relacje $A/B$ w $P$ i $Q$ są takie same. $\Rightarrow$ w $P$ $B$ nie wygrywa.
-			\newpage
+			
 			\item $w$ jest dyktatorem nad $B$ z kontrolerem $A$, $v$ jest dyktatorem nad $A$ z kontrolerem $B$
 			
 			\begin{tabular}{|c|c|c|}\hline
@@ -1395,7 +1417,9 @@ $$
 	\end{zad}
 	
 	\begin{zad}
-		Dla grupy $B + 6r$ (burmistrz i 6 radnych) wyznaczyć indeksy Shapleya–Shubika.
+		Dla grupy $B + 6r$ (burmistrz i 6 radnych) wyznaczyć indeksy Shapleya–Shubika.\\
+		
+		(Głosowanie przechodzi, gdy głosuje 5 radnych albo burmistrz i 2 radnych.)
 	\end{zad}
 	
 	\newpage
@@ -1615,9 +1639,20 @@ $$
 	$W \ni x \overset{M}{\to} M(x)$ - porządek w $K$  
 	$a \underset{M}{<} b$ oznacza $a < b$ w słabym porządku wyznaczonym przez $f(M)$.
 	
-	\begin{definition}
-		$(p)$ $\forall_M (\forall_{x \in W} \; a \overset{x, M}{<} b) \Rightarrow a \underset{M}{<} b$  
-		$(I)$ $\forall_{M, N} (\forall_{x \in W} \; (a \overset{x, M}{<} b \iff a \overset{x, N}{<} b)) \iff (a \underset{M}{<} b \iff a \underset{N}{<} b)$  
+	\begin{definition}[Warunek (DEC)]
+		MZU
+		\begin{center}
+			 $\forall_M (\forall_{x \in W} \; a \overset{x, M}{<} b) \Rightarrow a \underset{M}{<} b$  
+		$(I)$ $\forall_{M, N} \forall_{x \in W} \; (a \overset{x, M}{<} b \iff a \overset{x, N}{<} b)$
+		\end{center}
+		
+		\begin{center}
+			$\iff$ 
+		\end{center}
+		
+	\begin{center}
+			$(a \underset{M}{<} b \iff a \underset{N}{<} b)$ 
+	\end{center} 
 		
 		Zbiór $T \subset W$ spełnia warunek (DEC) wtedy i tylko wtedy, gdy $T$ jest zbiorem decyzyjnym:  
 		\[
