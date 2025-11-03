@@ -1,0 +1,107 @@
+\documentclass[12pt,a4paper]{article}
+
+\input{/home/tabaka/Documents/GitHub/Defs/defs.tex}
+
+%\pagestyle{empty} 			%usuwa nr strony
+
+\begin{document}
+	
+	\begin{center}
+		\LARGE Sprawdzian z matematycznych aspektów wyborów
+		
+		Rok akademicki 2024/2025
+	\end{center}
+	
+	\begin{center}
+		\large Część teoretyczna
+	\end{center}
+	
+	\begin{enumerate}[1.]
+		\item Napisać, co to znaczy, że metoda zwycięzcy jest prawie decyzyjna. (2 pkt)
+		\item Napisać, co to znaczy, że metoda zakładająca uporządkowanie spełnia kryterium przegranych Condorceta (wyjaśniając także pojęcie przegranego Condorceta). W przypadku używania oznaczeń należy je objaśnić. (2 pkt)
+		\item Napisać, co to znaczy, że metoda rozdziału spełnia warunek populacji. W przypadku używania oznaczeń należy je objaśnić. (2 pkt)
+		
+		\newpage
+		
+		\begin{center}
+			\large Część praktyczna
+		\end{center}
+		
+		\item Rozważamy metodę, w której każdy z wyborców ustawia kandydatów według swojej kolejności; za pierwsze miejsce na liście kandydat dostaje 2 punkty, za drugie - 1 punkt, za trzecie również 1 punkt, za każde następne - 0 punktów. Zwycięzcą zostaje kandydat (kandydaci) z największą liczbą punktów. Zbadać (z uzasadnieniem, tzn. wskazując lub pokazując kontrprzykłady) czy metoda:
+		\begin{itemize}
+			\item jest efektywna
+			\item jest decyzyjna
+			\item jest monotoniczna ze względu na transpozycje
+			\item jest jednoznacznie większościowa
+			\item spełnia kryterium Condorceta
+			\item spełnia słaby warunek IIA (niezależność porażki od ubocznych opcji)
+		\end{itemize}
+		
+		\textit{Uwaga:} uzasadnienie może (a nawet powinno) być \textbf{krótkie}, czasami wystarczyć może wręcz jednozdaniowe; ważne, by zawierało to, co jest dla uzasadnienia istotne, a kontrprzykład wystarczy podać, nie trzeba pisać uzasadnienia, dlaczego jest poprawny - jednak przy podaniu kontrprzykładu należy zaznaczyć, których kandydatów on dotyczy.
+		
+		(1/1/1/2/3/3 pkt.)
+		
+		\item Rozważamy porządkową metodę głosowania, w której każdy wyborca ustawia kandydatów według swojej kolejności. O ostatecznej kolejności decyduje:
+		\begin{itemize}
+			\item większa liczba pierwszych miejsc na listach wyborców,
+			\item w przypadku równej liczby pierwszych miejsc na listach – mniejsza liczba ostatnich miejsc,
+			\item jeśli obie te liczby są równe, kandydaci są umieszczeni w końcowym wyniku na tej samej pozycji.
+		\end{itemize}
+		Zbadać (wykazać lub podać kontrprzykład; podobnie jak w zadaniu poprzednim, nie pisać zbyt dużo), czy ta metoda:
+		\begin{itemize}
+			\item spełnia porządkową zasadę Pareto,
+			\item spełnia porządkowy warunek IIA,
+			\item jest odporna na nieobecność.
+		\end{itemize}
+		
+		\textit{Uwaga:} podobnie jak w zadaniu poprzednim – należy wykazać lub podać kontrprzykład i nie pisać zbyt dużo.
+		
+		(2/2/2 pkt.)
+		
+		
+		\item Wykazać, że jeśli – dla dowolnego $n \geq 2$ – dwanaście osób głosuje metodą punktów Bordy na $n$ kandydatów, to nie może się zdarzyć, że kandydat, który przez siedmiu wyborców jest postawiony na ostatnim miejscu, zostanie zwycięzcą.
+		
+		(4 pkt.)
+		
+		\item Wykazać, że zbiór $\{A \subset \mathbb{N} : \mathbb{N} \setminus A \text{ jest skończony}\}$ jest filtrem na $\mathbb{N}$, ale nie jest ultrafiltrem. 
+		
+		(4 pkt.)
+		
+		\item Rozważamy porządkową metodę głosowania, w której liczba wyborców jest o jeden mniejsza niż liczba kandydatów. Wyborcy są uporządkowani: $w_1, w_2, \dots, w_{n-1}$. Wyborca $w_1$ decyduje o pierwszym miejscu, stawiając tam kandydata z pierwszego miejsca swojej listy. Wyborca $w_2$ stawia na drugim miejscu kandydata, który jest najwyżej na jego liście po usunięciu kandydata wybranego przez $w_1$; wyborca $w_3$ stawia na trzecim miejscu kandydata, który na jego liście jest najwyżej spośród tych, którzy jeszcze nie mają przyporządkowanego ostatecznego miejsca itd.; wyborca $w_{n-1}$ „obsadza” przedostatnie miejsce, a na ostatnim umieszczany jest kandydat przez nikogo nie wskazany. Zbadać (wykazać lub obalić), czy ta metoda spełnia postulat liberalizmu Sena. 
+		
+		(4 pkt.)
+		
+		\item Władzę w Dyrdymale sprawuje rada, składająca się z Burmistrza Grubego, Burmistrza Chudego oraz z trzech radnych. Wniosek (głosowany metodą TAK/NIE) przechodzi, gdy spełniony jest któryś z warunków:
+		\begin{itemize}
+			\item popierają go obaj burmistrzowie,
+			\item popiera go jeden z burmistrzów i wszyscy trzej radni.
+		\end{itemize}
+		Obliczyć indeks Penrose’a–Banzhafa dla Burmistrza Grubego. 
+		
+		(3 pkt.)
+		
+		\item Herr Flick z Gestapo zaaresztował dwóch oficerów niemieckich: pułkownika von Strohma i porucznika Grubera oraz cztery osoby mieszkające w Caf\'{e} Ren\'{e}: Ren\'{e} Artois, jego żonę Edith i dwie kelnerki – Ivette i Mimi. Szóstka uwięzionych zastanawiała się nad próbą ucieczki. Uznano, że o tym, czy podejmą tę próbę, zdecyduje głosowanie, przy czym próba zostanie podjęta, jeśli w grupie głosujących za ucieczką znajdą się:
+		\begin{itemize}
+			\item obaj oficerowie,
+			
+			lub
+			\item jeden oficer i jeden mieszkaniec kawiarni.
+		\end{itemize}
+		Obliczyć indeks Shapleya–Shubika dla Ren\'{e}. 
+		
+		(3 pkt.)
+		
+		\item Dzielimy akcje między akcjonariuszy według następującej zasady: każdemu akcjonariuszowi przyznajemy górną quotę pomniejszoną o 1, a pozostałe akcje przyznajemy tym akcjonariuszom, którzy uzyskali największą różnicę między quotą a dolną quotą (w przypadku równych różnic pierwszeństwo ma akcjonariusz z większym wkładem) – do wyczerpania akcji do rozdziału. Zakładamy, że wszyscy akcjonariusze włożyli parami różne wkłady i każdy włożył niezerowy wkład. Pokazać na przykładach, że metoda ta nie spełnia:
+		\begin{itemize}
+			\item warunku quoty,
+			\item warunku monotoniczności.
+		\end{itemize}
+		W przypadku podawania przykładu należy – w szczególności – podać wkłady wyrażone w liczbach oraz liczbę akcji do rozdziału.
+		
+		\textit{Uwaga:} istnieją kontrprzykłady, w których występują naprawdę duże liczby.
+		
+		(2/2 pkt.)
+		
+	\end{enumerate}
+		
+\end{document}
